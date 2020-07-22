@@ -29,6 +29,7 @@ body {
     justify-content: center;
     align-items: center;
     border-bottom: 0px solid #00FFFF;
+    border-radius: 0px 0px 0px 0px;
     animation: border_header .5s 1;
     background-color: #595960;
     width: 300px;
@@ -36,10 +37,6 @@ body {
     box-shadow: 0px 0px 10px -2px #333333;
     margin-bottom: -1px;
     overflow: hidden;
-}
-
-@keyframes border_header {
-    50% {border-bottom: 15px solid #7FFFD4;}
 }
 
 .sub_header {
@@ -55,65 +52,70 @@ body {
     animation: color .5s 1;
 }
 
-@keyframes color {
-    50% {background-color: #7FFFD4;}
-}
-
-.slogan {
+.show_title {
     color: #595960;
     font-size: .5rem;
     font-weight: 400;
 }
 
-.section_title {
-    font-weight: 400;
-    color: white;
-    width: 300px;
-    text-align: left;
-    align-content: flex-start;
-    margin-left: 5px;
-    margin-bottom: 10px;
-}
-
-.random_episode_section {
-    margin-left: 10px;
+.random_row {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
-.show {
-    border: 5px solid #595960;
+.random_button {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 15px 15px 15px 15px;
-    width: 133px;
+    border-radius: 12px 12px 12px 12px;
+    width: 295px;
     height: 40px;
-    background-color: #595960;
+    background-color: #00FFFF;
     box-shadow: 0px 0px 10px -2px #333333;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-right: 10px;
+    margin-left: 10px;
 }
 
-.show_title {
+.random_episode {
     color: white;
-    font-weight: 400;
+    font-weight: 600;
 }
 
-.show:active {
-    width: 133px;
-    height: 39px;
+.random_button:active {
     box-shadow: 0px 0px 0px 0px #333333;
+    height: 39px;
+}
+
+.info {
+    border: 5px solid #595960;
+    display: flex;
+    visibility: hidden;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px 15px 15px 15px;
+    width: 265px;
+    color: white;
+    height: auto;
+    background-color: #595960;
+    padding: 10px;
+    box-shadow: 0px 0px 10px -2px #333333;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    z-index: -1;
 }
 
 .footer {
     font-weight: 100;
     font-size: .7rem;
     bottom: 0;
-    border-top: 2px solid #00FFFF;
+    border-top: 2px solid #ffd90f;
     position: fixed;
     display: flex;
     justify-content: center;
