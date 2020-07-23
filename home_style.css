@@ -15,6 +15,10 @@ a:visited {
     color:black;
 }
 
+li {
+    list-style-type: none;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -92,7 +96,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 0px 0px 15px 15px;
     width: 133px;
     height: 60px;
     padding: 4px;
@@ -202,7 +206,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 0px 0px 15px 15px;
     width: 133px;
     height: 60px;
     padding: 4px;
@@ -313,7 +317,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 0px 0px 15px 15px;
     width: 133px;
     height: 60px;
     padding: 4px;
