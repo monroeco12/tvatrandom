@@ -15,8 +15,11 @@ a:visited {
     color:black;
 }
 
-li {
+ul {
     list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 body {
@@ -90,6 +93,7 @@ body {
 }
 
 .show {
+-webkit-appearance: none; 
     border-top: 2px solid #282828;
     border-bottom: 2px solid #00CED1;
     display: flex;
@@ -109,7 +113,7 @@ body {
 
 .show:hover {
     background-color: #00CED1;
-        border-radius: 15px 15px 15px 15px;
+
 }
 
 .show_title {
@@ -201,6 +205,7 @@ body {
 }
 
 .show {
+-webkit-appearance: none; 
     border-top: 2px solid #282828;
     border-bottom: 2px solid #00CED1;
     display: flex;
@@ -220,7 +225,7 @@ body {
 
 .show:hover {
     background-color: #00CED1;
-        border-radius: 15px 15px 15px 15px;
+
 }
 
 .show_title {
@@ -313,6 +318,7 @@ body {
 }
 
 .show {
+-webkit-appearance: none; 
     border-top: 2px solid #282828;
     border-bottom: 2px solid #00CED1;
     display: flex;
@@ -331,7 +337,7 @@ body {
 
 .show:hover {
     background-color: #00CED1;
-        border-radius: 15px 15px 15px 15px;
+
 }
 
 .show_title {
@@ -425,6 +431,7 @@ body {
 }
 
 .show {
+-webkit-appearance: none; 
     border-top: 2px solid #282828;
     border-bottom: 2px solid #00CED1;
     display: flex;
@@ -443,7 +450,7 @@ body {
 
 .show:hover {
     background-color: #00CED1;
-        border-radius: 15px 15px 15px 15px;
+
 }
 
 .show_title {
