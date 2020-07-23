@@ -1,0 +1,124 @@
+---
+permalink: random-boys-episode
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https: // www.googletagmanager.com / gtag / js?id = UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="The Boys random episode generator." />
+    <title>Random Boys Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>The Boys</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='return false;'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///July 26, 2019///The Name of the Game///2019-07-26', 'S01E02///July 26, 2019///Cherry///2019-07-26', 'S01E03///July 26, 2019///Get Some///2019-07-26', 'S01E04///July 26, 2019///The Female of the Species///2019-07-26', 'S01E05///July 26, 2019///Good for the Soul///2019-07-26', 'S01E06///July 26, 2019///The Innocents///2019-07-26', 'S01E07///July 26, 2019///The Self-Preservation Society,//2019-07-26', 'S01E08///July 26, 2019///You Found Me///2019-07-26', 'S02E01///September 4, 2020///The Big Ride///2020-09-04', 'S02E02///September 4, 2020///Proper Preparation and Planning///2020-09-04', 'S02E03///September 4, 2020///Nothing Like It in the World///2020-09-04', 'S02E04///September 11, 2020///Over the Hill with the Swords of a Thousand Men///2020-09-11', 'S02E05///September 18, 2020///We Gotta Go Now///2020-09-18', 'S02E06///September 25, 2020///The Bloody Doors Off///2020-09-25', 'S02E07///October 2, 2020///Butcher, Baker, Candlestick Maker///2020-10-02', 'S02E08///October 9, 2020///What I Know///2020-10-09']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[2]
+    air_date = res[1]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+</html>

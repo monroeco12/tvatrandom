@@ -1,0 +1,124 @@
+---
+permalink: random-doom-patrol-episode
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https: // www.googletagmanager.com / gtag / js?id = UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="Doom Patrol random episode generator." />
+    <title>Random Doom Patrol Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>Doom Patrol</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='return false;'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///February 15, 2019///Pilot///2019-02-15', 'S01E02///February 22, 2019///Donkey Patrol///2019-02-22', 'S01E03///March 1, 2019///Puppet Patrol///2019-03-01', 'S01E04///March 8, 2019///Cult Patrol///2019-03-08', 'S01E05///March 15, 2019///Paw Patrol///2019-03-15', 'S01E06///March 22, 2019///Doom Patrol Patrol///2019-03-22', 'S01E07///March 29, 2019///Therapy Patrol///2019-03-29', 'S01E08///April 5, 2019///Danny Patrol///2019-04-05', 'S01E09///April 12, 2019///Jane Patrol///2019-04-12', 'S01E10///April 19, 2019///Hair Patrol///2019-04-19', 'S01E11///April 26, 2019///Frances Patrol///2019-04-26', 'S01E12///May 3, 2019///Cyborg Patrol///2019-05-03', 'S01E13///May 10, 2019///Flex Patrol///2019-05-10', 'S01E14///May 17, 2019///Penultimate Patrol///2019-05-17', 'S01E15///May 24, 2019///Ezekiel Patrol///2019-05-24', 'S02E01///June 25, 2020///Fun Size Patrol///2020-06-25', 'S02E02///June 25, 2020///Tyme Patrol///2020-06-25', 'S02E03///June 25, 2020///Pain Patrol///2020-06-25', 'S02E04///July 2, 2020///Sex Patrol///2020-07-02', 'S02E05///July 9, 2020///Finger Patrol///2020-07-09', 'S02E06///July 16, 2020///Space Patrol///2020-07-16', 'S02E07///July 23, 2020///Dumb Patrol///2020-07-23', 'S02E08///July 30, 2020///Dad Patrol///2020-07-30', 'S02E09///August 6, 2020///Wax Patrol///2020-08-06']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[2]
+    air_date = res[1]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+</html>

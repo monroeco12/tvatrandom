@@ -1,0 +1,124 @@
+---
+permalink: random-wire-episode
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https: // www.googletagmanager.com / gtag / js?id = UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="The Wire random episode generator." />
+    <title>Random Wire Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>The Wire</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='return false;'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///June 2, 2002///The Target///2002-06-02', 'S01E02///June 9, 2002///The Detail///2002-06-09', 'S01E03///June 16, 2002///The Buys///2002-06-16', 'S01E04///June 23, 2002///Old Cases///2002-06-23', 'S01E05///June 30, 2002///The Pager///2002-06-30', 'S01E06///July 7, 2002///The Wire///2002-07-07', 'S01E07///July 21, 2002///One Arrest///2002-07-21', 'S01E08///July 28, 2002///Lessons///2002-07-28', 'S01E09///August 4, 2002///Game Day///2002-08-04', 'S01E10///August 11, 2002///The Cost///2002-08-11', 'S01E11///August 18, 2002///The Hunt///2002-08-18', 'S01E12///September 1, 2002///Cleaning Up///2002-09-01', 'S01E13///September 8, 2002///Sentencing///2002-09-08', 'S02E01///June 1, 2003///Ebb Tide///2003-06-01', 'S02E02///June 8, 2003///Collateral Damage///2003-06-08', 'S02E03///June 15, 2003///Hot Shots///2003-06-15', 'S02E04///June 22, 2003///Hard Cases///2003-06-22', 'S02E05///June 29, 2003///Undertow///2003-06-29', 'S02E06///July 6, 2003///All Prologue///2003-07-06', 'S02E07///July 13, 2003///Backwash///2003-07-13', 'S02E08///July 27, 2003///Duck and Cover///2003-07-27', 'S02E09///August 3, 2003///Stray Rounds///2003-08-03', 'S02E10///August 10, 2003///Storm Warnings///2003-08-10', 'S02E11///August 17, 2003///Bad Dreams///2003-08-17', 'S02E12///August 24, 2003///Port in a Storm///2003-08-24', 'S03E01///September 19, 2004///Time After Time///2004-09-19', 'S03E02///September 26, 2004///All Due Respect///2004-09-26', 'S03E03///October 3, 2004///Dead Soldiers///2004-10-03', 'S03E04///October 10, 2004///Amsterdam///2004-10-10', 'S03E05///October 17, 2004///Straight and True///2004-10-17', 'S03E06///October 31, 2004///Homecoming///2004-10-31', 'S03E07///November 7, 2004///Back Burners///2004-11-07', 'S03E08///November 14, 2004///Moral Midgetry///2004-11-14', 'S03E09///November 21, 2004///Slapstick///2004-11-21', 'S03E10///November 28, 2004///Reformation///2004-11-28', 'S03E11///December 12, 2004///Middle Ground///2004-12-12', 'S03E12///December 19, 2004///Mission Accomplished///2004-12-19', 'S04E01///September 10, 2006///Boys of Summer///2006-09-10', 'S04E02///September 17, 2006///Soft Eyes///2006-09-17', 'S04E03///September 24, 2006///Home Rooms///2006-09-24', 'S04E04///October 1, 2006///Refugees///2006-10-01', 'S04E05///October 8, 2006///Alliances///2006-10-08', 'S04E06///October 15, 2006///Margin of Error///2006-10-15', 'S04E07///October 29, 2006///Unto Others///2006-10-29', 'S04E08///November 5, 2006///Corner Boys///2006-11-05', 'S04E09///November 12, 2006///Know Your Place///2006-11-12', 'S04E10///November 19, 2006///Misgivings///2006-11-19', 'S04E11///November 26, 2006///A New Day///2006-11-26', "S04E12///December 3, 2006///That's Got His Own///2006-12-03", 'S04E13///December 10, 2006///Final Grades///2006-12-10', 'S05E01///January 6, 2008///More with Less///2008-01-06', 'S05E02///January 13, 2008///Unconfirmed Reports///2008-01-13', 'S05E03///January 20, 2008///Not for Attribution///2008-01-20', 'S05E04///January 27, 2008///Transitions///2008-01-27', 'S05E05///February 3, 2008///React Quotes///2008-02-03', 'S05E06///February 10, 2008///The Dickensian Aspect///2008-02-10', 'S05E07///February 17, 2008///Took///2008-02-17', 'S05E08///February 24, 2008///Clarifications///2008-02-24', 'S05E09///March 2, 2008///Late Editions///2008-03-02', 'S05E10///March 9, 2008///-30-///2008-03-09']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[2]
+    air_date = res[1]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+</html>

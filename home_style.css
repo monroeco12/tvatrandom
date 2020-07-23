@@ -86,7 +86,7 @@ body {
 }
 
 .show {
-
+    border-top: 1px solid #282828;
     border-bottom: 2px solid #00CED1;
     display: flex;
     justify-content: center;
@@ -94,7 +94,8 @@ body {
     text-align: center;
     border-radius: 15px 15px 15px 15px;
     width: 133px;
-    height: 40px;
+    height: 60px;
+    padding: 2px;
     background-color: #282828;
     box-shadow: 0px 0px 10px -2px black;
     margin-bottom: 10px;
@@ -194,7 +195,7 @@ body {
 }
 
 .show {
-
+    border-top: 1px solid #282828;
     border-bottom: 2px solid #00CED1;
     display: flex;
     justify-content: center;
@@ -202,7 +203,8 @@ body {
     text-align: center;
     border-radius: 15px 15px 15px 15px;
     width: 133px;
-    height: 40px;
+    height: 60px;
+    padding: 2px;
     background-color: #282828;
     box-shadow: 0px 0px 10px -2px black;
     margin-bottom: 10px;
@@ -295,6 +297,7 @@ body {
 
 .random_episode_section {
     margin-left: 10px;
+    width: 650px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -302,7 +305,7 @@ body {
 }
 
 .show {
-
+    border-top: 1px solid #282828;
     border-bottom: 2px solid #00CED1;
     display: flex;
     justify-content: center;
@@ -310,7 +313,8 @@ body {
     text-align: center;
     border-radius: 15px 15px 15px 15px;
     width: 133px;
-    height: 40px;
+    height: 60px;
+    padding: 2px;
     background-color: #282828;
     box-shadow: 0px 0px 10px -2px black;
     margin-bottom: 10px;
@@ -404,6 +408,7 @@ body {
 
 .random_episode_section {
     margin-left: 10px;
+    width: 850px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -411,7 +416,7 @@ body {
 }
 
 .show {
-
+    border-top: 1px solid #282828;
     border-bottom: 2px solid #00CED1;
     display: flex;
     justify-content: center;
@@ -419,7 +424,8 @@ body {
     text-align: center;
     border-radius: 15px 15px 15px 15px;
     width: 133px;
-    height: 40px;
+    height: 60px;
+    padding: 2px;
     background-color: #282828;
     box-shadow: 0px 0px 10px -2px black;
     margin-bottom: 10px;

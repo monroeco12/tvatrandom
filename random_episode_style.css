@@ -69,6 +69,7 @@ body {
 }
 
 .random_button {
+    border-top: 1px solid #282828;
     border-bottom: 2px solid #00CED1;
     display: flex;
     justify-content: center;
@@ -185,6 +186,7 @@ background-color: #00CED1;
 }
 
 .random_button {
+    border-top: 1px solid #282828;
     border-bottom: 2px solid #00CED1;
     display: flex;
     justify-content: center;
@@ -301,6 +303,7 @@ background-color: #00CED1;
 }
 
 .random_button {
+    border-top: 1px solid #282828;
     border-bottom: 2px solid #00CED1;
     display: flex;
     justify-content: center;
@@ -417,6 +420,7 @@ background-color: #00CED1;
 }
 
 .random_button {
+    border-top: 1px solid #282828;
     border-bottom: 2px solid #00CED1;
     display: flex;
     justify-content: center;

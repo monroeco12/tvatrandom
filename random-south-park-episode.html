@@ -1,0 +1,124 @@
+---
+permalink: random-south-park-episode
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https: // www.googletagmanager.com / gtag / js?id = UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="South Park random episode generator." />
+    <title>Random South Park Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>South Park</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='return false;'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///August 13, 1997///Cartman Gets an Anal Probe///1997-08-13', 'S01E03///August 27, 1997///Volcano///1997-08-27', 'S01E02///August 20, 1997///Weight Gain 4000///1997-08-20', "S01E04///September 3, 1997///Big Gay Al's Big Gay Boat Ride///1997-09-03", 'S01E05///September 10, 1997///An Elephant Makes Love to a Pig///1997-09-10', 'S01E06///September 17, 1997///Death///1997-09-17', 'S01E07///October 29, 1997///Pinkeye///1997-10-29', "S01E08///November 19, 1997///Starvin' Marvin///1997-11-19", 'S01E09///December 17, 1997///Mr. Hankey the Christmas Poo///1997-12-17', 'S01E10///February 4, 1998///Damien///1998-02-04', "S01E11///February 11, 1998///Tom's Rhinoplasty///1998-02-11", 'S01E12///February 18, 1998///Mecha-Streisand///1998-02-18', "S01E13///February 25, 1998///Cartman's Mom is a Dirty Slut///1998-02-25", "S02E01///April 1, 1998///Terrance & Phillip in 'Not Without My Anus'///1998-04-01", "S02E02///April 22, 1998///Cartman's Mom is Still a Dirty Slut///1998-04-22", "S02E03///May 20, 1998///Ike's Wee Wee///1998-05-20", 'S02E04///May 27, 1998///Chickenlover///1998-05-27', 'S02E05///June 3, 1998///Conjoined Fetus Lady///1998-06-03', 'S02E06///June 10, 1998///The Mexican Staring Frog of Southern Sri Lanka///1998-06-10', 'S02E07///June 17, 1998///City on the Edge of Forever (a.k.a. Flashbacks)///1998-06-17', 'S02E08///June 24, 1998///Summer Sucks///1998-06-24', "S02E09///August 19, 1998///Chef's Chocolate Salty Balls///1998-08-19", 'S02E10///August 26, 1998///Chickenpox///1998-08-26', 'S02E11///September 2, 1998///Roger Ebert Should Lay Off the Fatty Foods///1998-09-02', 'S02E12///September 23, 1998///Clubhouses///1998-09-23', 'S02E13///September 30, 1998///Cow Days///1998-09-30', 'S02E14///October 7, 1998///Chef Aid///1998-10-07', 'S02E15///October 28, 1998///Spookyfish///1998-10-28', 'S02E16///December 9, 1998///Merry Christmas Charlie Manson///1998-12-09', 'S02E17///December 16, 1998///Gnomes///1998-12-16', 'S02E18///January 20, 1999///Prehistoric Ice Man///1999-01-20', 'S03E02///April 14, 1999///Spontaneous Combustion///1999-04-14', 'S03E03///April 21, 1999///The Succubus///1999-04-21', 'S03E05///June 23, 1999///Tweek vs. Craig///1999-06-23', 'S03E04///June 16, 1999///Jakovasaurs///1999-06-16', 'S03E06///July 7, 1999///Sexual Harassment Panda///1999-07-07', 'S03E07///July 14, 1999///Cat Orgy (1)///1999-07-14', 'S03E08///July 21, 1999///Two Guys Naked in a Hot Tub (2)///1999-07-21', 'S03E09///July 28, 1999///Jewbilee (3)///1999-07-28', 'S03E12///November 10, 1999///Hooked on Monkey Fonics///1999-11-10', "S03E10///October 27, 1999///Korn's Groovy Pirate Ghost Mystery///1999-10-27", "S03E13///November 17, 1999///Starvin' Marvin in Space!///1999-11-17", 'S03E11///November 3, 1999///Chinpokomon///1999-11-03', 'S03E14///November 24, 1999///The Red Badge of Gayness///1999-11-24', "S03E15///December 1, 1999///Mr. Hankey's Christmas Classics///1999-12-01", "S03E16///December 29, 1999///Are You There God? It's Me, Jesus///1999-12-29", 'S03E17///January 12, 2000///Worldwide Recorder Concert///2000-01-12', 'S04E01///April 5, 2000///The Tooth Fairy Tats 2000///2000-04-05', "S04E02///April 12, 2000///Cartman's Silly Hate Crime 2000///2000-04-12", 'S04E03///April 19, 2000///Timmy 2000///2000-04-19', 'S04E04///April 26, 2000///Quintuplets 2000///2000-04-26', 'S04E05///June 21, 2000///Cartman Joins NAMBLA///2000-06-21', 'S04E06///June 28, 2000///Cherokee Hair Tampons///2000-06-28', 'S04E07///July 5, 2000///Chef Goes Nanners///2000-07-05', 'S04E08///July 12, 2000///Something You Can Do with Your Finger///2000-07-12', 'S04E09///July 19, 2000///Do the Handicapped Go to Hell? (1)///2000-07-19', 'S04E10///July 26, 2000///Probably (2)///2000-07-26', 'S04E11///November 8, 2000///Fourth Grade///2000-11-08', 'S04E12///November 15, 2000///Trapper Keeper///2000-11-15', 'S04E13///November 22, 2000///Helen Keller! The Musical///2000-11-22', 'S04E14///November 29, 2000///Pip///2000-11-29', 'S04E15///December 6, 2000///Fat Camp///2000-12-06', 'S04E16///December 13, 2000///The Wacky Molestation Adventure///2000-12-13', 'S04E17///December 20, 2000///A Very Crappy Christmas///2000-12-20', 'S05E01///June 20, 2001///It Hits the Fan///2001-06-20', 'S05E02///June 27, 2001///Cripple Fight///2001-06-27', 'S05E03///July 4, 2001///Super Best Friends///2001-07-04', 'S05E04///July 11, 2001///Scott Tenorman Must Die///2001-07-11', 'S05E05///July 18, 2001///Terrance and Phillip: Behind the Blow///2001-07-18', 'S05E06///July 25, 2001///Cartmanland///2001-07-25', 'S05E07///August 1, 2001///Proper Condom Use///2001-08-01', 'S05E08///August 8, 2001///Towelie///2001-08-08', 'S05E09///November 7, 2001///Osama Bin Laden Has Farty Pants///2001-11-07', 'S05E10///November 14, 2001///How to Eat with Your Butt///2001-11-14', 'S05E11///November 21, 2001///The Entity///2001-11-21', 'S05E12///November 28, 2001///Here Comes the Neighborhood///2001-11-28', 'S05E13///December 5, 2001///Kenny Dies///2001-12-05', "S05E14///December 12, 2001///Butters' Very Own Episode///2001-12-12", 'S06E01///March 6, 2002///Jared Has Aides///2002-03-06', 'S06E02///March 13, 2002///Asspen///2002-03-13', 'S06E03///March 20, 2002///Freak Strike///2002-03-20', 'S06E04///March 27, 2002///Fun With Veal///2002-03-27', 'S06E05///April 3, 2002///The New Terrance and Phillip Movie Trailer///2002-04-03', 'S06E06///April 10, 2002///Professor Chaos///2002-04-10', 'S06E07///June 26, 2002///The Simpsons Already Did It///2002-06-26', 'S06E08///July 3, 2002///Red Hot Catholic Love///2002-07-03', 'S06E09///July 10, 2002///Free Hat///2002-07-10', "S06E10///July 17, 2002///Bebe's Boobs Destroy Society///2002-07-17", 'S06E11///July 24, 2002///Child Abduction is Not Funny///2002-07-24', 'S06E12///November 6, 2002///A Ladder to Heaven///2002-11-06', 'S06E13///November 13, 2002///The Return of the Fellowship of the Ring to the Two Towers///2002-11-13', 'S06E14///November 20, 2002///The Death Camp of Tolerance///2002-11-20', 'S06E15///November 27, 2002///The Biggest Douche in the Universe///2002-11-27', "S06E16///December 4, 2002///My Future Self n' Me///2002-12-04", 'S06E17///December 11, 2002///Red Sleigh Down///2002-12-11', 'S07E01///March 19, 2003///Cancelled///2003-03-19', 'S07E02///March 26, 2003///Krazy Kripples///2003-03-26', 'S07E03///April 2, 2003///Toilet Paper///2003-04-02', "S07E04///April 9, 2003///I'm A Little Bit Country///2003-04-09", 'S07E05///April 16, 2003///Fat Butt and Pancake Head///2003-04-16', "S07E06///April 23, 2003///Lil' Crime Stoppers///2003-04-23", "S07E07///April 30, 2003///Red Man's Greed///2003-04-30", 'S07E08///October 22, 2003///South Park is Gay///2003-10-22', 'S07E09///October 29, 2003///Christian Rock Hard///2003-10-29', 'S07E10///November 5, 2003///Grey Dawn///2003-11-05', 'S07E11///November 12, 2003///Casa Bonita///2003-11-12', 'S07E12///November 19, 2003///All About Mormons///2003-11-19', 'S07E13///December 3, 2003///Butt Out///2003-12-03', 'S07E14///December 10, 2003///Raisins///2003-12-10', "S07E15///December 17, 2003///It's Christmas in Canada///2003-12-17", 'S08E01///March 17, 2004///Good Times with Weapons///2004-03-17', 'S08E02///March 24, 2004///Up the Down Steroid///2004-03-24', 'S08E03///March 31, 2004///The Passion of the Jew///2004-03-31', "S08E04///April 7, 2004///You Got F'd in the A///2004-04-07", 'S08E05///April 14, 2004///AWESOM-O///2004-04-14', 'S08E06///April 21, 2004///The Jeffersons///2004-04-21', 'S08E07///April 28, 2004///Goobacks///2004-04-28', 'S08E08///October 27, 2004///Douche and Turd///2004-10-27', 'S08E09///November 3, 2004///Something Wall-Mart This Way Comes///2004-11-03', 'S08E10///November 10, 2004///Pre-School///2004-11-10', 'S08E11///November 17, 2004///Quest for Ratings///2004-11-17', 'S08E12///December 1, 2004///Stupid Spoiled Whore Video Playset///2004-12-01', "S08E13///December 8, 2004///Cartman's Incredible Gift///2004-12-08", 'S08E14///December 15, 2004///Woodland Critter Christmas///2004-12-15', "S09E01///March 9, 2005///Mr. Garrison's Fancy New Vagina///2005-03-09", 'S09E02///March 16, 2005///Die Hippie, Die///2005-03-16', 'S09E03///March 23, 2005///Wing///2005-03-23', 'S09E04///March 30, 2005///Best Friends Forever///2005-03-30', 'S09E05///April 6, 2005///The Losing Edge///2005-04-06', 'S09E06///April 13, 2005///The Death of Eric Cartman///2005-04-13', 'S09E07///April 20, 2005///Erection Day///2005-04-20', 'S03E01///April 7, 1999///Rainforest Shmainforest///1999-04-07', 'S09E08///October 19, 2005///Two Days Before the Day After Tomorrow///2005-10-19', 'S09E09///October 26, 2005///Marjorine///2005-10-26', 'S09E10///November 2, 2005///Follow That Egg///2005-11-02', 'S09E11///November 9, 2005///Ginger Kids///2005-11-09', 'S09E12///November 16, 2005///Trapped in the Closet///2005-11-16', 'S09E13///November 30, 2005///Free Willzyx///2005-11-30', 'S09E14///December 7, 2005///Bloody Mary///2005-12-07', 'S10E01///March 22, 2006///The Return of Chef///2006-03-22', 'S10E02///March 29, 2006///Smug Alert///2006-03-29', 'S10E03///April 5, 2006///Cartoon Wars (1)///2006-04-05', 'S10E04///April 12, 2006///Cartoon Wars (2)///2006-04-12', 'S10E05///April 19, 2006///A Million Little Fibers///2006-04-19', 'S10E06///April 26, 2006///Manbearpig///2006-04-26', 'S10E07///May 3, 2006///Tsst///2006-05-03', 'S10E08///October 4, 2006///Make Love, Not Warcraft///2006-10-04', 'S10E09///October 11, 2006///Mystery of the Urinal Deuce///2006-10-11', 'S10E10///October 18, 2006///Miss Teacher Bangs a Boy///2006-10-18', 'S10E11///October 25, 2006///Hell on Earth 2006///2006-10-25', 'S10E12///November 1, 2006///Go God Go (1)///2006-11-01', 'S10E13///November 8, 2006///Go God Go XII (2)///2006-11-08', "S10E14///November 15, 2006///Stanley's Cup///2006-11-15", 'S11E01///March 7, 2007///With Apologies to Jesse Jackson///2007-03-07', 'S11E02///March 14, 2007///Cartman Sucks///2007-03-14', 'S11E03///March 21, 2007///Lice Capades///2007-03-21', 'S11E04///March 28, 2007///The Snuke///2007-03-28', 'S11E05///April 4, 2007///Fantastic Easter Special///2007-04-04', 'S11E06///April 11, 2007///D-Yikes!///2007-04-11', 'S11E07///April 18, 2007///Night of the Living Homeless///2007-04-18', 'S11E08///October 3, 2007///Le Petit Tourette///2007-10-03', 'S11E09///October 10, 2007///More Crap///2007-10-10', 'S11E10///October 17, 2007///Imaginationland: Episode I///2007-10-17', 'S11E11///October 24, 2007///Imaginationland: Episode II///2007-10-24', 'S11E12///October 31, 2007///Imaginationland: Episode III///2007-10-31', 'S11E13///November 7, 2007///Guitar Queer-o///2007-11-07', 'S11E14///November 14, 2007///The List///2007-11-14', 'S12E01///March 12, 2008///Tonsil Trouble///2008-03-12', "S12E02///March 19, 2008///Britney's New Look///2008-03-19", 'S12E03///March 26, 2008///Major Boobage///2008-03-26', 'S12E04///April 2, 2008///Canada on Strike///2008-04-02', 'S12E05///April 9, 2008///Eek, A Penis!///2008-04-09', 'S12E06///April 16, 2008///Over Logging///2008-04-16', 'S12E07///April 23, 2008///Super Fun Time///2008-04-23', 'S12E08///October 8, 2008///The China Probrem///2008-10-08', 'S12E09///October 15, 2008///Breast Cancer Show Ever///2008-10-15', 'S12E10///October 22, 2008///Pandemic (1)///2008-10-22', 'S12E11///October 29, 2008///Pandemic 2: The Startling (2)///2008-10-29', 'S12E12///November 5, 2008///About Last Night...///2008-11-05', 'S12E13///November 12, 2008///Elementary School Musical///2008-11-12', 'S12E14///November 19, 2008///The Ungroundable///2008-11-19', 'S13E01///March 11, 2009///The Ring///2009-03-11', 'S13E02///March 18, 2009///The Coon///2009-03-18', 'S13E03///March 25, 2009///Margaritaville///2009-03-25', 'S13E04///April 1, 2009///Eat, Pray, Queef///2009-04-01', 'S13E05///April 8, 2009///Fishsticks///2009-04-08', 'S13E06///April 15, 2009///Pinewood Derby///2009-04-15', 'S13E07///April 22, 2009///Fatbeard///2009-04-22', 'S13E08///October 7, 2009///Dead Celebrities///2009-10-07', "S13E09///October 14, 2009///Butters' Bottom Bitch///2009-10-14", 'S13E10///October 21, 2009///W.T.F.///2009-10-21', 'S13E11///October 28, 2009///Whale Whores///2009-10-28', 'S13E12///November 4, 2009///The F Word///2009-11-04', 'S13E13///November 11, 2009///Dances With Smurfs///2009-11-11', 'S13E14///November 18, 2009///Pee///2009-11-18', 'S14E01///March 17, 2010///Sexual Healing///2010-03-17', 'S14E02///March 24, 2010///The Tale of Scrotie McBoogerballs///2010-03-24', 'S14E03///March 31, 2010///Medicinal Fried Chicken///2010-03-31', 'S14E04///April 7, 2010///You Have 0 Friends///2010-04-07', 'S14E05///April 14, 2010///200 (1)///2010-04-14', 'S14E06///April 21, 2010///201 (2)///2010-04-21', 'S14E07///April 28, 2010///Crippled Summer///2010-04-28', 'S14E08///October 6, 2010///Poor and Stupid///2010-10-06', "S14E09///October 13, 2010///It's a Jersey Thing///2010-10-13", 'S14E10///October 20, 2010///Insheeption///2010-10-20', 'S14E11///October 27, 2010///Coon 2: Hindsight (1)///2010-10-27', 'S14E12///November 3, 2010///Mysterion Rises (2)///2010-11-03', 'S14E13///November 10, 2010///Coon Vs. Coon & Friends (3)///2010-11-10', 'S14E14///November 17, 2010///Crème Fraiche///2010-11-17', 'S15E01///April 27, 2011///HUMANCENTiPAD///2011-04-27', 'S15E02///May 4, 2011///Funnybot///2011-05-04', 'S15E03///May 11, 2011///Royal Pudding///2011-05-11', 'S15E04///May 18, 2011///T.M.I.///2011-05-18', 'S15E05///May 25, 2011///Crack Baby Athletic Association///2011-05-25', 'S15E06///June 1, 2011///City Sushi///2011-06-01', "S15E07///June 8, 2011///You're Getting Old///2011-06-08", 'S15E08///October 5, 2011///Ass Burgers///2011-10-05', 'S15E09///October 12, 2011///The Last of the Meheecans///2011-10-12', 'S15E10///October 19, 2011///Bass to Mouth///2011-10-19', 'S15E11///October 26, 2011///Broadway Bro Down///2011-10-26', 'S15E12///November 2, 2011///1%///2011-11-02', 'S15E13///November 9, 2011///A History Channel Thanksgiving///2011-11-09', 'S15E14///November 16, 2011///The Poor Kid///2011-11-16', 'S16E01///March 14, 2012///Reverse Cowgirl///2012-03-14', 'S16E02///March 21, 2012///Cash for Gold///2012-03-21', 'S16E03///March 28, 2012///Faith Hilling///2012-03-28', 'S16E04///April 4, 2012///Jewpacabra///2012-04-04', 'S16E05///April 11, 2012///Butterballs///2012-04-11', 'S16E06///April 18, 2012///I Should Have Never Gone Ziplining///2012-04-18', 'S16E07///April 25, 2012///Cartman Finds Love///2012-04-25', 'S16E08///September 26, 2012///Sarcastaball///2012-09-26', 'S16E09///October 3, 2012///Raising the Bar///2012-10-03', 'S16E10///October 10, 2012///Insecurity///2012-10-10', 'S16E11///October 17, 2012///Going Native///2012-10-17', 'S16E12///October 24, 2012///A Nightmare on FaceTime///2012-10-24', 'S16E13///October 31, 2012///A Scause for Applause///2012-10-31', 'S16E14///November 7, 2012///Obama Wins!///2012-11-07', 'S17E01///September 25, 2013///Let Go, Let Gov///2013-09-25', 'S17E02///October 2, 2013///Informative Murder Porn///2013-10-02', 'S17E03///October 9, 2013///World War Zimmerman///2013-10-09', 'S17E04///October 23, 2013///Goth Kids 3: Dawn of the Posers///2013-10-23', 'S17E05///October 30, 2013///Taming Strange///2013-10-30', 'S17E06///November 6, 2013///Ginger Cow///2013-11-06', 'S17E07///November 13, 2013///Black Friday///2013-11-13', 'S17E08///November 20, 2013///A Song of Ass and Fire///2013-11-20', 'S17E09///December 4, 2013///Titties and Dragons///2013-12-04', 'S17E10///December 11, 2013///The Hobbit///2013-12-11', 'S18E01///September 24, 2014///Go Fund Yourself///2014-09-24', 'S18E02///October 1, 2014///Gluten Free Ebola///2014-10-01', 'S18E03///October 8, 2014///The Cissy///2014-10-08', 'S18E04///October 15, 2014///Handicar///2014-10-15', 'S18E05///October 29, 2014///The Magic Bush///2014-10-29', "S18E06///November 5, 2014///Freemium Isn't Free///2014-11-05", 'S18E07///November 12, 2014///Grounded Vindaloop///2014-11-12', 'S18E08///November 19, 2014///Cock Magic///2014-11-19', 'S18E09///December 3, 2014///#REHASH///2014-12-03', 'S18E10///December 10, 2014///#HappyHolograms///2014-12-10', 'S19E01///September 16, 2015///Stunning and Brave///2015-09-16', 'S19E02///September 23, 2015///Where My Country Gone?///2015-09-23', 'S19E03///September 30, 2015///The City Part of Town///2015-09-30', "S19E04///October 14, 2015///You're Not Yelping///2015-10-14", 'S19E05///October 21, 2015///Safe Space///2015-10-21', 'S19E06///October 28, 2015///Tweek x Craig///2015-10-28', 'S19E07///November 11, 2015///Naughty Ninjas///2015-11-11', 'S19E08///November 18, 2015///Sponsored Content///2015-11-18', 'S19E09///December 2, 2015///Truth and Advertising///2015-12-02', 'S19E10///December 9, 2015///PC Principal Final Justice///2015-12-09', 'S20E01///September 14, 2016///Member Berries///2016-09-14', 'S20E02///September 21, 2016///Skank Hunt///2016-09-21', 'S20E03///September 28, 2016///The Damned///2016-09-28', 'S20E04///October 12, 2016///Wieners Out///2016-10-12', 'S20E05///October 19, 2016///Douche and a Danish///2016-10-19', 'S20E06///October 26, 2016///Fort Collins///2016-10-26', 'S20E07///November 9, 2016///Oh, Jeez///2016-11-09', 'S20E08///November 16, 2016///Members Only///2016-11-16', 'S20E09///November 30, 2016///Not Funny///2016-11-30', 'S20E10///December 7, 2016///The End of Serialization as We Know It///2016-12-07', 'S21E01///September 13, 2017///White People Renovating Houses///2017-09-13', 'S21E02///September 20, 2017///Put It Down///2017-09-20', 'S21E03///September 27, 2017///Holiday Special///2017-09-27', 'S21E04///October 11, 2017///Franchise Prequel///2017-10-11', 'S21E05///October 18, 2017///Hummels & Heroin///2017-10-18', 'S21E06///October 25, 2017///Sons A Witches///2017-10-25', 'S21E07///November 8, 2017///Doubling Down///2017-11-08', 'S21E08///November 15, 2017///Moss Piglets///2017-11-15', 'S21E09///November 29, 2017///SUPER HARD PCness///2017-11-29', 'S21E10///December 6, 2017///Splatty Tomato///2017-12-06', 'S22E01///September 26, 2018///Dead Kids///2018-09-26', 'S22E02///October 3, 2018///A Boy and a Priest///2018-10-03', 'S22E03///October 10, 2018///The Problem With a Poo///2018-10-10', 'S22E04///October 17, 2018///Tegridy Farms///2018-10-17', 'S22E05///October 31, 2018///The Scoots///2018-10-31', 'S22E06///November 7, 2018///Time to Get Cereal///2018-11-07', 'S22E07///November 14, 2018///Nobody Got Cereal?///2018-11-14', 'S22E08///November 28, 2018///Buddha Box///2018-11-28', 'S22E09///December 5, 2018///Unfulfilled///2018-12-05', 'S22E10///December 12, 2018///Bike Parade///2018-12-12', 'S23E01///September 25, 2019///Mexican Joker///2019-09-25', 'S23E02///October 2, 2019///Band in China///2019-10-02', 'S23E03///October 9, 2019///SHOTS!!!///2019-10-09', 'S23E04///October 16, 2019///Let Them Eat Goo///2019-10-16', 'S23E05///October 30, 2019///Tegridy Farms Halloween Special///2019-10-30', 'S23E06///November 6, 2019///Season Finale///2019-11-06', 'S23E07///November 13, 2019///Board Girls///2019-11-13', 'S23E08///November 27, 2019///Turd Burglars///2019-11-27', 'S23E09///December 4, 2019///Basic Cable///2019-12-04', 'S23E10///December 11, 2019///Christmas Snow///2019-12-11']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[2]
+    air_date = res[1]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+</html>

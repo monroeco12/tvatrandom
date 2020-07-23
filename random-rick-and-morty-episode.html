@@ -1,0 +1,124 @@
+---
+permalink: random-rick-and-morty-episode
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https: // www.googletagmanager.com / gtag / js?id = UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="Rick and Morty random episode generator." />
+    <title>Random Rick and Morty Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>Rick and Morty</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='return false;'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///December 2, 2013///Pilot///2013-12-02', 'S01E02///December 9, 2013///Lawnmower Dog///2013-12-09', 'S01E03///December 16, 2013///Anatomy Park///2013-12-16', 'S01E04///January 13, 2014///M. Night Shaym-Aliens!///2014-01-13', 'S01E05///January 20, 2014///Meeseeks and Destroy///2014-01-20', 'S01E06///January 27, 2014///Rick Potion #9///2014-01-27', 'S01E07///March 10, 2014///Raising Gazorpazorp///2014-03-10', 'S01E08///March 17, 2014///Rixty Minutes///2014-03-17', 'S01E09///March 24, 2014///Something Ricked This Way Comes///2014-03-24', 'S01E10///April 7, 2014///Close Rick-Counters of the Rick Kind///2014-04-07', 'S01E11///April 14, 2014///Ricksy Business///2014-04-14', 'S02E01///July 26, 2015///A Rickle in Time///2015-07-26', 'S02E02///August 2, 2015///Mortynight Run///2015-08-02', 'S02E03///August 9, 2015///Auto Erotic Assimilation///2015-08-09', 'S02E04///August 16, 2015///Total Rickall///2015-08-16', 'S02E05///August 23, 2015///Get Schwifty///2015-08-23', 'S02E06///August 30, 2015///The Ricks Must Be Crazy///2015-08-30', 'S02E07///September 13, 2015///Big Trouble in Little Sanchez///2015-09-13', 'S02E08///September 20, 2015///Interdimensional Cable 2: Tempting Fate///2015-09-20', "S02E09///September 27, 2015///Look Who's Purging Now///2015-09-27", 'S02E10///October 4, 2015///The Wedding Squanchers///2015-10-04', 'S03E01///April 1, 2017///The Rickshank Rickdemption///2017-04-01', 'S03E04///August 13, 2017///Vindicators 3: The Return of Worldender///2017-08-13', 'S03E03///August 6, 2017///Pickle Rick///2017-08-06', 'S03E02///July 30, 2017///Rickmancing the Stone///2017-07-30', 'S03E05///August 20, 2017///The Whirly Dirly Conspiracy///2017-08-20', 'S03E06///August 27, 2017///Rest and Ricklaxation///2017-08-27', 'S03E07///September 10, 2017///The Ricklantis Mixup///2017-09-10', "S03E09///September 24, 2017///The ABC's of Beth///2017-09-24", "S03E08///September 17, 2017///Morty's Mind Blowers///2017-09-17", 'S03E10///October 1, 2017///The Rickchurian Mortydate///2017-10-01', 'S04E01///November 10, 2019///Edge of Tomorty: Rick Die Rickpeat///2019-11-10', 'S04E07///May 10, 2020///Promortyus///2020-05-10', 'S04E02///November 17, 2019///The Old Man and the Seat///2019-11-17', "S04E03///November 24, 2019///One Crew Over the Crewcoo's Morty///2019-11-24", "S04E04///December 8, 2019///Claw and Hoarder: Special Ricktim's Morty///2019-12-08", 'S04E05///December 15, 2019///Rattlestar Ricklactica///2019-12-15', 'S04E06///May 3, 2020///Never Ricking Morty///2020-05-03', 'S04E08///May 17, 2020///The Vat of Acid Episode///2020-05-17', 'S04E09///May 24, 2020///Childrick of Mort///2020-05-24', 'S04E10///May 31, 2020///Star Mort: Rickturn of the Jerri///2020-05-31']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[2]
+    air_date = res[1]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+</html>

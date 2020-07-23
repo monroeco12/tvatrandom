@@ -1,0 +1,124 @@
+---
+permalink: random-how-i-met-your-mother-episode
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https: // www.googletagmanager.com / gtag / js?id = UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="How I Met Your Mother random episode generator." />
+    <title>Random How I Met Your Mother Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>How I Met Your Mother</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='return false;'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///September 19, 2005///Pilot///2005-09-19', 'S01E02///September 26, 2005///Purple Giraffe///2005-09-26', 'S01E03///October 3, 2005///Sweet Taste of Liberty///2005-10-03', 'S01E04///October 10, 2005///Return of the Shirt///2005-10-10', 'S01E05///October 17, 2005///Okay Awesome///2005-10-17', 'S01E06///October 24, 2005///The Slutty Pumpkin///2005-10-24', 'S01E07///November 7, 2005///Matchmaker///2005-11-07', 'S01E08///November 14, 2005///The Duel///2005-11-14', 'S01E09///November 21, 2005///Belly Full of Turkey///2005-11-21', 'S01E10///November 28, 2005///The Pineapple Incident///2005-11-28', 'S01E11///December 19, 2005///The Limo///2005-12-19', 'S01E12///January 9, 2006///The Wedding///2006-01-09', 'S01E13///January 23, 2006///Drumroll, Please///2006-01-23', 'S01E14///February 6, 2006///Zip, Zip, Zip///2006-02-06', 'S01E15///February 27, 2006///Game Night///2006-02-27', 'S01E16///March 6, 2006///Cupcake///2006-03-06', 'S01E17///March 20, 2006///Life Among the Gorillas///2006-03-20', 'S01E18///April 10, 2006///Nothing Good Happens After 2 AM///2006-04-10', 'S01E19///April 24, 2006///Mary the Paralegal///2006-04-24', 'S01E20///May 1, 2006///Best Prom Ever///2006-05-01', 'S01E21///May 8, 2006///Milk///2006-05-08', 'S01E22///May 15, 2006///Come On///2006-05-15', 'S02E01///September 18, 2006///Where Were We?///2006-09-18', 'S02E02///September 25, 2006///The Scorpion and the Toad///2006-09-25', 'S02E03///October 2, 2006///Brunch///2006-10-02', 'S02E04///October 9, 2006///Ted Mosby, Architect///2006-10-09', "S02E05///October 16, 2006///World's Greatest Couple///2006-10-16", 'S02E06///October 23, 2006///Aldrin Justice///2006-10-23', 'S02E07///November 6, 2006///Swarley///2006-11-06', 'S02E08///November 13, 2006///Atlantic City///2006-11-13', 'S02E09///November 20, 2006///Slap Bet///2006-11-20', 'S02E10///November 27, 2006///Single Stamina///2006-11-27', 'S02E11///December 11, 2006///How Lily Stole Christmas///2006-12-11', 'S02E12///January 8, 2007///First Time in New York///2007-01-08', 'S02E13///January 22, 2007///Columns///2007-01-22', 'S02E14///February 5, 2007///Monday Night Football///2007-02-05', 'S02E15///February 12, 2007///Lucky Penny///2007-02-12', 'S02E16///February 19, 2007///Stuff///2007-02-19', 'S02E17///February 26, 2007///Arrivederci, Fiero///2007-02-26', 'S02E18///March 19, 2007///Moving Day///2007-03-19', 'S02E19///April 9, 2007///Bachelor Party///2007-04-09', 'S02E20///April 30, 2007///Showdown///2007-04-30', 'S02E21///May 7, 2007///Something Borrowed///2007-05-07', 'S02E22///May 14, 2007///Something Blue///2007-05-14', 'S03E01///September 24, 2007///Wait for It///2007-09-24', "S03E02///October 1, 2007///We're Not from Here///2007-10-01", 'S03E04///October 15, 2007///Little Boys///2007-10-15', 'S03E03///October 8, 2007///Third Wheel///2007-10-08', 'S03E05///October 22, 2007///How I Met Everyone Else///2007-10-22', "S03E06///October 29, 2007///I'm Not That Guy///2007-10-29", 'S03E07///November 5, 2007///Dowisetrepla///2007-11-05', 'S03E08///November 12, 2007///Spoiler Alert///2007-11-12', 'S03E09///November 19, 2007///Slapsgiving///2007-11-19', 'S03E10///November 26, 2007///The Yips///2007-11-26', 'S03E11///December 10, 2007///The Platinum Rule///2007-12-10', 'S03E12///March 17, 2008///No Tomorrow///2008-03-17', 'S03E13///March 24, 2008///Ten Sessions///2008-03-24', 'S03E14///March 31, 2008///The Bracket///2008-03-31', 'S03E15///April 14, 2008///The Chain of Screaming///2008-04-14', 'S03E16///April 21, 2008///Sandcastles in the Sand///2008-04-21', 'S03E17///April 28, 2008///The Goat///2008-04-28', 'S03E18///May 5, 2008///Rebound Bro///2008-05-05', 'S03E19///May 12, 2008///Everything Must Go///2008-05-12', 'S03E20///May 19, 2008///Miracles///2008-05-19', 'S04E01///September 22, 2008///Do I Know You?///2008-09-22', 'S04E02///September 29, 2008///The Best Burger in New York///2008-09-29', 'S04E04///October 13, 2008///Intervention///2008-10-13', 'S04E05///October 20, 2008///Shelter Island///2008-10-20', 'S04E03///October 6, 2008///I Heart NJ///2008-10-06', 'S04E06///November 3, 2008///Happily Ever After///2008-11-03', "S04E07///November 10, 2008///Not a Father's Day///2008-11-10", 'S04E08///November 17, 2008///Woooo!///2008-11-17', 'S04E09///November 24, 2008///The Naked Man///2008-11-24', 'S04E10///December 8, 2008///The Fight///2008-12-08', 'S04E11///December 15, 2008///Little Minnesota///2008-12-15', 'S04E12///January 12, 2009///Benefits///2009-01-12', 'S04E13///January 19, 2009///Three Days of Snow///2009-01-19', 'S04E14///February 2, 2009///The Possimpible///2009-02-02', 'S04E15///March 2, 2009///The Stinsons///2009-03-02', 'S04E16///March 9, 2009///Sorry, Bro///2009-03-09', 'S04E17///March 16, 2009///The Front Porch///2009-03-16', 'S04E18///March 23, 2009///Old King Clancy///2009-03-23', 'S04E19///March 30, 2009///Murtaugh///2009-03-30', 'S04E20///April 13, 2009///Mosbius Designs///2009-04-13', 'S04E21///April 27, 2009///The Three Days Rule///2009-04-27', 'S04E22///May 4, 2009///Right Place Right Time///2009-05-04', 'S04E23///May 11, 2009///As Fast as She Can///2009-05-11', 'S04E24///May 18, 2009///The Leap///2009-05-18', 'S05E01///September 21, 2009///Definitions///2009-09-21', 'S05E02///September 28, 2009///Double Date///2009-09-28', 'S05E03///October 5, 2009///Robin 101///2009-10-05', 'S05E04///October 12, 2009///The Sexless Innkeeper///2009-10-12', 'S05E05///October 19, 2009///Duel Citizenship///2009-10-19', 'S05E06///November 2, 2009///Bagpipes///2009-11-02', 'S05E07///November 9, 2009///The Rough Patch///2009-11-09', 'S05E08///November 16, 2009///The Playbook///2009-11-16', 'S05E09///November 23, 2009///Slapsgiving 2: Revenge of the Slap///2009-11-23', 'S05E10///December 7, 2009///The Window///2009-12-07', 'S05E11///December 14, 2009///Last Cigarette Ever///2009-12-14', 'S05E12///January 11, 2010///Girls Vs. Suits///2010-01-11', 'S05E13///January 18, 2010///Jenkins///2010-01-18', 'S05E14///February 1, 2010///Perfect Week///2010-02-01', 'S05E15///February 8, 2010///Rabbit or Duck///2010-02-08', 'S05E16///March 1, 2010///Hooked///2010-03-01', 'S05E18///March 22, 2010///Say Cheese///2010-03-22', 'S05E17///March 8, 2010///Of Course///2010-03-08', 'S05E19///April 12, 2010///Zoo or False///2010-04-12', 'S05E20///April 19, 2010///Home Wreckers///2010-04-19', 'S05E21///May 3, 2010///Twin Beds///2010-05-03', 'S05E22///May 10, 2010///Robots Vs. Wrestlers///2010-05-10', 'S05E24///May 24, 2010///Doppelgangers///2010-05-24', 'S05E23///May 17, 2010///The Wedding Bride///2010-05-17', 'S06E01///September 20, 2010///Big Days///2010-09-20', 'S06E02///September 27, 2010///Cleaning House///2010-09-27', 'S06E03///October 4, 2010///Unfinished///2010-10-04', 'S06E04///October 11, 2010///Subway Wars///2010-10-11', 'S06E05///October 18, 2010///Architect of Destruction///2010-10-18', 'S06E07///November 1, 2010///Canning Randy///2010-11-01', 'S06E06///October 25, 2010///Baby Talk///2010-10-25', 'S06E08///November 8, 2010///Natural History///2010-11-08', 'S06E09///November 15, 2010///Glitter///2010-11-15', 'S06E10///November 22, 2010///Blitzgiving///2010-11-22', 'S06E11///December 6, 2010///The Mermaid Theory///2010-12-06', 'S06E12///December 13, 2010///False Positive///2010-12-13', 'S06E13///January 3, 2011///Bad News///2011-01-03', 'S06E14///January 17, 2011///Last Words///2011-01-17', 'S06E15///February 7, 2011///Oh Honey///2011-02-07', 'S06E16///February 14, 2011///Desperation Day///2011-02-14', 'S06E17///February 21, 2011///Garbage Island///2011-02-21', 'S06E18///February 28, 2011///A Change of Heart///2011-02-28', 'S06E19///March 21, 2011///Legendaddy///2011-03-21', 'S06E20///April 11, 2011///The Exploding Meatball Sub///2011-04-11', 'S06E22///May 2, 2011///The Perfect Cocktail///2011-05-02', 'S06E21///April 18, 2011///Hopeless///2011-04-18', 'S06E23///May 9, 2011///Landmarks///2011-05-09', 'S06E24///May 16, 2011///Challenge Accepted///2011-05-16', 'S07E01///September 19, 2011///The Best Man///2011-09-19', 'S07E02///September 19, 2011///The Naked Truth///2011-09-19', 'S07E03///September 26, 2011///Ducky Tie///2011-09-26', 'S07E04///October 3, 2011///The Stinson Missile Crisis///2011-10-03', 'S07E05///October 10, 2011///Field Trip///2011-10-10', 'S07E06///October 17, 2011///Mystery Vs. History///2011-10-17', 'S07E07///October 24, 2011///Noretta///2011-10-24', 'S07E08///October 31, 2011///The Slutty Pumpkin Returns///2011-10-31', 'S07E09///November 7, 2011///Disaster Averted///2011-11-07', 'S07E10///November 14, 2011///Tick Tick Tick///2011-11-14', 'S07E11///November 21, 2011///The Rebound Girl///2011-11-21', 'S07E12///December 5, 2011///Symphony of Illumination///2011-12-05', 'S07E13///January 2, 2012///Tailgate///2012-01-02', 'S07E14///January 16, 2012///46 Minutes///2012-01-16', 'S07E16///February 13, 2012///The Drunk Train///2012-02-13', 'S07E17///February 20, 2012///No Pressure///2012-02-20', 'S07E15///February 6, 2012///The Burning Beekeeper///2012-02-06', 'S07E18///February 27, 2012///Karma///2012-02-27', 'S07E19///March 19, 2012///The Broath///2012-03-19', 'S07E22///April 30, 2012///Good Crazy///2012-04-30', "S07E21///April 16, 2012///Now We're Even///2012-04-16", 'S07E20///April 9, 2012///Trilogy Time///2012-04-09', "S07E23///May 14, 2012///The Magician's Code: Part One///2012-05-14", "S07E24///May 14, 2012///The Magician's Code: Part Two///2012-05-14", 'S08E01///September 24, 2012///Farhampton///2012-09-24', 'S08E02///October 1, 2012///The Pre-Nup///2012-10-01', 'S08E03///October 8, 2012///Nannies///2012-10-08', 'S08E04///October 15, 2012///Who Wants to Be a Godparent///2012-10-15', 'S08E05///November 5, 2012///The Autumn of Breakups///2012-11-05', 'S08E06///November 12, 2012///Splitsville///2012-11-12', 'S08E07///November 19, 2012///The Stamp Tramp///2012-11-19', 'S08E08///November 26, 2012///Twelve Horny Women///2012-11-26', 'S08E09///December 3, 2012///Lobster Crawl///2012-12-03', 'S08E10///December 10, 2012///The Over-Correction///2012-12-10', 'S08E11///December 17, 2012///The Final Page: Part One///2012-12-17', 'S08E12///December 17, 2012///The Final Page: Part Two///2012-12-17', 'S08E13///January 14, 2013///Band or DJ?///2013-01-14', 'S08E14///January 21, 2013///Ring Up!///2013-01-21', 'S08E15///February 4, 2013///P.S. I Love You///2013-02-04', 'S08E16///February 11, 2013///Bad Crazy///2013-02-11', 'S08E17///February 18, 2013///The Ashtray///2013-02-18', "S08E18///February 25, 2013///Weekend at Barney's///2013-02-25", 'S08E19///March 18, 2013///The Fortress///2013-03-18', 'S08E20///March 25, 2013///The Time Travelers///2013-03-25', 'S08E21///April 15, 2013///Romeward Bound///2013-04-15', 'S08E22///April 29, 2013///The Bro Mitzvah///2013-04-29', 'S08E23///May 6, 2013///Something Old///2013-05-06', 'S08E24///May 13, 2013///Something New///2013-05-13', 'S09E01///September 23, 2013///The Locket///2013-09-23', 'S09E02///September 23, 2013///Coming Back///2013-09-23', 'S09E04///October 7, 2013///The Broken Code///2013-10-07', 'S09E03///September 30, 2013///Last Time in New York///2013-09-30', 'S09E05///October 14, 2013///The Poker Game///2013-10-14', 'S09E07///October 28, 2013///No Questions Asked///2013-10-28', 'S09E06///October 21, 2013///Knight Vision///2013-10-21', 'S09E08///November 4, 2013///The Lighthouse///2013-11-04', 'S09E10///November 18, 2013///Mom and Dad///2013-11-18', 'S09E13///December 16, 2013///Bass Player Wanted///2013-12-16', 'S09E12///December 2, 2013///The Rehearsal Dinner///2013-12-02', 'S09E14///January 13, 2014///Slapsgiving 3: Slappointment in Slapmarra///2014-01-13', 'S09E16///January 27, 2014///How Your Mother Met Me///2014-01-27', 'S09E18///February 24, 2014///Rally///2014-02-24', 'S09E20///March 10, 2014///Daisy///2014-03-10', 'S09E09///November 11, 2013///Platonish///2013-11-11', 'S09E11///November 25, 2013///Bedtime Stories///2013-11-25', 'S09E15///January 20, 2014///Unpause///2014-01-20', 'S09E17///February 3, 2014///Sunrise///2014-02-03', 'S09E19///March 3, 2014///Vesuvius///2014-03-03', 'S09E21///March 17, 2014///Gary Blauman///2014-03-17', 'S09E22///March 24, 2014///The End of the Aisle///2014-03-24', 'S09E23///March 31, 2014///Last Forever (1)///2014-03-31', 'S09E24///March 31, 2014///Last Forever (2)///2014-03-31']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[2]
+    air_date = res[1]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+</html>
