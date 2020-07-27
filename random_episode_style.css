@@ -99,7 +99,6 @@ background-color: #00CED1;
 }
 
 .info {
-    border: 5px solid #333333;
     display: flex;
     visibility: hidden;
     justify-content: center;
@@ -110,7 +109,7 @@ background-color: #00CED1;
     color: white;
     height: auto;
     background-color: #333333;
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 20px;
     margin-right: 10px;
     margin-left: 10px;
@@ -214,7 +213,6 @@ background-color: #00CED1;
 }
 
 .info {
-    border: 5px solid #333333;
     display: flex;
     visibility: hidden;
     justify-content: center;
@@ -225,7 +223,7 @@ background-color: #00CED1;
     color: white;
     height: auto;
     background-color: #333333;
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 20px;
     margin-right: 10px;
     margin-left: 10px;
@@ -329,7 +327,6 @@ background-color: #00CED1;
 }
 
 .info {
-    border: 5px solid #333333;
     display: flex;
     visibility: hidden;
     justify-content: center;
@@ -340,7 +337,7 @@ background-color: #00CED1;
     color: white;
     height: auto;
     background-color: #333333;
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 20px;
     margin-right: 10px;
     margin-left: 10px;
@@ -444,7 +441,6 @@ background-color: #00CED1;
 }
 
 .info {
-    border: 5px solid #333333;
     display: flex;
     visibility: hidden;
     justify-content: center;
@@ -455,7 +451,7 @@ background-color: #00CED1;
     color: white;
     height: auto;
     background-color: #333333;
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 20px;
     margin-right: 10px;
     margin-left: 10px;
