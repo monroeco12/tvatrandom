@@ -1,0 +1,76 @@
+---
+permalink: 404
+---
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="home_style.css">
+
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172820632-2"></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <meta name="description" content="Don't know what to watch on TV? Let us choose for you with our random episode generator so you always know what to watch!"/>
+    <title>Page not found</title>
+
+</head>
+
+<body>
+
+    <a href="https://www.tvatrandom.com">
+        <div class="header">
+            <p>
+                <img src="logo.png" alt="TV at Random Logo" title="TV at Random Logo" style="width: 200px; padding-top: 10px;">
+            </p>
+        </div>
+    </a>
+
+    <div class="sub_header">
+        <div>
+            <p class="slogan"><i>Always know what to watch</i></p>
+        </div>
+    </div>
+
+    <div style="color: white; font-size: 8rem; padding-bottom: 10px;">404</div>
+
+    <div style="color: white; font-size: 1.5rem;"><i>Page not found</i></div>
+
+    <div class="footer">
+        <div>
+            <a href="https://www.tvatrandom.com">
+                <p class="footer_text">&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<style id="search_style"></style>
+<script type="text/javascript">
+var searchStyle = document.getElementById('search_style');
+document.getElementById('search').addEventListener('input', function() {
+  if (!this.value) {
+    searchStyle.innerHTML = '';
+    return;
+  }
+  // look ma, no indexOf!
+  searchStyle.innerHTML = ".searchable:not([data-index*=\"" + this.value.toLowerCase() + "\"]) { display: none; }";
+  // beware of css injections!
+});
+</script>
+
+</html>
