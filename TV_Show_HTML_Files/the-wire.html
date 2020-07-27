@@ -1,0 +1,162 @@
+---
+permalink: random-episode-of-the-wire
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='../random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="The Wire random episode generator." />
+    <title>Random Wire Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='../logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>The Wire</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='change(); color()'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p id='random_button' class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+        <div id='rating' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///The Target///June 2, 2002///303029///tt0306414///8.0', 'S01E02///The Detail///June 9, 2002///303030///tt0306414///8.3', 'S01E03///The Buys///June 16, 2002///303031///tt0306414///8.3', 'S01E04///Old Cases///June 23, 2002///303032///tt0306414///8.3', 'S01E05///The Pager///June 30, 2002///303033///tt0306414///8.4', 'S01E06///The Wire///July 7, 2002///303034///tt0306414///8.6', 'S01E07///One Arrest///July 21, 2002///303035///tt0306414///8.6', 'S01E08///Lessons///July 28, 2002///303036///tt0306414///8.6', 'S01E09///Game Day///August 4, 2002///303037///tt0306414///8.8', 'S01E10///The Cost///August 11, 2002///303038///tt0306414///9.2', 'S01E11///The Hunt///August 18, 2002///303039///tt0306414///8.8', 'S01E12///Cleaning Up///September 1, 2002///303040///tt0306414///9.1', 'S01E13///Sentencing///September 8, 2002///303041///tt0306414///9.0', 'S02E01///Ebb Tide///June 1, 2003///303042///tt0306414///7.9', 'S02E02///Collateral Damage///June 8, 2003///303043///tt0306414///8.2', 'S02E03///Hot Shots///June 15, 2003///303044///tt0306414///8.2', 'S02E04///Hard Cases///June 22, 2003///303045///tt0306414///8.2', 'S02E05///Undertow///June 29, 2003///303046///tt0306414///8.3', 'S02E06///All Prologue///July 6, 2003///303047///tt0306414///8.8', 'S02E07///Backwash///July 13, 2003///303048///tt0306414///8.4', 'S02E08///Duck and Cover///July 27, 2003///303049///tt0306414///8.5', 'S02E09///Stray Rounds///August 3, 2003///303050///tt0306414///8.7', 'S02E10///Storm Warnings///August 10, 2003///303051///tt0306414///9.0', 'S02E11///Bad Dreams///August 17, 2003///303052///tt0306414///9.2', 'S02E12///Port in a Storm///August 24, 2003///303053///tt0306414///9.0', 'S03E01///Time After Time///September 19, 2004///303054///tt0306414///8.2', 'S03E02///All Due Respect///September 26, 2004///303055///tt0306414///8.5', 'S03E03///Dead Soldiers///October 3, 2004///303056///tt0306414///8.5', 'S03E04///Amsterdam///October 10, 2004///303057///tt0306414///8.5', 'S03E05///Straight and True///October 17, 2004///303058///tt0306414///8.7', 'S03E06///Homecoming///October 31, 2004///303059///tt0306414///8.7', 'S03E07///Back Burners///November 7, 2004///303060///tt0306414///8.6', 'S03E08///Moral Midgetry///November 14, 2004///303061///tt0306414///8.9', 'S03E09///Slapstick///November 21, 2004///303062///tt0306414///8.8', 'S03E10///Reformation///November 28, 2004///303063///tt0306414///8.8', 'S03E11///Middle Ground///December 12, 2004///303064///tt0306414///9.6', 'S03E12///Mission Accomplished///December 19, 2004///303065///tt0306414///9.3', 'S04E01///Boys of Summer///September 10, 2006///308835///tt0306414///8.5', 'S04E02///Soft Eyes///September 17, 2006///308836///tt0306414///8.6', 'S04E03///Home Rooms///September 24, 2006///308837///tt0306414///8.7', 'S04E04///Refugees///October 1, 2006///308838///tt0306414///8.5', 'S04E05///Alliances///October 8, 2006///308839///tt0306414///8.6', 'S04E06///Margin of Error///October 15, 2006///310696///tt0306414///8.8', 'S04E07///Unto Others///October 29, 2006///311558///tt0306414///8.6', 'S04E08///Corner Boys///November 5, 2006///313257///tt0306414///8.6', 'S04E09///Know Your Place///November 12, 2006///313258///tt0306414///8.6', 'S04E10///Misgivings///November 19, 2006///313259///tt0306414///8.9', 'S04E11///A New Day///November 26, 2006///313260///tt0306414///9.0', "S04E12///That's Got His Own///December 3, 2006///313261///tt0306414///9.3", 'S04E13///Final Grades///December 10, 2006///313262///tt0306414///9.5', 'S05E01///More with Less///January 6, 2008///347453///tt0306414///8.2', 'S05E02///Unconfirmed Reports///January 13, 2008///347454///tt0306414///8.3', 'S05E03///Not for Attribution///January 20, 2008///347564///tt0306414///8.6', 'S05E04///Transitions///January 27, 2008///347565///tt0306414///8.9', 'S05E05///React Quotes///February 3, 2008///347566///tt0306414///8.7', 'S05E06///The Dickensian Aspect///February 10, 2008///347567///tt0306414///8.5', 'S05E07///Took///February 17, 2008///347568///tt0306414///8.6', 'S05E08///Clarifications///February 24, 2008///347569///tt0306414///8.9', 'S05E09///Late Editions///March 2, 2008///348313///tt0306414///9.3', 'S05E10///-30-///March 9, 2008///348314///tt0306414///9.6']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[1]
+    air_date = res[2]
+    rating = res[5]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+    document.getElementById('rating').innerHTML = rating;
+            document.getElementById('rating').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('rating').animate([
+    // keyframes
+        { transform: 'translateY(-280px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+<script>
+    function
+    change()
+    {
+        var elem = document.getElementById("random_button");
+        if (elem.innerHTML == "Random Episode") elem.innerHTML = "Pick Again";
+        else elem.innerHTML = "Pick Again";
+    }
+</script>
+
+<script>
+    function
+    color()
+    {
+        var elem = document.getElementById("rating").innerHTML;
+        var float = parseFloat(elem);
+        var good = 8.5;
+        var bad = 7.9;
+        if (float >= good) document.getElementById("rating").style.backgroundColor = "#2db92d";
+        else if (float <= bad) document.getElementById("rating").style.backgroundColor = "#ff3333";
+        else document.getElementById("rating").style.backgroundColor = "#333333";
+    }
+</script>
+
+</html>

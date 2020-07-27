@@ -1,0 +1,162 @@
+---
+permalink: random-episode-of-archer
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='../random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="Archer random episode generator." />
+    <title>Random Archer Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='../logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>Archer</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='change(); color()'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p id='random_button' class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+        <div id='rating' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E02///Training Day///January 14, 2010///1085661///tt1486217///7.3', 'S01E01///Mole Hunt///September 17, 2009///1555111///tt1486217///7.8', 'S01E03///Diversity Hire///January 21, 2010///1555121///tt1486217///7.6', 'S01E04///Killing Utne///January 28, 2010///1555131///tt1486217///8.2', 'S01E05///Honeypot///February 4, 2010///1654761///tt1486217///7.6', 'S01E06///Skorpio///February 11, 2010///1699621///tt1486217///8.0', 'S01E07///Skytanic///February 18, 2010///1699631///tt1486217///8.2', 'S01E08///The Rock///March 4, 2010///1725041///tt1486217///8.6', 'S01E09///Job Offer///March 11, 2010///1746101///tt1486217///7.7', 'S01E10///Dial M for Mother///March 18, 2010///1834021///tt1486217///8.1', 'S02E01///Swiss Miss///January 27, 2011///3226611///tt1486217///8.5', 'S02E02///A Going Concern///February 3, 2011///3409341///tt1486217///7.8', 'S02E03///Blood Test///February 10, 2011///3409351///tt1486217///7.9', 'S02E04///Pipeline Fever///February 17, 2011///3409361///tt1486217///8.2', 'S02E05///The Double Deuce///February 24, 2011///3409371///tt1486217///8.1', 'S02E06///Tragical History///March 3, 2011///3409381///tt1486217///7.8', 'S02E07///Movie Star///March 10, 2011///3409391///tt1486217///7.8', 'S02E08///Stage Two///March 17, 2011///3712581///tt1486217///8.6', 'S02E09///Placebo Effect///March 24, 2011///3712591///tt1486217///9.0', 'S02E10///El Secuestro///March 31, 2011///3989581///tt1486217///8.6', 'S02E11///Jeu Monegasque///April 7, 2011///4002861///tt1486217///8.0', 'S02E12///White Nights///April 14, 2011///4002891///tt1486217///8.2', 'S02E13///Double Trouble///April 21, 2011///4077515///tt1486217///8.3', 'S03E01///The Man From Jupiter///January 19, 2012///4171788///tt1486217///8.5', 'S03E02///El Contador///January 26, 2012///4245836///tt1486217///8.2', 'S03E03///The Limited///February 2, 2012///4246771///tt1486217///8.2', 'S03E05///Lo Scandalo///February 16, 2012///4246772///tt1486217///8.4', 'S03E04///Drift Problem///February 9, 2012///4253725///tt1486217///8.1', 'S03E06///Bloody Ferlin///February 23, 2012///4253736///tt1486217///8.5', 'S03E07///Crossing Over///March 1, 2012///4258939///tt1486217///7.7', 'S03E08///Skin Game///March 8, 2012///4277067///tt1486217///8.6', 'S03E09///Space Race (1)///March 15, 2012///4277068///tt1486217///8.0', 'S03E10///Space Race (2)///March 22, 2012///4277069///tt1486217///8.0', 'S04E01///Fugue and Riffs///January 17, 2013///4357938///tt1486217///8.3', 'S04E02///The Wind Cries Mary///January 24, 2013///4479272///tt1486217///8.2', 'S04E03///Legs///January 31, 2013///4479273///tt1486217///8.0', 'S04E04///Midnight Ron///February 7, 2013///4479275///tt1486217///7.7', 'S04E05///Viscous Coupling///February 14, 2013///4491197///tt1486217///7.6', 'S04E06///Once Bitten///February 21, 2013///4491198///tt1486217///7.6', 'S04E07///Live and Let Dine///February 28, 2013///4491200///tt1486217///7.9', 'S04E08///Coyote Lovely///March 7, 2013///4491201///tt1486217///7.7', 'S04E09///The Honeymooners///March 14, 2013///4491202///tt1486217///8.0', 'S04E10///Un Chien Tangerine///March 21, 2013///4491203///tt1486217///7.8', 'S04E11///The Papal Chase///March 28, 2013///4491204///tt1486217///7.9', 'S04E12///Sea Tunt (1)///April 4, 2013///4502446///tt1486217///7.7', 'S04E13///Sea Tunt (2)///April 11, 2013///4502447///tt1486217///7.7', 'S05E01///White Elephant///January 13, 2014///4704586///tt1486217///8.6', 'S05E02///Archer Vice: A Kiss While Dying///January 20, 2014///4762195///tt1486217///7.8', 'S05E03///Archer Vice: A Debt of Honor///January 27, 2014///4762196///tt1486217///7.8', 'S05E04///Archer Vice: House Call///February 3, 2014///4762197///tt1486217///8.2', 'S05E05///Archer Vice: Southbound and Down///February 24, 2014///4771189///tt1486217///7.8', 'S05E06///Archer Vice: Baby Shower///March 3, 2014///4791022///tt1486217///7.8', "S05E07///Archer Vice: Smugglers' Blues///March 10, 2014///4796974///tt1486217///7.8", 'S05E08///Archer Vice: The Rules of Extraction///March 17, 2014///4802460///tt1486217///8.3', 'S05E09///Archer Vice: On The Carpet///March 24, 2014///4807829///tt1486217///8.1', 'S05E10///Archer Vice: Palace Intrigue (1)///March 31, 2014///4815361///tt1486217///8.1', 'S05E11///Archer Vice: Palace Intrigue (2)///April 7, 2014///4822927///tt1486217///8.1', 'S05E12///Archer Vice: Filibuster///April 14, 2014///4830139///tt1486217///8.1', 'S05E13///Archer Vice: Arrivals/Departures///April 21, 2014///4830140///tt1486217///8.1', 'S06E01///The Holdout///January 8, 2015///5052407///tt1486217///8.2', 'S06E02///Three to Tango///January 15, 2015///5066956///tt1486217///8.1', 'S06E03///The Archer Sanction///January 22, 2015///5066957///tt1486217///8.3', "S06E04///Edie's Wedding///January 29, 2015///5066960///tt1486217///8.1", 'S06E05///Vision Quest///February 5, 2015///5066961///tt1486217///8.7', 'S06E06///Sitting///February 12, 2015///5101345///tt1486217///8.0', 'S06E07///Nellis///February 19, 2015///5107958///tt1486217///7.8', 'S06E08///The Kanes///February 26, 2015///5118520///tt1486217///8.9', 'S06E09///Pocket Listing///March 5, 2015///5118521///tt1486217///8.6', 'S06E10///Reignition Sequence///March 12, 2015///5124776///tt1486217///8.2', 'S06E11///Achub Y Morfilod///March 19, 2015///5134060///tt1486217///8.0', 'S06E12///Drastic Voyage (1)///March 26, 2015///5137446///tt1486217///8.1', 'S06E13///Drastic Voyage (2)///April 2, 2015///5137447///tt1486217///8.1', 'S07E01///The Figgis Agency///March 31, 2016///5483426///tt1486217///8.0', 'S07E02///The Handoff///April 7, 2016///5552070///tt1486217///8.1', 'S07E03///Deadly Prep///April 14, 2016///5552071///tt1486217///8.5', 'S07E04///Motherless Child///April 21, 2016///5581189///tt1486217///8.1', 'S07E05///Bel Panto (1)///April 28, 2016///5581190///tt1486217///8.2', 'S07E06///Bel Panto (2)///May 5, 2016///5582036///tt1486217///8.2', 'S07E07///Double Indecency///May 12, 2016///5582038///tt1486217///8.4', 'S07E08///Liquid Lunch///May 19, 2016///5605521///tt1486217///8.5', 'S07E09///Deadly Velvet (1)///May 26, 2016///5605522///tt1486217///7.8', 'S07E10///Deadly Velvet (2)///June 2, 2016///5605523///tt1486217///7.8', 'S08E01///Dreamland: No Good Deed///April 5, 2017///5924316///tt1486217///7.8', 'S08E02///Dreamland: Berenice///April 12, 2017///6030273///tt1486217///7.7', 'S08E03///Dreamland: Jane Doe///April 19, 2017///6030275///tt1486217///7.6', 'S08E04///Dreamland: Ladyfingers///April 26, 2017///6030278///tt1486217///7.6', 'S08E05///Dreamland: Sleepers Wake///May 3, 2017///6030279///tt1486217///7.2', 'S08E06///Dreamland: Waxing Gibbous///May 10, 2017///6030280///tt1486217///7.9', 'S08E07///Dreamland: Gramercy, Halberd!///May 17, 2017///6030281///tt1486217///8.0', 'S08E08///Dreamland: Auflösung///May 24, 2017///6030784///tt1486217///7.5', 'S09E01///Danger Island: Strange Pilot///April 25, 2018///6579347///tt1486217///7.2', 'S09E02///Danger Island: Disheartening Situation///May 2, 2018///6622284///tt1486217///7.2', 'S09E03///Danger Island: Different Modes of Preparing Fruit///May 9, 2018///6622286///tt1486217///7.1', 'S09E05///Danger Island: Strange Doings in the Taboo Groves///May 23, 2018///6622290///tt1486217///7.3', 'S09E06///Danger Island: Some Remarks on Cannibalism///May 30, 2018///6622291///tt1486217///7.3', 'S09E07///Danger Island: Comparative Wickedness of Civilized and Unenlightened Peoples///June 6, 2018///6661463///tt1486217///7.3', 'S09E08///Danger Island: A Discovery///June 13, 2018///6661464///tt1486217///7.9', 'S09E04///Danger Island: A Warrior in Costume///May 16, 2018///6739339///tt1486217///7.7', 'S10E01///1999: Bort the Garj///May 29, 2019///7137005///tt1486217///7.1', 'S10E02///1999: Happy Borthday///June 5, 2019///7171307///tt1486217///7.3', 'S10E03///1999: The Leftovers///June 12, 2019///7188888///tt1486217///7.5', 'S10E04///1999: Dining with the Zarglorp///June 19, 2019///7188889///tt1486217///7.3', 'S10E08///1999: Cubert///July 24, 2019///7188890///tt1486217///8.0', 'S10E05///1999: Mr. Deadly Goes to Town///June 26, 2019///7188892///tt1486217///7.4', 'S10E06///1999: Road Trip///July 10, 2019///7188895///tt1486217///7.7', 'S10E07///1999: Space Pirates///July 17, 2019///7188896///tt1486217///8.0', 'S10E09///1999: Robert De Niro///July 31, 2019///7254363///tt1486217///8.5']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[1]
+    air_date = res[2]
+    rating = res[5]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+    document.getElementById('rating').innerHTML = rating;
+            document.getElementById('rating').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('rating').animate([
+    // keyframes
+        { transform: 'translateY(-280px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+<script>
+    function
+    change()
+    {
+        var elem = document.getElementById("random_button");
+        if (elem.innerHTML == "Random Episode") elem.innerHTML = "Pick Again";
+        else elem.innerHTML = "Pick Again";
+    }
+</script>
+
+<script>
+    function
+    color()
+    {
+        var elem = document.getElementById("rating").innerHTML;
+        var float = parseFloat(elem);
+        var good = 8.5;
+        var bad = 7.9;
+        if (float >= good) document.getElementById("rating").style.backgroundColor = "#2db92d";
+        else if (float <= bad) document.getElementById("rating").style.backgroundColor = "#ff3333";
+        else document.getElementById("rating").style.backgroundColor = "#333333";
+    }
+</script>
+
+</html>

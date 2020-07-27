@@ -1,0 +1,162 @@
+---
+permalink: random-episode-of-its-always-sunny-in-philadelphia
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='../random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="It's Always Sunny in Philadelphia random episode generator." />
+    <title>Random It's Always Sunny in Philadelphia Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='../logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>It's Always Sunny in Philadelphia</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='change(); color()'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p id='random_button' class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+        <div id='rating' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///The Gang Gets Racist///August 4, 2005///296310///tt0472954///8.3', 'S01E02///Charlie Wants an Abortion///August 11, 2005///296311///tt0472954///8.4', 'S01E03///Underage Drinking: A National Concern///August 18, 2005///296312///tt0472954///8.5', 'S01E04///Charlie Has Cancer///August 23, 2005///296313///tt0472954///8.2', 'S01E05///Gun Fever///August 30, 2005///296314///tt0472954///8.1', 'S01E06///The Gang Finds a Dead Guy///September 8, 2005///296315///tt0472954///8.2', 'S01E07///Charlie Got Molested///September 15, 2005///298883///tt0472954///8.6', 'S02E01///Charlie Gets Crippled///June 29, 2006///308471///tt0472954///8.6', 'S02E02///The Gang Goes Jihad///June 29, 2006///308472///tt0472954///8.6', 'S02E03///Dennis and Dee Go on Welfare///July 6, 2006///308473///tt0472954///8.7', "S02E04///Mac Bangs Dennis' Mom///July 6, 2006///308474///tt0472954///8.7", 'S02E05///Hundred Dollar Baby///July 13, 2006///308475///tt0472954///9.1', 'S02E06///The Gang Gives Back///July 20, 2006///308476///tt0472954///9.2', 'S02E07///The Gang Exploits a Miracle///July 27, 2006///308477///tt0472954///8.8', 'S02E08///The Gang Runs for Office///August 3, 2006///308478///tt0472954///8.5', "S02E09///Charlie Goes America All Over Everybody's Ass///August 10, 2006///308479///tt0472954///8.1", 'S02E10///Dennis and Dee Get a New Dad///August 17, 2006///308480///tt0472954///8.1', 'S03E01///The Gang Finds a Dumpster Baby///September 13, 2007///335475///tt0472954///8.7', 'S03E02///The Gang Gets Invincible///September 13, 2007///335476///tt0472954///8.7', "S03E03///Dennis and Dee's Mom Is Dead///September 20, 2007///335477///tt0472954///8.8", 'S03E04///The Gang Gets Held Hostage///September 20, 2007///335478///tt0472954///8.8', 'S03E05///The Aluminum Monster vs. Fatty Magoo///September 27, 2007///335479///tt0472954///8.4', 'S03E06///The Gang Solves the North Korea Situation///September 27, 2007///336650///tt0472954///8.4', 'S03E07///The Gang Sells Out///October 4, 2007///337192///tt0472954///8.9', 'S03E08///Frank Sets Sweet Dee On Fire///October 4, 2007///337193///tt0472954///8.9', "S03E09///Sweet Dee's Dating a Retarded Person///October 11, 2007///337194///tt0472954///8.1", 'S03E10///Mac is a Serial Killer///October 18, 2007///337195///tt0472954///8.5', 'S03E11///Dennis Looks Like a Registered Sex Offender///October 25, 2007///339382///tt0472954///8.3', 'S03E12///The Gang Gets Whacked (1)///November 1, 2007///340074///tt0472954///8.6', 'S03E14///Bums: Making a Mess All Over the City///November 8, 2007///340215///tt0472954///9.3', 'S03E15///The Gang Dances Their Asses Off///November 15, 2007///342319///tt0472954///9.0', 'S03E13///The Gang Gets Whacked (2)///November 1, 2007///387009///tt0472954///9.0', 'S04E01///Mac and Dennis: Manhunters///September 18, 2008///387149///tt0472954///8.5', 'S04E02///The Gang Solves the Gas Crisis///September 18, 2008///388882///tt0472954///8.5', "S04E03///America's Next Top Paddy's Billboard Model Contest///September 25, 2008///388884///tt0472954///9.2", "S04E04///Mac's Banging the Waitress///September 25, 2008///388885///tt0472954///9.2", 'S04E05///Mac & Charlie Die (1)///October 2, 2008///390920///tt0472954///8.5', 'S04E06///Mac & Charlie Die (2)///October 2, 2008///393227///tt0472954///8.5', 'S04E07///Who Pooped the Bed?///October 9, 2008///395314///tt0472954///8.6', "S04E08///Paddy's Pub: The Worst Bar in Philadelphia///October 16, 2008///395315///tt0472954///9.0", 'S04E09///Dennis Reynolds: An Erotic Life///October 23, 2008///400452///tt0472954///8.7', 'S04E10///Sweet Dee Has a Heart Attack///October 30, 2008///400453///tt0472954///8.4', 'S04E11///The Gang Cracks the Liberty Bell///November 6, 2008///400454///tt0472954///8.6', 'S04E12///The Gang Gets Extreme: Home Makeover Edition///November 13, 2008///406039///tt0472954///8.3', 'S04E13///The Nightman Cometh///November 20, 2008///407838///tt0472954///8.8', 'S05E01///The Gang Exploits the Mortgage Crisis///September 17, 2009///1087211///tt0472954///8.4', 'S05E02///The Gang Hits the Road///September 24, 2009///1088081///tt0472954///9.1', 'S05E04///The Gang Gives Frank an Intervention///October 8, 2009///1088091///tt0472954///8.1', 'S05E05///The Waitress Is Getting Married///October 15, 2009///1088101///tt0472954///8.8', 'S05E06///The World Series Defense///October 22, 2009///1088111///tt0472954///8.8', 'S05E07///The Gang Wrestles for the Troops///October 29, 2009///1088121///tt0472954///8.4', 'S05E03///The Great Recession///October 1, 2009///1088131///tt0472954///8.5', "S05E08///Paddy's Pub: Home of the Original Kitten Mittens///November 5, 2009///1088141///tt0472954///9.0", 'S05E10///The D.E.N.N.I.S. System///November 19, 2009///1088151///tt0472954///8.6', 'S05E12///The Gang Reignites the Rivalry///December 10, 2009///1088161///tt0472954///9.3', 'S05E11///Mac and Charlie Write a Movie///December 3, 2009///1088171///tt0472954///8.2', 'S05E09///Mac and Dennis Break Up///November 12, 2009///1088181///tt0472954///8.6', 'S06E01///Mac Fights Gay Marriage///September 16, 2010///2405531///tt0472954///8.0', 'S06E02///Dennis Gets Divorced///September 23, 2010///2819161///tt0472954///7.7', 'S06E03///The Gang Buys a Boat///September 30, 2010///2819171///tt0472954///8.8', "S06E04///Mac's Big Break///October 7, 2010///2819181///tt0472954///8.2", 'S06E05///Mac and Charlie: White Trash///October 14, 2010///2949951///tt0472954///8.3', "S06E06///Mac's Mom Burns Her House Down///October 21, 2010///2949961///tt0472954///7.8", 'S06E07///Who Got Dee Pregnant?///October 28, 2010///2949971///tt0472954///9.1', 'S06E08///The Gang Gets a New Member///November 4, 2010///3019351///tt0472954///7.8', "S06E09///Dee Reynolds: Shaping America's Youth///November 11, 2010///3019361///tt0472954///8.9", 'S06E10///Charlie Kelly: King of the Rats///November 18, 2010///3019371///tt0472954///8.4', 'S06E11///The Gang Gets Stranded in the Woods///December 2, 2010///3164311///tt0472954///8.6', 'S06E12///Dee Gives Birth///December 9, 2010///3164321///tt0472954///8.5', 'S06E13///A Very Sunny Christmas///December 16, 2010///3358551///tt0472954///9.2', "S07E01///Frank's Pretty Woman///September 15, 2011///4136240///tt0472954///8.6", 'S07E02///The Gang Goes to the Jersey Shore///September 22, 2011///4164605///tt0472954///9.1', "S07E03///Frank Reynolds' Little Beauties///September 29, 2011///4174052///tt0472954///8.5", 'S07E04///Sweet Dee Gets Audited///October 6, 2011///4176076///tt0472954///8.0', "S07E05///Frank's Brother///October 13, 2011///4179853///tt0472954///6.8", 'S07E06///The Storm of the Century///October 20, 2011///4186469///tt0472954///8.3', 'S07E07///Chardee MacDennis: The Game of Games///October 27, 2011///4190632///tt0472954///9.2', 'S07E08///The ANTI-Social Network///November 3, 2011///4190633///tt0472954///8.4', 'S07E09///The Gang Gets Trapped///November 10, 2011///4190634///tt0472954///8.7', 'S07E10///How Mac Got Fat///November 17, 2011///4190635///tt0472954///7.8', 'S07E11///Thunder Gun Express///December 1, 2011///4203527///tt0472954///8.9', 'S07E12///The High School Reunion (1)///December 8, 2011///4207554///tt0472954///8.3', "S07E13///The Gang's Revenge (2)///December 15, 2011///4207555///tt0472954///8.3", 'S08E01///Pop-Pop: The Final Solution///October 11, 2012///4292773///tt0472954///7.9', 'S08E02///The Gang Recycles Their Trash///October 18, 2012///4410871///tt0472954///8.3', 'S08E03///The Maureen Ponderosa Wedding Massacre///October 25, 2012///4410872///tt0472954///8.7', 'S08E04///Charlie and Dee Find Love///November 1, 2012///4417785///tt0472954///8.9', "S08E06///Charlie's Mom Has Cancer///November 15, 2012///4417786///tt0472954///8.9", 'S08E05///The Gang Gets Analyzed///November 8, 2012///4417787///tt0472954///7.7', 'S08E08///Charlie Rules the World///December 6, 2012///4417788///tt0472954///8.1', "S08E07///Frank's Back in Business///November 29, 2012///4417789///tt0472954///8.4", 'S08E09///The Gang Dines Out///December 13, 2012///4417790///tt0472954///8.9', 'S08E10///Reynolds vs. Reynolds: The Cereal Defense///December 20, 2012///4417791///tt0472954///8.9', 'S09E01///The Gang Broke Dee///September 4, 2013///4619057///tt0472954///8.8', 'S09E07///The Gang Gets Quarantined///October 16, 2013///4623323///tt0472954///8.3', 'S09E03///The Gang Tries Desperately to Win an Award///September 18, 2013///4623325///tt0472954///9.2', 'S09E05///Mac Day///October 2, 2013///4623327///tt0472954///8.1', 'S09E02///Gun Fever Too: Still Hot///September 11, 2013///4623328///tt0472954///8.6', 'S09E09///The Gang Makes Lethal Weapon 6///October 30, 2013///4623330///tt0472954///8.9', 'S09E06///The Gang Saves the Day///October 9, 2013///4623331///tt0472954///8.8', 'S09E04///Mac and Dennis Buy a Timeshare///September 25, 2013///4623333///tt0472954///8.8', 'S09E08///Flowers for Charlie///October 23, 2013///4623334///tt0472954///8.1', 'S09E10///The Gang Squashes Their Beefs///November 6, 2013///4623335///tt0472954///8.3', 'S10E01///The Gang Beats Boggs///January 14, 2015///5052408///tt0472954///8.8', 'S10E02///The Gang Group Dates///January 21, 2015///5079589///tt0472954///8.8', 'S10E03///Psycho Pete Returns///January 28, 2015///5084674///tt0472954///7.6', 'S10E04///Charlie Work///February 4, 2015///5101346///tt0472954///9.8', 'S10E05///The Gang Spies Like U.S.///February 11, 2015///5106954///tt0472954///8.3', 'S10E06///The Gang Misses the Boat///February 18, 2015///5106955///tt0472954///8.8', 'S10E07///Mac Kills His Dad///February 25, 2015///5106956///tt0472954///8.0', 'S10E08///The Gang Goes on Family Fight///March 4, 2015///5106957///tt0472954///9.0', 'S10E09///Frank Retires///March 11, 2015///5106959///tt0472954///8.2', 'S10E10///Ass Kickers United: Mac and Charlie Join a Cult///March 18, 2015///5106961///tt0472954///7.6', 'S11E01///Chardee MacDennis 2: Electric Boogaloo///January 6, 2016///5390631///tt0472954///8.6', 'S11E02///Frank Falls out the Window///January 13, 2016///5390632///tt0472954///8.0', 'S11E03///The Gang Hits the Slopes///January 20, 2016///5476978///tt0472954///8.6', 'S11E04///Dee Made a Smut Film///January 27, 2016///5476979///tt0472954///7.6', 'S11E05///Mac & Dennis Move to the Suburbs///February 3, 2016///5476981///tt0472954///9.4', 'S11E06///Being Frank///February 10, 2016///5487408///tt0472954///8.4', 'S11E07///McPoyle vs. Ponderosa: The Trial of the Century///February 17, 2016///5494108///tt0472954///8.6', 'S11E08///Charlie Catches a Leprechaun///February 24, 2016///5517690///tt0472954///8.6', 'S11E09///The Gang Goes to Hell (1)///March 2, 2016///5517693///tt0472954///8.5', 'S11E10///The Gang Goes to Hell (2)///March 9, 2016///5517695///tt0472954///8.5', 'S12E01///The Gang Turns Black///January 4, 2017///5828364///tt0472954///8.5', 'S12E02///The Gang Goes to a Water Park///January 11, 2017///5871909///tt0472954///9.5', 'S12E03///Old Lady House: A Situation Comedy///January 18, 2017///5871910///tt0472954///8.5', 'S12E04///Wolf Cola: A Public Relations Nightmare///January 25, 2017///5871911///tt0472954///8.2', 'S12E05///Making Dennis Reynolds a Murderer///February 1, 2017///5939159///tt0472954///8.7', 'S12E06///Hero or Hate Crime?///February 8, 2017///5942881///tt0472954///9.5', 'S12E07///PTSDee///February 15, 2017///5942882///tt0472954///8.7', 'S12E08///The Gang Tends Bar///February 22, 2017///5947712///tt0472954///8.3', "S12E09///A Cricket's Tale///March 1, 2017///5947722///tt0472954///7.4", "S12E10///Dennis' Double Life///March 8, 2017///5947723///tt0472954///8.7", "S13E01///The Gang Makes Paddy's Great Again///September 5, 2018///6742869///tt0472954///7.8", 'S13E02///The Gang Escapes///September 12, 2018///6804295///tt0472954///8.2', 'S13E03///The Gang Beats Boggs: Ladies Reboot///September 19, 2018///6806624///tt0472954///6.8', "S13E04///Time's Up for the Gang///September 26, 2018///6806625///tt0472954///9.3", 'S13E05///The Gang Gets New Wheels///October 3, 2018///6816379///tt0472954///9.0', 'S13E06///The Gang Solves the Bathroom Problem///October 10, 2018///6823105///tt0472954///8.4', 'S13E07///The Gang Does a Clip Show///October 17, 2018///6831938///tt0472954///7.5', 'S13E09///The Gang Wins the Big Game///October 31, 2018///6843836///tt0472954///6.9', "S13E08///Charlie's Home Alone///October 24, 2018///6843943///tt0472954///7.0", 'S13E10///Mac Finds His Pride///November 7, 2018///6843945///tt0472954///8.3', 'S14E01///The Gang Gets Romantic///September 25, 2019///7250072///tt0472954///8.2', 'S14E02///Thunder Gun 4: Maximum Cool///October 2, 2019///7349126///tt0472954///8.1', 'S14E03///Dee Day///October 9, 2019///7349127///tt0472954///8.4', 'S14E04///The Gang Chokes///October 16, 2019///7364930///tt0472954///8.3', 'S14E05///The Gang Texts///October 23, 2019///7364933///tt0472954///8.2', 'S14E06///The Janitor Always Mops Twice///October 30, 2019///7364935///tt0472954///8.6', 'S14E07///The Gang Solves Global Warming///November 6, 2019///7379120///tt0472954///8.3', "S14E09///A Woman's Right to Chop///November 20, 2019///7379121///tt0472954///8.7", "S14E08///Paddy's Has a Jumper///November 13, 2019///7379122///tt0472954///8.3", 'S14E10///Waiting for Big Mo///November 20, 2019///7379124///tt0472954///8.1']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[1]
+    air_date = res[2]
+    rating = res[5]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+    document.getElementById('rating').innerHTML = rating;
+            document.getElementById('rating').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('rating').animate([
+    // keyframes
+        { transform: 'translateY(-280px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+<script>
+    function
+    change()
+    {
+        var elem = document.getElementById("random_button");
+        if (elem.innerHTML == "Random Episode") elem.innerHTML = "Pick Again";
+        else elem.innerHTML = "Pick Again";
+    }
+</script>
+
+<script>
+    function
+    color()
+    {
+        var elem = document.getElementById("rating").innerHTML;
+        var float = parseFloat(elem);
+        var good = 8.5;
+        var bad = 7.9;
+        if (float >= good) document.getElementById("rating").style.backgroundColor = "#2db92d";
+        else if (float <= bad) document.getElementById("rating").style.backgroundColor = "#ff3333";
+        else document.getElementById("rating").style.backgroundColor = "#333333";
+    }
+</script>
+
+</html>
