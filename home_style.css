@@ -115,9 +115,27 @@ body {
     margin-right: 10px;
 }
 
+.show_message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px 15px 15px 15px;
+    width: 133px;
+    height: 60px;
+    padding: 4px;
+    background-color: #4d4d4d;
+    box-shadow: 0px 0px 10px -2px black;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
 .show:hover {
     background-color: #00CED1;
+}
 
+.show_message:hover {
+    background-color: #00CED1;
 }
 
 .show_title {
@@ -223,9 +241,27 @@ body {
     margin-right: 10px;
 }
 
+.show_message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px 15px 15px 15px;
+    width: 133px;
+    height: 60px;
+    padding: 4px;
+    background-color: #4d4d4d;
+    box-shadow: 0px 0px 10px -2px black;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
 .show:hover {
     background-color: #00CED1;
+}
 
+.show_message:hover {
+    background-color: #00CED1;
 }
 
 .show_title {
@@ -332,9 +368,27 @@ body {
     margin-right: 10px;
 }
 
+.show_message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px 15px 15px 15px;
+    width: 133px;
+    height: 60px;
+    padding: 4px;
+    background-color: #4d4d4d;
+    box-shadow: 0px 0px 10px -2px black;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
 .show:hover {
     background-color: #00CED1;
+}
 
+.show_message:hover {
+    background-color: #00CED1;
 }
 
 .show_title {
@@ -442,9 +496,27 @@ body {
     margin-right: 10px;
 }
 
+.show_message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px 15px 15px 15px;
+    width: 133px;
+    height: 60px;
+    padding: 4px;
+    background-color: #4d4d4d;
+    box-shadow: 0px 0px 10px -2px black;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
 .show:hover {
     background-color: #00CED1;
+}
 
+.show_message:hover {
+    background-color: #00CED1;
 }
 
 .show_title {
