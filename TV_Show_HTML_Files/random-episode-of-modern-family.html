@@ -1,0 +1,162 @@
+---
+permalink: random-episode-of-modern-family
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='../random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="Modern Family random episode generator." />
+    <title>Random Modern Family Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='../logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>Modern Family</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='change(); color()'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p id='random_button' class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+        <div id='rating' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///Pilot///September 23, 2009///660911///tt1442437///8.2', 'S01E02///The Bicycle Thief///September 30, 2009///1084191///tt1442437///8.2', 'S01E03///Come Fly with Me///October 7, 2009///1084201///tt1442437///8.0', 'S01E04///The Incident///October 14, 2009///1084211///tt1442437///8.2', 'S01E05///Coal Digger///October 21, 2009///1084221///tt1442437///8.3', 'S01E06///Run for Your Wife///October 28, 2009///1199791///tt1442437///7.8', 'S01E07///En Garde///November 4, 2009///1268461///tt1442437///8.0', 'S01E08///Great Expectations///November 18, 2009///1302231///tt1442437///8.0', 'S01E09///Fizbo///November 25, 2009///1302241///tt1442437///8.7', 'S01E10///Undeck the Halls///December 9, 2009///1333741///tt1442437///8.1', 'S01E11///Up All Night///January 6, 2010///1333751///tt1442437///8.0', 'S01E12///Not in My House///January 13, 2010///1483471///tt1442437///7.9', 'S01E13///Fifteen Percent///January 20, 2010///1559011///tt1442437///8.1', 'S01E14///Moon Landing///February 3, 2010///1559121///tt1442437///8.1', 'S01E15///My Funky Valentine///February 10, 2010///1635111///tt1442437///8.7', 'S01E16///Fears///March 3, 2010///1762251///tt1442437///8.0', 'S01E17///Truth Be Told///March 10, 2010///1793921///tt1442437///7.9', 'S01E18///Starry Night///March 24, 2010///1846441///tt1442437///8.1', 'S01E19///Game Changer///March 31, 2010///1846451///tt1442437///7.9', 'S01E20///Benched///April 14, 2010///1911511///tt1442437///7.7', 'S01E21///Travels with Scout///April 28, 2010///2106491///tt1442437///7.8', 'S01E22///Airport 2010///May 5, 2010///2106501///tt1442437///8.2', 'S01E23///Hawaii///May 12, 2010///2106511///tt1442437///8.5', 'S01E24///Family Portrait///May 19, 2010///2106521///tt1442437///8.6', 'S02E01///The Old Wagon///September 22, 2010///2452161///tt1442437///8.0', 'S02E02///The Kiss///September 29, 2010///2832631///tt1442437///8.1', 'S02E03///Earthquake///October 6, 2010///2888511///tt1442437///7.8', 'S02E04///Strangers on a Treadmill///October 13, 2010///2888521///tt1442437///8.0', 'S02E06///Halloween///October 27, 2010///2922931///tt1442437///8.2', 'S02E05///Unplugged///October 20, 2010///2923031///tt1442437///8.5', 'S02E11///Slow Down Your Neighbors///January 5, 2011///2969501///tt1442437///7.7', 'S02E10///Dance Dance Revelation///December 8, 2010///2969511///tt1442437///8.3', 'S02E07///Chirp///November 3, 2010///2969521///tt1442437///7.6', 'S02E08///Manny Get Your Gun///November 17, 2010///3053051///tt1442437///7.5', 'S02E09///Mother Tucker///November 24, 2010///3053061///tt1442437///8.2', 'S02E13///Caught in the Act///January 19, 2011///3161951///tt1442437///7.8', 'S02E12///Our Children, Ourselves///January 12, 2011///3186451///tt1442437///9.0', "S02E14///Bixby's Back///February 9, 2011///3409591///tt1442437///8.0", 'S02E15///Princess Party///February 16, 2011///3609661///tt1442437///7.6', 'S02E16///Regrets Only///February 23, 2011///3609671///tt1442437///8.1', 'S02E17///Two Monkeys and a Panda///March 2, 2011///3609681///tt1442437///7.8', "S02E18///Boys' Night///March 23, 2011///3852441///tt1442437///8.3", 'S02E19///The Musical Man///April 13, 2011///3852451///tt1442437///8.3', 'S02E20///Someone to Watch Over Lily///April 20, 2011///3852461///tt1442437///8.1', "S02E21///Mother's Day///May 4, 2011///4078472///tt1442437///8.1", 'S02E22///Good Cop, Bad Dog///May 11, 2011///4078473///tt1442437///8.2', 'S02E23///See You Next Fall///May 18, 2011///4078474///tt1442437///8.2', 'S02E24///The One That Got Away///May 25, 2011///4078475///tt1442437///8.0', 'S03E01///Dude Ranch///September 21, 2011///4122276///tt1442437///8.0', 'S03E02///When Good Kids Go Bad///September 21, 2011///4160111///tt1442437///8.0', 'S03E03///Phil on Wire///September 28, 2011///4160112///tt1442437///8.1', 'S03E04///Door to Door///October 5, 2011///4160113///tt1442437///8.1', 'S03E05///Hit and Run///October 12, 2011///4160114///tt1442437///7.9', 'S03E06///Go Bullfrogs!///October 19, 2011///4160115///tt1442437///7.8', 'S03E07///Treehouse///November 2, 2011///4190839///tt1442437///7.7', 'S03E08///After the Fire///November 16, 2011///4193566///tt1442437///8.2', 'S03E09///Punkin Chunkin///November 23, 2011///4194103///tt1442437///7.9', 'S03E10///Express Christmas///December 7, 2011///4207557///tt1442437///7.9', 'S03E11///Lifetime Supply///January 4, 2012///4218074///tt1442437///8.1', 'S03E12///Egg Drop///January 11, 2012///4225526///tt1442437///7.8', 'S03E13///Little Bo Bleep///January 18, 2012///4241477///tt1442437///7.7', 'S03E14///Me? Jealous?///February 8, 2012///4241478///tt1442437///8.5', 'S03E15///Aunt Mommy///February 15, 2012///4250534///tt1442437///8.0', 'S03E16///Virgin Territory///February 22, 2012///4256957///tt1442437///8.1', 'S03E17///Leap Day///February 29, 2012///4265454///tt1442437///7.8', 'S03E18///Send Out the Clowns///March 14, 2012///4265455///tt1442437///8.0', 'S03E19///Election Day///April 11, 2012///4288456///tt1442437///7.5', 'S03E20///The Last Walt///April 18, 2012///4292716///tt1442437///7.8', 'S03E21///Planes, Trains and Cars///May 2, 2012///4292717///tt1442437///7.6', 'S03E22///Disneyland///May 9, 2012///4292718///tt1442437///7.7', 'S03E23///Tableau Vivant///May 16, 2012///4292719///tt1442437///8.2', 'S03E24///Baby on Board///May 23, 2012///4292720///tt1442437///8.0', 'S04E01///Bringing Up Baby///September 26, 2012///4341944///tt1442437///8.2', 'S04E02///Schooled///October 10, 2012///4401050///tt1442437///8.6', 'S04E03///Snip///October 10, 2012///4401051///tt1442437///8.6', "S04E04///The Butler's Escape///October 17, 2012///4401052///tt1442437///8.0", 'S04E05///Open House of Horrors///October 24, 2012///4401053///tt1442437///7.6', 'S04E06///Yard Sale///October 31, 2012///4401054///tt1442437///7.9', 'S04E07///Arrested///November 7, 2012///4410870///tt1442437///7.8', 'S04E08///Mistery Date///November 14, 2012///4420015///tt1442437///8.5', 'S04E09///When a Tree Falls///November 28, 2012///4420016///tt1442437///8.2', 'S04E10///Diamond in the Rough///December 12, 2012///4429606///tt1442437///7.8', "S04E11///New Year's Eve///January 9, 2013///4429607///tt1442437///7.8", 'S04E12///Party Crasher///January 16, 2013///4429608///tt1442437///8.1', 'S04E13///Fulgencio///January 23, 2013///4437762///tt1442437///8.4', 'S04E14///A Slight at the Opera///February 6, 2013///4437763///tt1442437///8.9', 'S04E15///Heart Broken///February 13, 2013///4453934///tt1442437///7.6', 'S04E16///Bad Hair Day///February 20, 2013///4458664///tt1442437///7.7', 'S04E17///Best Men///February 27, 2013///4458665///tt1442437///7.4', 'S04E18///The Wow Factor///March 27, 2013///4507302///tt1442437///8.0', 'S04E19///The Future Dunphys///April 3, 2013///4507303///tt1442437///7.7', 'S04E20///Flip Flop///April 10, 2013///4507304///tt1442437///7.9', 'S04E21///Career Day///May 1, 2013///4507305///tt1442437///7.7', 'S04E22///My Hero///May 8, 2013///4507306///tt1442437///7.6', 'S04E23///Games People Play///May 15, 2013///4525367///tt1442437///7.8', 'S04E24///Goodnight, Gracie///May 22, 2013///4525368///tt1442437///7.8', 'S05E01///Suddenly, Last Summer///September 25, 2013///4611479///tt1442437///8.1', 'S05E02///First Days///September 25, 2013///4635001///tt1442437///8.1', "S05E03///Larry's Wife///October 2, 2013///4641563///tt1442437///7.8", 'S05E04///Farm Strong///October 9, 2013///4654700///tt1442437///7.5', 'S05E05///The Late Show///October 16, 2013///4659007///tt1442437///7.8', 'S05E06///The Help///October 23, 2013///4678715///tt1442437///8.1', 'S05E07///A Fair to Remember///November 13, 2013///4678722///tt1442437///7.6', "S05E08///ClosetCon '13///November 20, 2013///4702011///tt1442437///7.9", 'S05E11///And One to Grow On///January 8, 2014///4702118///tt1442437///7.7', 'S05E09///The Big Game///December 4, 2013///4711143///tt1442437///7.5', 'S05E10///The Old Man & the Tree///December 11, 2013///4711144///tt1442437///7.8', 'S05E12///Under Pressure///January 15, 2014///4731166///tt1442437///7.5', 'S05E13///Three Dinners///January 22, 2014///4735556///tt1442437///8.5', 'S05E14///iSpy///February 5, 2014///4777103///tt1442437///8.1', 'S05E15///The Feud///February 26, 2014///4777104///tt1442437///8.0', 'S05E16///Spring-a-Ding-Fling///March 5, 2014///4777105///tt1442437///7.7', "S05E17///Other People's Children///March 12, 2014///4808013///tt1442437///7.7", 'S05E18///Las Vegas///March 26, 2014///4818750///tt1442437///7.9', "S05E19///A Hard Jay's Night///April 2, 2014///4818751///tt1442437///9.2", 'S05E20///Australia///April 23, 2014///4818752///tt1442437///7.8', 'S05E21///Sleeper///April 30, 2014///4818753///tt1442437///8.0', 'S05E22///Message Received///May 7, 2014///4818754///tt1442437///7.6', 'S05E23///The Wedding (1)///May 14, 2014///4818755///tt1442437///8.3', 'S05E24///The Wedding (2)///May 21, 2014///4818756///tt1442437///8.3', 'S06E01///The Long Honeymoon///September 24, 2014///4933960///tt1442437///8.0', 'S06E02///Do Not Push///October 1, 2014///4986303///tt1442437///8.0', 'S06E03///The Cold///October 8, 2014///4986304///tt1442437///7.8', 'S06E04///Marco Polo///October 15, 2014///5005438///tt1442437///7.9', "S06E05///Won't You Be Our Neighbor///October 22, 2014///5010893///tt1442437///7.9", 'S06E06///Halloween 3: AwesomeLand///October 29, 2014///5016604///tt1442437///7.6', 'S06E07///Queer Eyes, Full Hearts///November 12, 2014///5029272///tt1442437///8.1', 'S06E08///Three Turkeys///November 19, 2014///5030883///tt1442437///8.4', 'S06E09///Strangers in the Night///December 3, 2014///5041939///tt1442437///7.6', "S06E10///Haley's 21st Birthday///December 10, 2014///5041941///tt1442437///8.1", 'S06E11///The Day We Almost Died///January 7, 2015///5059740///tt1442437///8.3', 'S06E12///The Big Guns///January 14, 2015///5059741///tt1442437///7.7', 'S06E13///Rash Decisions///February 4, 2015///5069879///tt1442437///7.5', "S06E14///Valentine's Day 4: Twisted Sister///February 11, 2015///5105145///tt1442437///7.8", 'S06E15///Fight or Flight///February 18, 2015///5105146///tt1442437///7.9', 'S06E16///Connection Lost///February 25, 2015///5105147///tt1442437///9.5', "S06E17///Closet? You'll Love It!///March 4, 2015///5112608///tt1442437///7.8", 'S06E18///Spring Break///March 25, 2015///5122790///tt1442437///7.4', 'S06E19///Grill, Interrupted///April 1, 2015///5122791///tt1442437///7.6', "S06E20///Knock 'Em Down///April 22, 2015///5122793///tt1442437///8.1", 'S06E21///Integrity///April 29, 2015///5160953///tt1442437///7.8', 'S06E22///Patriot Games///May 6, 2015///5160954///tt1442437///8.1', 'S06E23///Crying Out Loud///May 13, 2015///5160955///tt1442437///8.3', 'S06E24///American Skyper///May 20, 2015///5160956///tt1442437///8.8', "S07E01///Summer Lovin'///September 23, 2015///5248993///tt1442437///7.8", 'S07E02///The Day Alex Left for College///September 30, 2015///5307012///tt1442437///7.8', 'S07E03///The Closet Case///October 7, 2015///5333807///tt1442437///7.8', 'S07E04///She Crazy///October 14, 2015///5333808///tt1442437///7.7', 'S07E05///The Verdict///October 21, 2015///5333809///tt1442437///7.5', 'S07E06///The More You Ignore Me///November 11, 2015///5333810///tt1442437///7.5', "S07E07///Phil's Sexy, Sexy House///November 18, 2015///5374718///tt1442437///8.6", 'S07E08///Clean Out Your Junk Drawer///December 2, 2015///5374719///tt1442437///7.9', 'S07E09///White Christmas///December 9, 2015///5374721///tt1442437///8.3', 'S07E10///Playdates///January 6, 2016///5374722///tt1442437///7.6', 'S07E11///Spread Your Wings///January 13, 2016///5406724///tt1442437///8.0', 'S07E13///Thunk in the Trunk///February 17, 2016///5482600///tt1442437///7.5', 'S07E12///Clean for a Day///February 10, 2016///5482601///tt1442437///7.6', 'S07E14///The Storm///February 24, 2016///5482602///tt1442437///8.1', "S07E15///I Don't Know How She Does It///March 2, 2016///5483437///tt1442437///7.6", 'S07E16///The Cover-Up///March 16, 2016///5509579///tt1442437///8.1', 'S07E17///Express Yourself///March 23, 2016///5542501///tt1442437///7.7', 'S07E18///The Party///April 6, 2016///5557196///tt1442437///8.6', "S07E19///Man Shouldn't Lie///April 13, 2016///5557197///tt1442437///7.7", 'S07E20///Promposal///May 4, 2016///5571502///tt1442437///7.5', 'S07E21///Crazy Train///May 11, 2016///5571503///tt1442437///8.0', 'S07E22///Double-Click///May 18, 2016///5571504///tt1442437///8.2', 'S08E02///A Stereotypical Day///September 28, 2016///5720948///tt1442437///8.1', 'S08E03///Blindsided///October 5, 2016///5734358///tt1442437///7.6', 'S08E04///Weathering Heights///October 12, 2016///5734359///tt1442437///7.4', 'S08E05///Halloween 4: The Revenge of Rod Skyhook///October 26, 2016///5734360///tt1442437///7.6', 'S08E06///Grab It///November 9, 2016///5796551///tt1442437///7.7', 'S08E07///Thanksgiving Jamboree///November 16, 2016///5796552///tt1442437///7.2', 'S08E08///The Alliance///November 30, 2016///5840610///tt1442437///7.3', 'S08E09///Snow Ball///December 14, 2016///5840611///tt1442437///8.4', 'S08E01///A Tale of Three Cities///September 21, 2016///5857673///tt1442437///7.2', 'S08E10///Ringmaster Keifth///January 4, 2017///5880092///tt1442437///7.4', 'S08E11///Sarge & Pea///January 11, 2017///5897071///tt1442437///7.2', 'S08E12///Do You Believe in Magic?///February 8, 2017///5924667///tt1442437///7.8', 'S08E15///Finding Fizbo///March 1, 2017///5930403///tt1442437///7.3', 'S08E14///Heavy Is the Head///February 22, 2017///5944376///tt1442437///7.2', 'S08E13///Do It Yourself///February 15, 2017///5966852///tt1442437///6.7', 'S08E16///Basketball///March 8, 2017///5979426///tt1442437///7.2', 'S08E17///Pig Moon Rising///March 15, 2017///5987956///tt1442437///7.6', 'S08E18///Five Minutes///March 29, 2017///6006044///tt1442437///7.5', "S08E19///Frank's Wedding///April 5, 2017///6006045///tt1442437///7.4", 'S08E20///All Things Being Equal///May 3, 2017///6006046///tt1442437///5.9', 'S08E21///Alone Time///May 10, 2017///6006047///tt1442437///7.6', 'S08E22///The Graduates///May 17, 2017///6006048///tt1442437///7.7', 'S09E01///Lake Life///September 27, 2017///6215286///tt1442437///7.8', 'S09E02///The Long Goodbye///October 4, 2017///6273130///tt1442437///7.3', 'S09E03///Catch of the Day///October 11, 2017///6333658///tt1442437///7.4', 'S09E04///Sex, Lies & Kickball///October 18, 2017///6349783///tt1442437///7.0', "S09E05///It's the Great Pumpkin, Phil Dunphy///October 25, 2017///6366922///tt1442437///7.2", 'S09E06///Ten Years Later///November 1, 2017///6379375///tt1442437///7.2', 'S09E07///Winner Winner Turkey Dinner///November 15, 2017///6387902///tt1442437///7.6', 'S09E08///Brushes with Celebrity///November 29, 2017///6409273///tt1442437///7.3', 'S09E09///Tough Love///December 6, 2017///6418140///tt1442437///7.2', 'S09E10///No Small Feet///December 13, 2017///6432803///tt1442437///7.1', 'S09E11///He Said, She Shed///January 3, 2018///6455067///tt1442437///7.1', 'S09E12///Dear Beloved Family///January 10, 2018///6471903///tt1442437///7.3', 'S09E13///In Your Head///January 17, 2018///6471904///tt1442437///7.3', 'S09E14///Written in the Stars///February 28, 2018///6512370///tt1442437///7.4', 'S09E15///Spanks for the Memories///March 7, 2018///6555859///tt1442437///6.8', 'S09E16///Wine Weekend///March 21, 2018///6581790///tt1442437///7.4', 'S09E17///Royal Visit///March 28, 2018///6594244///tt1442437///7.2', 'S09E18///Daddy Issues///April 4, 2018///6608931///tt1442437///8.1', 'S09E19///CHiPs and Salsa///April 11, 2018///6618581///tt1442437///6.9', 'S09E20///Mother!///May 2, 2018///6634126///tt1442437///7.4', 'S09E21///The Escape///May 9, 2018///6634127///tt1442437///7.5', 'S09E22///Clash of Swords///May 16, 2018///6634128///tt1442437///6.5', 'S10E01///I Love a Parade///September 26, 2018///6770317///tt1442437///6.6', 'S10E02///Kiss and Tell///October 3, 2018///6829826///tt1442437///8.0', 'S10E03///A Sketchy Area///October 10, 2018///6839550///tt1442437///7.2', 'S10E04///Torn Between Two Lovers///October 17, 2018///6847307///tt1442437///7.4', 'S10E05///Good Grief///October 24, 2018///6856954///tt1442437///7.3', 'S10E06///On the Same Paige///October 31, 2018///6862170///tt1442437///7.6', 'S10E07///Did the Chicken Cross the Road?///November 7, 2018///6869296///tt1442437///7.4', 'S10E08///Kids These Days///November 28, 2018///6896914///tt1442437///7.2', 'S10E10///Stuck in a Moment///December 12, 2018///6898825///tt1442437///7.5', 'S10E09///Putting Down Roots///December 5, 2018///6906842///tt1442437///7.5', 'S10E11///A Moving Day///January 9, 2019///6981497///tt1442437///7.1', 'S10E12///Blasts from the Past///January 16, 2019///6981499///tt1442437///6.7', 'S10E13///Whanex?///January 23, 2019///6983867///tt1442437///6.8', 'S10E14///We Need to Talk About Lily///January 30, 2019///6997398///tt1442437///7.3', 'S10E15///SuperShowerBabyBowl///February 20, 2019///7017547///tt1442437///7.2', 'S10E16///Red Alert///February 27, 2019///7029258///tt1442437///6.8', 'S10E17///The Wild///March 13, 2019///7053239///tt1442437///7.1', 'S10E18///Stand By Your Man///March 20, 2019///7063656///tt1442437///7.2', 'S10E19///Yes-Woman///April 3, 2019///7086673///tt1442437///7.4', "S10E20///Can't Elope///April 10, 2019///7097524///tt1442437///8.0", 'S10E21///Commencement///May 1, 2019///7118543///tt1442437///7.1', 'S10E22///A Year of Birthdays///May 8, 2019///7118544///tt1442437///8.6', 'S11E01///New Kids on the Block///September 25, 2019///7262678///tt1442437///6.4', 'S11E02///Snapped///October 2, 2019///7362662///tt1442437///7.2', 'S11E03///Perfect Pairs///October 9, 2019///7373428///tt1442437///7.2', 'S11E04///Pool Party///October 16, 2019///7381370///tt1442437///7.1', 'S11E05///The Last Halloween///October 30, 2019///7406823///tt1442437///7.7', 'S11E06///A Game of Chicken///November 6, 2019///7407752///tt1442437///6.8', 'S11E07///The Last Thanksgiving///November 20, 2019///7429725///tt1442437///7.2', "S11E08///Tree's a Crowd///December 4, 2019///7436174///tt1442437///7.0", 'S11E09///The Last Christmas///December 11, 2019///7436175///tt1442437///7.5', 'S11E10///The Prescott///January 8, 2020///7460719///tt1442437///7.7', 'S11E11///Legacy///January 15, 2020///7525365///tt1442437///7.6', 'S11E12///Dead on a Rival///January 22, 2020///7526371///tt1442437///6.8', 'S11E13///Paris///February 12, 2020///7528595///tt1442437///7.5', 'S11E14///Spuds///February 19, 2020///7575821///tt1442437///7.6', 'S11E15///Baby Steps///March 18, 2020///7599036///tt1442437///7.1', "S11E16///I'm Going to Miss This///April 1, 2020///7599041///tt1442437///7.1", 'S11E17///Finale (1)///April 8, 2020///7599055///tt1442437///8.3', 'S11E18///Finale (2)///April 8, 2020///7611841///tt1442437///8.3']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[1]
+    air_date = res[2]
+    rating = res[5]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+    document.getElementById('rating').innerHTML = rating;
+            document.getElementById('rating').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('rating').animate([
+    // keyframes
+        { transform: 'translateY(-280px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+<script>
+    function
+    change()
+    {
+        var elem = document.getElementById("random_button");
+        if (elem.innerHTML == "Random Episode") elem.innerHTML = "Pick Again";
+        else elem.innerHTML = "Pick Again";
+    }
+</script>
+
+<script>
+    function
+    color()
+    {
+        var elem = document.getElementById("rating").innerHTML;
+        var float = parseFloat(elem);
+        var good = 8.5;
+        var bad = 7.9;
+        if (float >= good) document.getElementById("rating").style.backgroundColor = "#2db92d";
+        else if (float <= bad) document.getElementById("rating").style.backgroundColor = "#ff3333";
+        else document.getElementById("rating").style.backgroundColor = "#333333";
+    }
+</script>
+
+</html>

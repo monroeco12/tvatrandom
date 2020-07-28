@@ -1,0 +1,162 @@
+---
+permalink: random-episode-of-brooklyn-nine-nine
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='../random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="Brooklyn Nine-Nine random episode generator." />
+    <title>Random Brooklyn Nine-Nine Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='../logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>Brooklyn Nine-Nine</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='change(); color()'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p id='random_button' class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+        <div id='rating' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///Pilot///September 18, 2013///4568065///tt2467372///7.8', 'S01E02///The Tagger///September 24, 2013///4643747///tt2467372///7.6', 'S01E03///The Slump///October 1, 2013///4643748///tt2467372///7.6', 'S01E04///M.E. Time///October 8, 2013///4643749///tt2467372///7.7', 'S01E05///The Vulture///October 15, 2013///4663454///tt2467372///8.0', 'S01E06///Halloween///October 22, 2013///4680805///tt2467372///8.5', "S01E09///Sal's Pizza///November 19, 2013///4692629///tt2467372///8.1", 'S01E07///48 Hours///November 5, 2013///4694142///tt2467372///7.8', 'S01E08///Old School///November 12, 2013///4699356///tt2467372///7.7', 'S01E10///Thanksgiving///November 26, 2013///4705176///tt2467372///8.3', 'S01E11///Christmas///December 3, 2013///4715834///tt2467372///8.2', 'S01E12///Pontiac Bandit///January 7, 2014///4727033///tt2467372///8.2', 'S01E13///The Bet///January 14, 2014///4749751///tt2467372///8.8', 'S01E14///The Ebony Falcon///January 21, 2014///4749752///tt2467372///7.7', 'S01E15///Operation: Broken Feather///February 2, 2014///4749755///tt2467372///8.2', 'S01E16///The Party///February 4, 2014///4749757///tt2467372///8.6', 'S01E17///Full Boyle///February 11, 2014///4749758///tt2467372///8.0', 'S01E18///The Apartment///February 25, 2014///4749759///tt2467372///7.7', 'S01E19///Tactical Village///March 4, 2014///4749760///tt2467372///8.5', 'S01E20///Fancy Brudgom///March 11, 2014///4749761///tt2467372///7.7', 'S01E21///Unsolvable///March 18, 2014///4749762///tt2467372///8.2', 'S01E22///Charges and Specs///March 25, 2014///4749763///tt2467372///8.9', 'S02E01///Undercover///September 28, 2014///4930442///tt2467372///8.2', 'S02E02///Chocolate Milk///October 5, 2014///4968135///tt2467372///7.8', 'S02E04///Halloween II///October 19, 2014///4968136///tt2467372///8.3', 'S02E03///The Jimmy Jab Games///October 12, 2014///4969973///tt2467372///8.8', 'S02E05///The Mole///November 2, 2014///5011825///tt2467372///8.2', 'S02E06///Jake and Sophia///November 9, 2014///5017263///tt2467372///8.2', 'S02E07///Lockdown///November 16, 2014///5025204///tt2467372///7.8', 'S02E08///USPIS///November 23, 2014///5032019///tt2467372///8.0', 'S02E09///The Road Trip///November 30, 2014///5039358///tt2467372///8.2', 'S02E10///The Pontiac Bandit Returns///December 7, 2014///5045091///tt2467372///8.3', 'S02E11///Stakeout///December 14, 2014///5051503///tt2467372///7.9', 'S02E12///Beach House///January 4, 2015///5052243///tt2467372///8.3', 'S02E13///Payback///January 11, 2015///5068347///tt2467372///8.0', 'S02E14///Defense Rests///January 25, 2015///5087045///tt2467372///7.8', 'S02E15///Windbreaker City///February 8, 2015///5102284///tt2467372///8.3', 'S02E16///The Wednesday Incident///February 15, 2015///5108575///tt2467372///8.0', 'S02E17///Boyle-Linetti Wedding///March 1, 2015///5120119///tt2467372///8.2', 'S02E18///Captain Peralta///March 8, 2015///5127443///tt2467372///7.9', 'S02E19///Sabotage///March 15, 2015///5135245///tt2467372///7.9', 'S02E20///AC/DC///April 26, 2015///5170352///tt2467372///7.8', 'S02E21///Det. Dave Majors///May 3, 2015///5180466///tt2467372///8.0', 'S02E22///The Chopper///May 10, 2015///5190406///tt2467372///8.6', 'S02E23///Johnny and Dora///May 17, 2015///5199337///tt2467372///9.1', 'S03E01///New Captain///September 27, 2015///5261705///tt2467372///8.3', 'S03E02///The Funeral///October 4, 2015///5325151///tt2467372///7.7', "S03E03///Boyle's Hunch///October 11, 2015///5335906///tt2467372///7.9", 'S03E04///The Oolong Slayer///October 18, 2015///5344964///tt2467372///8.5', 'S03E05///Halloween III///October 25, 2015///5352170///tt2467372///9.0', 'S03E06///Into the Woods///November 8, 2015///5371478///tt2467372///7.8', 'S03E07///The Mattress///November 15, 2015///5373898///tt2467372///7.8', 'S03E08///Ava///November 22, 2015///5381215///tt2467372///8.2', 'S03E09///The Swedes///December 6, 2015///5397124///tt2467372///7.9', 'S03E10///Yippie Kayak///December 13, 2015///5405602///tt2467372///8.8', 'S03E11///Hostage Situation///January 5, 2016///5429366///tt2467372///7.7', 'S03E12///9 Days///January 19, 2016///5453863///tt2467372///8.0', 'S03E13///The Cruise///January 26, 2016///5463439///tt2467372///8.1', 'S03E14///Karen Peralta///February 2, 2016///5470763///tt2467372///7.6', 'S03E15///The 9-8///February 9, 2016///5483268///tt2467372///8.0', 'S03E16///House Mouses///February 16, 2016///5496844///tt2467372///7.8', 'S03E17///Adrian Pimento///February 23, 2016///5498597///tt2467372///7.8', 'S03E18///Cheddar///March 1, 2016///5509369///tt2467372///7.8', 'S03E19///Terry Kitties///March 15, 2016///5523886///tt2467372///7.8', 'S03E20///Paranoia///March 29, 2016///5539644///tt2467372///8.2', 'S03E21///Maximum Security///April 5, 2016///5545915///tt2467372///8.1', 'S03E22///Bureau///April 12, 2016///5557695///tt2467372///8.7', 'S03E23///Greg and Larry///April 19, 2016///5560649///tt2467372///9.0', 'S04E01///Coral Palms (1)///September 20, 2016///5649958///tt2467372///8.2', 'S04E02///Coral Palms (2)///September 27, 2016///5710409///tt2467372///8.2', 'S04E03///Coral Palms (3)///October 4, 2016///5710410///tt2467372///8.2', 'S04E04///The Night Shift (1)///October 11, 2016///5723058///tt2467372///8.4', 'S04E05///Halloween IV///October 18, 2016///5772211///tt2467372///7.6', 'S04E08///Skyfire Cycle///November 29, 2016///5779221///tt2467372///8.7', 'S04E09///The Overmining///December 6, 2016///5779223///tt2467372///7.9', 'S04E06///Monster in the Closet///November 15, 2016///5779225///tt2467372///8.3', 'S04E07///Mr. Santiago///November 22, 2016///5812964///tt2467372///7.8', 'S04E10///Captain Latvia///December 13, 2016///5833325///tt2467372///8.1', 'S04E11///The Fugitive (1)///January 1, 2017///5860229///tt2467372///7.6', 'S04E12///The Fugitive (2)///January 1, 2017///5860230///tt2467372///7.6', 'S04E13///The Audit///April 11, 2017///5922716///tt2467372///8.5', 'S04E14///Serve & Protect///April 18, 2017///5946638///tt2467372///8.5', 'S04E15///The Last Ride///April 25, 2017///5947446///tt2467372///7.8', 'S04E17///Cop-Con///May 9, 2017///5951543///tt2467372///7.9', 'S04E16///Moo Moo///May 2, 2017///5951544///tt2467372///8.3', 'S04E18///Chasing Amy///May 9, 2017///6044039///tt2467372///8.9', 'S04E19///Your Honor///May 16, 2017///6055155///tt2467372///8.3', 'S04E20///The Slaughterhouse///May 16, 2017///6055156///tt2467372///8.3', 'S04E21///The Bank Job///May 23, 2017///6060773///tt2467372///8.1', 'S04E22///Crime & Punishment///May 23, 2017///6060774///tt2467372///8.1', 'S05E01///The Big House (1)///September 26, 2017///6148858///tt2467372///8.5', 'S05E02///The Big House (2)///October 3, 2017///6231404///tt2467372///8.5', 'S05E03///Kicks///October 10, 2017///6231406///tt2467372///8.4', 'S05E04///HalloVeen///October 17, 2017///6231407///tt2467372///8.0', 'S05E05///Bad Beat///November 7, 2017///6357965///tt2467372///9.5', 'S05E06///The Venue///November 14, 2017///6369847///tt2467372///8.0', 'S05E07///Two Turkeys///November 21, 2017///6380814///tt2467372///7.8', 'S05E08///Return to Skyfire///November 28, 2017///6390389///tt2467372///8.1', 'S05E09///99///December 5, 2017///6412795///tt2467372///7.6', 'S05E10///Game Night///December 12, 2017///6420056///tt2467372///8.8', 'S05E11///The Favor///December 12, 2017///6420970///tt2467372///8.8', 'S05E12///Safe House///March 18, 2018///6569098///tt2467372///8.6', 'S05E13///The Negotiation///March 25, 2018///6583155///tt2467372///8.0', 'S05E14///The Box///April 1, 2018///6590257///tt2467372///8.7', 'S05E15///The Puzzle Master///April 8, 2018///6601701///tt2467372///8.3', 'S05E16///NutriBoom///April 15, 2018///6611575///tt2467372///9.5', 'S05E17///DFW///April 15, 2018///6611576///tt2467372///9.5', 'S05E18///Gray Star Mutual///April 22, 2018///6614884///tt2467372///7.8', 'S05E19///Bachelor/ette Party///April 29, 2018///6617733///tt2467372///7.9', 'S05E20///Show Me Going///May 6, 2018///6617738///tt2467372///7.9', 'S05E21///White Whale///May 13, 2018///6617739///tt2467372///8.0', 'S05E22///Jake & Amy///May 20, 2018///6617740///tt2467372///8.5', 'S06E01///Honeymoon///January 10, 2019///6897614///tt2467372///8.5', 'S06E02///Hitchcock & Scully///January 17, 2019///6913210///tt2467372///8.8', 'S06E03///The Tattler///January 24, 2019///6970885///tt2467372///7.8', 'S06E04///Four Movements///January 31, 2019///6987965///tt2467372///7.5', 'S06E05///A Tale of Two Bandits///February 7, 2019///6987967///tt2467372///8.2', 'S06E06///The Crime Scene///February 14, 2019///6987969///tt2467372///8.6', 'S06E07///The Honeypot///February 21, 2019///7023795///tt2467372///8.6', 'S06E09///The Golden Child///March 7, 2019///7037025///tt2467372///7.1', 'S06E08///He Said, She Said///February 28, 2019///7037027///tt2467372///8.3', 'S06E10///Gintars///March 14, 2019///7043996///tt2467372///7.6', 'S06E11///The Therapist///March 21, 2019///7058440///tt2467372///8.2', 'S06E12///Casecation///April 11, 2019///7058443///tt2467372///7.8', 'S06E13///The Bimbo///April 18, 2019///7061608///tt2467372///8.1', 'S06E15///Return of the King///May 2, 2019///7061610///tt2467372///8.5', 'S06E14///Ticking Clocks///April 25, 2019///7061611///tt2467372///6.5', 'S06E16///Cinco de Mayo///May 9, 2019///7061612///tt2467372///9.2', 'S06E17///Sicko///May 16, 2019///7061613///tt2467372///8.5', 'S06E18///Suicide Squad///May 16, 2019///7061614///tt2467372///8.5', 'S07E01///Manhunter///February 6, 2020///7308223///tt2467372///8.2', 'S07E02///Captain Kim///February 6, 2020///7308226///tt2467372///8.2', 'S07E03///Pimemento///February 13, 2020///7337985///tt2467372///8.5', 'S07E04///The Jimmy Jab Games II///February 20, 2020///7337987///tt2467372///8.6', 'S07E05///Debbie///February 27, 2020///7337988///tt2467372///8.0', 'S07E06///Trying///March 5, 2020///7356270///tt2467372///7.4', 'S07E07///Ding Dong///March 12, 2020///7602917///tt2467372///8.0', 'S07E08///The Takeback///March 19, 2020///7602919///tt2467372///8.8', 'S07E09///Dillman///March 26, 2020///7602920///tt2467372///8.3', 'S07E10///Admiral Peralta///April 2, 2020///7602921///tt2467372///8.8', 'S07E11///Valloweaster///April 9, 2020///7646184///tt2467372///8.1', 'S07E12///Ransom///April 16, 2020///7654500///tt2467372///8.4', 'S07E13///Lights Out///April 23, 2020///7654501///tt2467372///9.0']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[1]
+    air_date = res[2]
+    rating = res[5]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+    document.getElementById('rating').innerHTML = rating;
+            document.getElementById('rating').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('rating').animate([
+    // keyframes
+        { transform: 'translateY(-280px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+<script>
+    function
+    change()
+    {
+        var elem = document.getElementById("random_button");
+        if (elem.innerHTML == "Random Episode") elem.innerHTML = "Pick Again";
+        else elem.innerHTML = "Pick Again";
+    }
+</script>
+
+<script>
+    function
+    color()
+    {
+        var elem = document.getElementById("rating").innerHTML;
+        var float = parseFloat(elem);
+        var good = 8.5;
+        var bad = 7.9;
+        if (float >= good) document.getElementById("rating").style.backgroundColor = "#2db92d";
+        else if (float <= bad) document.getElementById("rating").style.backgroundColor = "#ff3333";
+        else document.getElementById("rating").style.backgroundColor = "#333333";
+    }
+</script>
+
+</html>

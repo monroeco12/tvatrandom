@@ -1,0 +1,162 @@
+---
+permalink: random-episode-of-mad-men
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='../random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="Mad Men random episode generator." />
+    <title>Random Mad Men Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='../logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>Mad Men</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='change(); color()'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p id='random_button' class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+        <div id='rating' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///Smoke Gets in Your Eyes///July 19, 2007///333179///tt0804503///8.2', 'S01E02///Ladies Room///July 26, 2007///333180///tt0804503///7.6', 'S01E03///Marriage of Figaro///August 2, 2007///333181///tt0804503///7.7', 'S01E04///New Amsterdam///August 9, 2007///333182///tt0804503///8.0', 'S01E05///5G///August 16, 2007///333183///tt0804503///8.2', 'S01E06///Babylon///August 23, 2007///333184///tt0804503///8.0', 'S01E07///Red in the Face///August 30, 2007///333185///tt0804503///8.1', 'S01E08///The Hobo Code///September 6, 2007///335030///tt0804503///8.4', 'S01E09///Shoot///September 13, 2007///335474///tt0804503///8.3', 'S01E10///Long Weekend///September 27, 2007///335953///tt0804503///8.2', 'S01E11///Indian Summer///October 4, 2007///337256///tt0804503///8.1', 'S01E12///Nixon vs. Kennedy///October 11, 2007///337257///tt0804503///9.0', 'S01E13///The Wheel///October 18, 2007///337258///tt0804503///9.0', 'S02E01///For Those Who Think Young///July 27, 2008///376358///tt0804503///7.8', 'S02E02///Flight 1///August 3, 2008///376359///tt0804503///7.9', 'S02E03///The Benefactor///August 10, 2008///378151///tt0804503///7.9', 'S02E04///Three Sundays///August 17, 2008///379436///tt0804503///8.1', 'S02E05///The New Girl///August 24, 2008///380960///tt0804503///8.4', 'S02E06///Maidenform///August 31, 2008///383002///tt0804503///8.0', 'S02E07///The Gold Violin///September 7, 2008///384073///tt0804503///8.5', 'S02E08///A Night to Remember///September 14, 2008///386037///tt0804503///8.4', 'S02E09///Six Month Leave///September 28, 2008///387719///tt0804503///8.6', 'S02E10///The Inheritance///October 5, 2008///389520///tt0804503///8.0', 'S02E11///The Jet Set///October 12, 2008///393936///tt0804503///8.4', 'S02E12///The Mountain King///October 19, 2008///396567///tt0804503///8.5', 'S02E13///Meditations in an Emergency///October 26, 2008///399466///tt0804503///9.0', 'S03E01///Out of Town///August 16, 2009///982661///tt0804503///8.3', 'S03E02///Love Among the Ruins///August 23, 2009///1007571///tt0804503///7.8', 'S03E03///My Old Kentucky Home///August 30, 2009///1007581///tt0804503///8.1', 'S03E04///The Arrangements///September 6, 2009///1007601///tt0804503///8.1', 'S03E05///The Fog///September 13, 2009///1007621///tt0804503///8.0', 'S03E06///Guy Walks Into an Advertising Agency///September 20, 2009///1007641///tt0804503///9.1', 'S03E07///Seven Twenty Three///September 27, 2009///1007661///tt0804503///8.5', 'S03E08///Souvenir///October 4, 2009///1007671///tt0804503///8.0', 'S03E09///Wee Small Hours///October 11, 2009///1007681///tt0804503///8.2', 'S03E10///The Color Blue///October 18, 2009///1007691///tt0804503///8.3', 'S03E11///The Gypsy and the Hobo///October 25, 2009///1007701///tt0804503///9.2', 'S03E12///The Grown-Ups///November 1, 2009///1007711///tt0804503///8.9', 'S03E13///Shut the Door. Have a Seat///November 8, 2009///1007721///tt0804503///9.7', 'S04E01///Public Relations///July 25, 2010///2099901///tt0804503///8.6', 'S04E02///Christmas Comes but Once a Year///August 1, 2010///2295351///tt0804503///8.2', 'S04E03///The Good News///August 8, 2010///2295361///tt0804503///8.7', 'S04E04///The Rejected///August 15, 2010///2295371///tt0804503///8.3', 'S04E05///The Chrysanthemum and the Sword///August 22, 2010///2295381///tt0804503///8.7', 'S04E06///Waldorf Stories///August 29, 2010///2295391///tt0804503///8.6', 'S04E07///The Suitcase///September 5, 2010///2686341///tt0804503///9.7', 'S04E08///The Summer Man///September 12, 2010///2686351///tt0804503///8.7', 'S04E09///The Beautiful Girls///September 19, 2010///2686361///tt0804503///8.8', 'S04E10///Hands and Knees///September 26, 2010///2686371///tt0804503///8.7', 'S04E11///Chinese Wall///October 3, 2010///2879831///tt0804503///8.4', 'S04E12///Blowing Smoke///October 10, 2010///2922451///tt0804503///8.9', 'S04E13///Tomorrowland///October 17, 2010///2922461///tt0804503///9.0', 'S05E01///A Little Kiss (1)///March 25, 2012///4168172///tt0804503///8.6', 'S05E02///A Little Kiss (2)///March 25, 2012///4256954///tt0804503///8.6', 'S05E03///Tea Leaves///April 1, 2012///4284542///tt0804503///8.5', 'S05E04///Mystery Date///April 8, 2012///4284543///tt0804503///7.9', 'S05E05///Signal 30///April 15, 2012///4284544///tt0804503///8.6', 'S05E06///Far Away Places///April 22, 2012///4284545///tt0804503///9.0', 'S05E07///At the Codfish Ball///April 29, 2012///4284546///tt0804503///9.2', 'S05E08///Lady Lazarus///May 6, 2012///4292722///tt0804503///8.7', 'S05E09///Dark Shadows///May 13, 2012///4292723///tt0804503///8.3', 'S05E10///Christmas Waltz///May 20, 2012///4292724///tt0804503///8.1', 'S05E11///The Other Woman///May 27, 2012///4292725///tt0804503///8.2', 'S05E12///Commissions and Fees///June 3, 2012///4292726///tt0804503///9.4', 'S05E13///The Phantom///June 10, 2012///4292727///tt0804503///9.4', 'S06E01///The Doorway (1)///April 7, 2013///4468357///tt0804503///7.6', 'S06E02///The Doorway (2)///April 7, 2013///4531385///tt0804503///7.6', 'S06E03///Collaborators///April 14, 2013///4531386///tt0804503///7.8', 'S06E04///To Have and to Hold///April 21, 2013///4531387///tt0804503///7.9', 'S06E05///The Flood///April 28, 2013///4531388///tt0804503///8.1', 'S06E06///For Immediate Release///May 5, 2013///4547932///tt0804503///8.3', 'S06E07///Man With a Plan///May 12, 2013///4547935///tt0804503///8.9', 'S06E08///The Crash///May 19, 2013///4550925///tt0804503///8.0', 'S06E09///The Better Half///May 26, 2013///4562482///tt0804503///8.7', 'S06E10///A Tale of Two Cities///June 2, 2013///4562483///tt0804503///8.4', 'S06E11///Favors///June 9, 2013///4573576///tt0804503///8.1', 'S06E12///The Quality of Mercy///June 16, 2013///4573577///tt0804503///8.7', 'S06E13///In Care Of///June 23, 2013///4576951///tt0804503///8.5', 'S07E01///Time Zones///April 13, 2014///4766129///tt0804503///8.0', "S07E02///A Day's Work///April 20, 2014///4837010///tt0804503///8.4", 'S07E03///Field Trip///April 27, 2014///4840955///tt0804503///8.6', 'S07E04///The Monolith///May 4, 2014///4840956///tt0804503///8.5', 'S07E05///The Runaways///May 11, 2014///4840957///tt0804503///8.6', 'S07E06///The Strategy///May 18, 2014///4840958///tt0804503///9.0', 'S07E07///Waterloo///May 25, 2014///4840959///tt0804503///9.5', 'S07E08///Severance///April 5, 2015///5098290///tt0804503///8.2', 'S07E10///The Forecast///April 19, 2015///5127220///tt0804503///7.9', 'S07E09///New Business///April 12, 2015///5152631///tt0804503///8.4', 'S07E11///Time & Life///April 26, 2015///5173339///tt0804503///8.9', 'S07E12///Lost Horizon///May 3, 2015///5173342///tt0804503///9.0', 'S07E13///The Milk and Honey Route///May 10, 2015///5173343///tt0804503///9.1', 'S07E14///Person to Person///May 17, 2015///5173344///tt0804503///9.3']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[1]
+    air_date = res[2]
+    rating = res[5]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+    document.getElementById('rating').innerHTML = rating;
+            document.getElementById('rating').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('rating').animate([
+    // keyframes
+        { transform: 'translateY(-280px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+<script>
+    function
+    change()
+    {
+        var elem = document.getElementById("random_button");
+        if (elem.innerHTML == "Random Episode") elem.innerHTML = "Pick Again";
+        else elem.innerHTML = "Pick Again";
+    }
+</script>
+
+<script>
+    function
+    color()
+    {
+        var elem = document.getElementById("rating").innerHTML;
+        var float = parseFloat(elem);
+        var good = 8.5;
+        var bad = 7.9;
+        if (float >= good) document.getElementById("rating").style.backgroundColor = "#2db92d";
+        else if (float <= bad) document.getElementById("rating").style.backgroundColor = "#ff3333";
+        else document.getElementById("rating").style.backgroundColor = "#333333";
+    }
+</script>
+
+</html>

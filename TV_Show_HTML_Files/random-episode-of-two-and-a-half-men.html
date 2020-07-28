@@ -1,0 +1,162 @@
+---
+permalink: random-episode-of-two-and-a-half-men
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='../random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="Two and a half Men random episode generator." />
+    <title>Random Two and a half Men Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='../logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>Two and a half Men</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='change(); color()'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p id='random_button' class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+        <div id='rating' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ["S01E01///Pilot (Most Chicks Won't Eat Veal)///September 22, 2003///78312///tt0369179///8.3", 'S01E02///Big Flappy Bastards///September 29, 2003///78313///tt0369179///8.4', 'S01E03///Go East on Sunset Until You Reach the Gates of Hell///October 6, 2003///78314///tt0369179///8.0', "S01E04///If I Can't Write My Chocolate Song, I'm Going to Take a Nap///October 13, 2003///78315///tt0369179///7.9", 'S01E05///The Last Thing You Want to Do Is Wind Up with a Hump///October 20, 2003///78316///tt0369179///8.1', 'S01E06///Did You Check With the Captain of the Flying Monkeys?///October 27, 2003///78317///tt0369179///8.0', "S01E07///If They Do Go Either Way, They're Usually Fake///November 3, 2003///78318///tt0369179///7.7", 'S01E08///Twenty-Five Little Pre-Pubers Without a Snootful///November 10, 2003///78319///tt0369179///8.4', 'S01E09///Phase One, Complete///November 17, 2003///78320///tt0369179///8.0', 'S01E10///Merry Thanksgiving///November 24, 2003///78321///tt0369179///7.8', 'S01E11///Alan Harper, Frontier Chiropractor///December 15, 2003///78322///tt0369179///8.2', 'S01E12///Camel Filters + Pheromones///January 5, 2004///78323///tt0369179///7.8', 'S01E13///Sarah Like Puny Alan///January 13, 2004///78324///tt0369179///8.8', "S01E14///I Can't Afford Hyenas///February 2, 2004///78325///tt0369179///7.8", 'S01E15///Round One to the Hot Crazy Chick///February 9, 2004///78326///tt0369179///8.0', 'S01E16///That Was Saliva, Alan///February 16, 2004///78327///tt0369179///8.0', 'S01E17///Ate the Hamburgers, Wearing the Hats///February 23, 2004///78328///tt0369179///8.0', 'S01E18///An Old Flame With a New Wick///March 1, 2004///78329///tt0369179///8.1', "S01E19///I Remember the Coatroom, I Just Don't Remember You///March 22, 2004///78330///tt0369179///8.5", 'S01E20///Hey, I Can Pee Outside in the Dark///April 19, 2004///78331///tt0369179///8.2', 'S01E21///No Sniffing, No Wowing///May 3, 2004///78332///tt0369179///7.8', 'S01E22///My Doctor Has a Cow Puppet///May 10, 2004///78333///tt0369179///8.2', 'S01E23///Just Like Buffalo///May 17, 2004///78334///tt0369179///8.1', 'S01E24///Can You Feel My Finger?///May 24, 2004///78335///tt0369179///8.6', 'S02E01///Back Off, Mary Poppins///September 20, 2004///78336///tt0369179///8.2', 'S02E02///Enjoy Those Garlic Balls///September 27, 2004///78337///tt0369179///7.8', 'S02E03///A Bag Full of Jawea///October 4, 2004///78338///tt0369179///8.1', "S02E04///Go Get Mommy's Bra///October 11, 2004///78339///tt0369179///8.1", 'S02E05///Bad News from the Clinic?///October 18, 2004///78340///tt0369179///7.8', 'S02E06///The Price of Healthy Gums Is Eternal Vigilance///October 25, 2004///78341///tt0369179///8.1', 'S02E07///A Kosher Slaughterhouse Out in Fontana///November 8, 2004///78342///tt0369179///7.6', 'S02E08///Frankenstein and the Horny Villagers///November 15, 2004///78343///tt0369179///8.2', 'S02E09///Yes, Monsignor///November 22, 2004///78344///tt0369179///8.0', 'S02E10///The Salmon Under My Sweater///November 29, 2004///78345///tt0369179///8.2', 'S02E11///Last Chance to See Those Tattoos///December 13, 2004///78346///tt0369179///8.2', 'S02E12///A Lungful of Alan///January 3, 2005///78347///tt0369179///8.2', 'S02E13///Zejdz Zmoich Wlosow (Get Off My Hair)///January 17, 2005///78348///tt0369179///8.3', 'S02E14///Those Big Pink Things with Coconut///January 31, 2005///78349///tt0369179///7.9', 'S02E15///Smell the Umbrella Stand///February 7, 2005///78350///tt0369179///8.1', 'S02E16///Can You Eat Human Flesh with Wooden Teeth?///February 14, 2005///78351///tt0369179///8.4', 'S02E17///Woo-Hoo, a Hernia Exam!///February 21, 2005///78352///tt0369179///8.0', "S02E18///It Was 'Mame', Mom///March 7, 2005///78353///tt0369179///8.3", 'S02E19///A Low, Guttural Tongue-Flapping Noise///March 21, 2005///78354///tt0369179///8.0', 'S02E20///I Always Wanted a Shaved Monkey///April 18, 2005///78355///tt0369179///7.9', 'S02E21///A Sympathetic Crotch to Cry On///May 2, 2005///78356///tt0369179///8.0', 'S02E22///That Old Hose Bag Is My Mother///May 9, 2005///78357///tt0369179///7.8', 'S02E23///Squab, Squab, Squab, Squab, Squab///May 16, 2005///78358///tt0369179///8.8', 'S02E24///Does This Smell Funny to You?///May 23, 2005///78359///tt0369179///8.4', 'S03E01///Weekend In Bangkok with Two Olympic Gymnasts///September 19, 2005///299461///tt0369179///8.1', "S03E02///Principal Gallagher's Lesbian Lover///September 26, 2005///299462///tt0369179///8.3", 'S03E03///Carpet Burns and a Bite Mark///October 3, 2005///299463///tt0369179///7.9', 'S03E04///Your Dismissive Attitude Toward Boobs///October 10, 2005///299464///tt0369179///7.9', 'S03E05///We Called It Mr. Pinky///October 17, 2005///299465///tt0369179///7.9', 'S03E06///Hi, Mr. Horned One///October 24, 2005///301270///tt0369179///8.6', "S03E07///Sleep Tight, Puddin' Pop///November 7, 2005///301297///tt0369179///8.1", 'S03E08///That Voodoo That I Do Do///November 14, 2005///301298///tt0369179///8.4', 'S03E09///Madame and Her Special Friend///November 21, 2005///301299///tt0369179///8.1', 'S03E10///Something Salted and Twisted///November 28, 2005///301300///tt0369179///7.8', "S03E11///Santa's Village of the Damned///December 19, 2005///301301///tt0369179///8.4", 'S03E12///That Special Tug///January 9, 2006///304691///tt0369179///8.2', 'S03E13///Humiliation is a visual medium///January 23, 2006///304692///tt0369179///7.8', "S03E14///Love Isn't Blind, It's Retarded///February 6, 2006///304693///tt0369179///8.3", 'S03E15///My Tongue is Meat///February 27, 2006///304694///tt0369179///8.0', 'S03E16///Ergo, the Booty Call///March 6, 2006///307327///tt0369179///8.5', 'S03E17///The Unfortunate Little Schnauser///March 13, 2006///307328///tt0369179///7.7', 'S03E18///The Spit-Covered Cobbler///March 20, 2006///307329///tt0369179///7.8', "S03E19///Golly Moses, She's a Muffin///April 10, 2006///307330///tt0369179///8.0", 'S03E20///Always a Bridesmaid, Never a Burro///April 24, 2006///307331///tt0369179///8.4', 'S04E01///Working for Caligula///September 18, 2006///308830///tt0369179///7.8', "S04E02///Who's Vod Kanockers?///September 25, 2006///308831///tt0369179///8.0", 'S04E03///The Sea Is a Harsh Mistress///October 2, 2006///308832///tt0369179///7.7', 'S04E04///A Pot Smoking Monkey///October 9, 2006///308833///tt0369179///7.7', 'S03E21///And the Plot Moistens///May 1, 2006///309534///tt0369179///8.1', 'S03E22///Just Once With Aunt Sophie///May 8, 2006///309535///tt0369179///8.3', 'S03E23///Arguments for the Quickie///May 15, 2006///309536///tt0369179///7.9', "S03E24///That Pistol-Packin' Hermaphrodite///May 22, 2006///309537///tt0369179///7.9", 'S04E05///A Live Woman of Proven Fertility///October 16, 2006///309538///tt0369179///7.8', 'S04E06///Apologies for the Frivolity///October 23, 2006///309539///tt0369179///8.0', 'S04E07///Repeated Blows to His Unformed Head///November 6, 2006///312113///tt0369179///7.7', 'S04E08///Release the Dogs///November 13, 2006///313395///tt0369179///7.7', "S04E09///Corey's Been Dead for an Hour///November 20, 2006///313396///tt0369179///7.9", 'S04E10///Kissing Abe Lincoln///November 27, 2006///313780///tt0369179///8.4', 'S04E11///Walnuts and Demerol///December 11, 2006///313781///tt0369179///8.0', 'S04E12///Castrating Sheep in Montana///January 8, 2007///316461///tt0369179///8.1', "S04E13///Don't Worry, Speed Racer///January 22, 2007///316462///tt0369179///7.8", "S04E14///That's Summer Sausage, Not Salami///February 5, 2007///319267///tt0369179///7.9", 'S04E15///My Damn Stalker///February 12, 2007///319268///tt0369179///8.7', 'S04E16///Young People Have Phlegm Too///February 19, 2007///319764///tt0369179///7.8', 'S04E17///I Merely Slept with a Commie///February 26, 2007///320718///tt0369179///7.8', 'S04E18///It Never Rains in Hooterville///March 19, 2007///323543///tt0369179///7.9', 'S04E19///Smooth as a Ken Doll///April 9, 2007///326267///tt0369179///8.0', "S04E20///Aunt Myra Doesn't Pee a Lot///April 16, 2007///326268///tt0369179///7.9", 'S04E21///Tucked, Taped and Gorgeous///April 23, 2007///326980///tt0369179///7.8', "S04E22///Mr. McGlue's Feedbag///April 30, 2007///328904///tt0369179///7.8", "S04E23///Anteaters. They're Just Crazy-Lookin///May 7, 2007///328905///tt0369179///8.2", 'S04E24///Prostitutes and Gelato///May 14, 2007///328906///tt0369179///8.3', 'S05E01///Large Birds, Spiders and Mom///September 24, 2007///336298///tt0369179///8.0', 'S05E02///Media Room Slash Dungeon///October 1, 2007///337027///tt0369179///8.0', 'S05E03///Dum Diddy Dum Diddy Doo///October 8, 2007///337028///tt0369179///8.0', 'S05E04///City of Great Racks///October 15, 2007///337554///tt0369179///8.1', 'S05E05///Putting Swim Fins on a Cat///October 23, 2007///339062///tt0369179///8.0', 'S05E06///Help Daddy Find His Toenail///October 30, 2007///340015///tt0369179///7.9', 'S05E07///The Leather Gear Is in the Guest Room///November 5, 2007///341172///tt0369179///7.8', 'S05E08///Is There a Mrs. Waffles?///November 12, 2007///342010///tt0369179///8.6', "S05E09///Tight's Good///November 19, 2007///342660///tt0369179///8.1", 'S05E10///Kinda Like Necrophilia///November 26, 2007///343398///tt0369179///8.2', 'S05E11///Meander to Your Dander///March 17, 2008///353957///tt0369179///8.2', 'S05E12///A Little Clammy and None Too Fresh///March 24, 2008///356116///tt0369179///8.0', 'S05E13///The Soil Is Moist///March 31, 2008///356706///tt0369179///8.3', 'S05E14///Winky-Dink Time///April 14, 2008///361076///tt0369179///8.1', 'S05E15///Rough Night In Hump Junction///April 21, 2008///361077///tt0369179///8.0', "S05E16///Look At Me, Mommy, I'm Pretty///April 28, 2008///364221///tt0369179///8.0", 'S05E17///Fish in a Drawer///May 5, 2008///364222///tt0369179///8.8', 'S05E18///If My Hole Could Talk///May 12, 2008///367034///tt0369179///7.9', 'S05E19///Waiting for the Right Snapper///May 19, 2008///367035///tt0369179///8.0', 'S06E01///Taterhead Is Our Love Child///September 22, 2008///390035///tt0369179///8.0', 'S06E02///Pie Hole, Herb///September 29, 2008///392158///tt0369179///7.9', 'S06E03///Damn You, Eggs Benedict///October 6, 2008///392820///tt0369179///8.1', "S06E04///The Flavin' and the Mavin'///October 13, 2008///392821///tt0369179///7.9", 'S06E05///A Jock Strap in Hell///October 20, 2008///399867///tt0369179///7.7', "S06E06///It's Always Nazi Week///November 3, 2008///403248///tt0369179///8.1", 'S06E07///Best H.O. Money Can Buy///November 10, 2008///403419///tt0369179///8.1', "S06E08///Pinocchio's Mouth///November 17, 2008///407133///tt0369179///7.9", 'S06E09///The Mooch at the Boo///November 24, 2008///407134///tt0369179///8.6', 'S06E10///He Smelled the Ham, He Got Excited///December 8, 2008///407135///tt0369179///7.8', "S06E11///The Devil's Lube///December 15, 2008///415721///tt0369179///7.8", 'S06E12///Thank God for Scoliosis///January 12, 2009///423219///tt0369179///8.1', 'S06E13///I Think You Offended Don///January 19, 2009///423604///tt0369179///7.7', 'S06E14///David Copperfield Slipped Me a Roofie///February 2, 2009///423608///tt0369179///8.1', "S06E15///I'd Like to Start with the Cat///February 9, 2009///431039///tt0369179///7.8", "S06E16///She'll Still Be Dead At Halftime///March 2, 2009///441423///tt0369179///8.3", "S06E17///The 'Ocu' or the 'Pado'?///March 9, 2009///441424///tt0369179///7.8", "S06E18///My Son's Enormous Head///March 16, 2009///441426///tt0369179///7.7", 'S06E19///The Two Finger Rule///March 30, 2009///487881///tt0369179///8.8', 'S06E20///Hello, I Am Alan Cousteau///April 13, 2009///528311///tt0369179///8.0', 'S06E21///Above Exalted Cyclops///April 27, 2009///589001///tt0369179///8.3', "S06E22///Sir Lancelot's Litter Box///May 4, 2009///616131///tt0369179///7.8", 'S06E23///Good Morning, Mrs. Butterworth///May 11, 2009///616141///tt0369179///7.8', 'S06E24///Baseball Was Better With Steroids///May 18, 2009///616151///tt0369179///8.4', 'S07E01///818-JKLPUZO///September 21, 2009///795671///tt0369179///8.4', 'S07E02///Whipped Unto the Third Generation///September 28, 2009///1045721///tt0369179///8.0', 'S07E03///Mmm, Fish. Yum.///October 5, 2009///1098781///tt0369179///7.9', 'S07E04///Laxative Tester, Horse Inseminator///October 12, 2009///1154821///tt0369179///7.8', 'S07E05///For the Sake of the Child///October 19, 2009///1154831///tt0369179///7.8', 'S07E06///Give Me Your Thumb///November 2, 2009///1259811///tt0369179///8.1', 'S07E07///Untainted By Filth///November 9, 2009///1259821///tt0369179///8.1', 'S07E08///Gorp. Fnark. Schmegle.///November 16, 2009///1259831///tt0369179///8.8', "S07E09///Captain Terry's Spray-On Hair///November 23, 2009///1323011///tt0369179///8.0", "S07E10///That's Why They Call It Ball Room///December 7, 2009///1323021///tt0369179///8.1", "S07E11///Warning, It's Dirty///December 15, 2009///1323031///tt0369179///8.1", 'S07E12///Fart Jokes, Pie and Celeste///January 11, 2010///1455231///tt0369179///8.0', 'S07E13///Yay, No Polyps!///January 18, 2010///1575991///tt0369179///8.0', 'S07E14///Crude and Uncalled For///February 1, 2010///1640241///tt0369179///7.7', 'S07E15///Aye, Aye, Captain Douche///February 8, 2010///1640271///tt0369179///7.8', 'S07E16///Tinkle Like a Princess///March 1, 2010///1787701///tt0369179///7.8', 'S07E17///I Found Your Moustache///March 8, 2010///1787711///tt0369179///7.6', 'S07E18///Ixnay on the Oggie Day///March 22, 2010///1939191///tt0369179///8.3', 'S07E19///Keith Moon Is Vomiting in His Grave///April 12, 2010///2042451///tt0369179///7.9', 'S07E20///I Called Him Magoo///May 10, 2010///2051581///tt0369179///7.8', 'S07E21///Gumby with a Pokey///May 17, 2010///2051591///tt0369179///8.2', 'S07E22///This Is Not Gonna End Well///May 24, 2010///2051601///tt0369179///8.0', 'S08E01///Three Girls and a Guy Named Bud///September 20, 2010///2682771///tt0369179///8.6', 'S08E02///A Bottle of Wine and a Jackhammer///September 27, 2010///2809091///tt0369179///8.1', 'S08E03///A Pudding-Filled Cactus///October 4, 2010///2863311///tt0369179///8.0', 'S08E04///Hookers, Hookers, Hookers///October 11, 2010///2893431///tt0369179///8.1', 'S08E05///The Immortal Mr. Billy Joel///October 18, 2010///2922401///tt0369179///7.8', 'S08E06///Twanging Your Magic Clanger///October 25, 2010///2967801///tt0369179///8.1', 'S08E07///The Crazy Bitch Gazette///November 1, 2010///2993241///tt0369179///7.9', 'S08E08///Springtime on a Stick///November 8, 2010///3034541///tt0369179///7.9', 'S08E09///A Good Time in Central Africa///November 15, 2010///3109061///tt0369179///8.1', "S08E10///Ow, Ow, Don't Stop///November 22, 2010///3151101///tt0369179///7.6", 'S08E11///Dead from the Waist Down///December 6, 2010///3201341///tt0369179///7.6', "S08E12///Chocolate Diddlers or My Puppy's Dead///December 13, 2010///3201411///tt0369179///7.4", 'S08E13///Skunk, Dog, Crap and Ketchup///January 3, 2011///3289051///tt0369179///7.8', "S08E14///Lookin' for Japanese Subs///January 17, 2011///3443111///tt0369179///7.8", 'S08E15///Three Hookers and a Philly Cheesesteak///February 7, 2011///3545811///tt0369179///8.2', 'S08E16///That Darn Priest///February 14, 2011///3676871///tt0369179///7.7', 'S09E01///Nice to Meet You, Walden Schmidt///September 19, 2011///4123347///tt0369179///5.5', 'S09E02///People Who Love Peepholes///September 26, 2011///4170659///tt0369179///5.0', "S09E03///Big Girls Don't Throw Food///October 3, 2011///4170660///tt0369179///5.0", 'S09E04///Nine Magic Fingers///October 10, 2011///4170661///tt0369179///5.4', 'S09E05///A Giant Cat Holding a Churro///October 17, 2011///4183555///tt0369179///5.5', 'S09E06///The Squat and the Hover///October 24, 2011///4188168///tt0369179///5.4', 'S09E07///Those Fancy Japanese Toilets///October 31, 2011///4188169///tt0369179///5.6', 'S09E08///Thank You for the Intercourse///November 7, 2011///4196466///tt0369179///6.4', "S09E09///Frodo's Headshots///November 14, 2011///4197137///tt0369179///6.2", 'S09E10///A Fishbowl Full of Glass Eyes///November 21, 2011///4202902///tt0369179///5.9', 'S09E11///What a Lovely Landing Strip///December 5, 2011///4205036///tt0369179///6.1', 'S09E12///One False Move, Zimbabwe!///December 12, 2011///4215843///tt0369179///5.6', 'S09E13///Slowly and in a Circular Fashion///January 2, 2012///4221544///tt0369179///6.4', 'S09E14///A Possum On Chemo///January 16, 2012///4234982///tt0369179///6.2', 'S09E15///The Duchess of Dull-in-Sack///February 6, 2012///4247533///tt0369179///6.3', 'S09E16///Sips, Sonnets and Sodomy///February 13, 2012///4256259///tt0369179///6.4', 'S09E17///Not in My Mouth!///February 20, 2012///4263158///tt0369179///5.5', 'S09E18///The War Against Gingivitis///February 27, 2012///4270723///tt0369179///5.5', 'S09E19///Palmdale, Ech///March 19, 2012///4278370///tt0369179///6.1', "S09E20///Grandma's Pie///April 9, 2012///4290428///tt0369179///5.8", "S09E21///Mr. Hose Says 'Yes'///April 16, 2012///4298532///tt0369179///6.0", 'S09E22///Why We Gave Up Women///April 30, 2012///4303744///tt0369179///6.2', 'S09E23///The Straw in My Donut Hole///May 7, 2012///4309172///tt0369179///5.5', 'S09E24///Oh Look! Al-Qaeda!///May 14, 2012///4312182///tt0369179///6.2', 'S10E01///I Changed My Mind About the Milk///September 27, 2012///4341920///tt0369179///6.0', 'S10E02///A Big Bag of Dog///October 4, 2012///4401768///tt0369179///6.1', 'S10E03///Four Balls, Two Bats and One Mitt///October 11, 2012///4406699///tt0369179///6.0', 'S10E04///You Do Know What the Lollipop Is For///October 18, 2012///4414269///tt0369179///6.4', "S10E05///That's Not What They Call It in Amsterdam///October 25, 2012///4414270///tt0369179///6.3", 'S10E06///Ferrets, Attack///November 1, 2012///4423374///tt0369179///5.9', 'S10E07///Avoid the Chinese Mustard///November 8, 2012///4428370///tt0369179///6.2', 'S10E08///Something My Gynecologist Said///November 15, 2012///4432021///tt0369179///6.4', 'S10E09///I Scream When I Pee///November 29, 2012///4441260///tt0369179///6.8', 'S10E10///One Nut Johnson///December 6, 2012///4441261///tt0369179///6.9', 'S10E11///Give Santa a Tail-Hole///December 13, 2012///4450781///tt0369179///6.7', 'S10E12///Welcome to Alancrest///January 3, 2013///4451773///tt0369179///6.1', 'S10E13///Grab a Feather and Get in Line///January 10, 2013///4453062///tt0369179///5.6', 'S10E14///Run, Steven Staven! Run!///January 31, 2013///4453063///tt0369179///6.5', 'S10E15///Paint It, Pierce It or Plug It///February 7, 2013///4453064///tt0369179///6.8', 'S10E16///Advantage: Fat, Flying Baby///February 14, 2013///4495965///tt0369179///6.2', 'S10E17///Throgwarten Middle School Mysteries///February 21, 2013///4500759///tt0369179///6.2', 'S10E18///The 9:04 from Pemberton///March 7, 2013///4508123///tt0369179///6.3', 'S10E19///Big Episode. Someone Stole a Spoon///March 14, 2013///4515267///tt0369179///6.7', "S10E20///Bazinga! That's from a TV Show///April 4, 2013///4526535///tt0369179///6.9", 'S10E21///Another Night with Neil Diamond///April 25, 2013///4538989///tt0369179///6.1', 'S10E22///My Bodacious Vidalia///May 2, 2013///4538990///tt0369179///6.3', 'S10E23///Cows, Prepare to be Tipped///May 9, 2013///4554633///tt0369179///6.3', 'S11E01///Nangnangnangnang///September 26, 2013///4595728///tt0369179///6.1', 'S11E02///I Think I Banged Lucille Ball///October 3, 2013///4623496///tt0369179///6.0', 'S11E03///This Unblessed Biscuit///October 10, 2013///4623497///tt0369179///5.9', 'S11E04///Clank, Clank, Drunken Skank///October 17, 2013///4623498///tt0369179///6.2', 'S11E05///Alan Harper, Pleasing Women Since 2003///October 24, 2013///4680952///tt0369179///6.3', 'S11E06///Justice in Star-Spangled Hot Pants///November 7, 2013///4695058///tt0369179///6.1', 'S11E07///Some Kind of Lesbian Zombie///November 14, 2013///4695059///tt0369179///6.5', 'S11E09///Numero Uno Accidente Lawyer///December 5, 2013///4705873///tt0369179///6.2', 'S11E08///Mr. Walden, He Die. I Clean Room.///November 21, 2013///4716253///tt0369179///6.0', 'S11E10///On Vodka, On Soda, On Blender, On Mixer!///December 12, 2013///4716906///tt0369179///6.4', 'S11E11///Tazed In the Lady Nuts///January 2, 2014///4733689///tt0369179///6.6', 'S11E12///Baseball.  Boobs.  Boobs.  Baseball.///January 9, 2014///4735949///tt0369179///6.2', 'S11E13///Bite Me, Supreme Court///January 30, 2014///4772190///tt0369179///6.1', 'S11E14///Three Fingers of Creme De Menthe///February 6, 2014///4787750///tt0369179///6.2', 'S11E15///Cab Fare and a Bottle of Penicillin///February 27, 2014///4797266///tt0369179///6.1', 'S11E16///How to Get Rid of Alan Harper///March 6, 2014///4811496///tt0369179///6.5', 'S11E17///Welcome Home, Jake///March 13, 2014///4811507///tt0369179///6.5', 'S11E18///West Side Story///April 3, 2014///4831055///tt0369179///6.5', 'S11E19///Lan Mao Shi Zai Wuding Shang///April 10, 2014///4847091///tt0369179///7.2', 'S11E20///Lotta Delis In Little Armenia///April 24, 2014///4847092///tt0369179///7.0', 'S11E21///Dial 1-900-Mix-a-Lot///May 1, 2014///4847093///tt0369179///6.0', 'S11E22///Oh, WALD-E, Good Times Ahead///May 8, 2014///4859897///tt0369179///6.6', "S12E01///The Ol' Mexican Spinach///October 30, 2014///4919069///tt0369179///5.0", 'S12E02///A Chic Bar in Ibiza///November 6, 2014///5026368///tt0369179///5.1', 'S12E03///Glamping in a Yurt///November 13, 2014///5038387///tt0369179///5.3', 'S12E04///Thirty-Eight, Sixty-Two, Thirty-Eight///November 20, 2014///5038388///tt0369179///5.3', 'S12E05///Oontz, Oontz, Oontz ///November 27, 2014///5051436///tt0369179///5.1', 'S12E06///Alan Shot a Little Girl ///December 4, 2014///5051437///tt0369179///5.2', 'S12E07///Sex with an Animated Ed Asner///December 11, 2014///5051827///tt0369179///5.8', 'S12E08///Family, Bublé, Deep-Fried Turkey///December 18, 2014///5065327///tt0369179///5.4', 'S12E09///Bouncy, Bouncy, Bouncy, Lyndsey///January 8, 2015///5075369///tt0369179///5.6', 'S12E10///Here I Come, Pants!///January 15, 2015///5077925///tt0369179///5.6', 'S12E11///For Whom the Booty Calls///January 22, 2015///5079929///tt0369179///5.5', 'S12E12///A Beer Battered Rip-Off///January 29, 2015///5079930///tt0369179///5.9', 'S12E13///Boompa Loved His Hookers///February 5, 2015///5109301///tt0369179///5.7', 'S12E14///Don’t Give a Monkey a Gun///February 12, 2015///5118480///tt0369179///5.6', "S12E15///Of Course He's Dead (1)///February 19, 2015///5121308///tt0369179///3.8", "S12E16///Of Course He's Dead (2)///February 19, 2015///5121311///tt0369179///3.8"]
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[1]
+    air_date = res[2]
+    rating = res[5]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+    document.getElementById('rating').innerHTML = rating;
+            document.getElementById('rating').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('rating').animate([
+    // keyframes
+        { transform: 'translateY(-280px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+<script>
+    function
+    change()
+    {
+        var elem = document.getElementById("random_button");
+        if (elem.innerHTML == "Random Episode") elem.innerHTML = "Pick Again";
+        else elem.innerHTML = "Pick Again";
+    }
+</script>
+
+<script>
+    function
+    color()
+    {
+        var elem = document.getElementById("rating").innerHTML;
+        var float = parseFloat(elem);
+        var good = 8.5;
+        var bad = 7.9;
+        if (float >= good) document.getElementById("rating").style.backgroundColor = "#2db92d";
+        else if (float <= bad) document.getElementById("rating").style.backgroundColor = "#ff3333";
+        else document.getElementById("rating").style.backgroundColor = "#333333";
+    }
+</script>
+
+</html>

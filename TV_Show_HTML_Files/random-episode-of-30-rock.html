@@ -1,0 +1,162 @@
+---
+permalink: random-episode-of-30-rock
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='../random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="30 Rock random episode generator." />
+    <title>Random 30 Rock Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='../logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>30 Rock</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='change(); color()'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p id='random_button' class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+        <div id='rating' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///Pilot///October 11, 2006///308865///tt0496424///7.8', 'S01E02///The Aftermath///October 18, 2006///308866///tt0496424///7.3', 'S01E03///Blind Date///October 25, 2006///308867///tt0496424///7.6', 'S01E04///Jack the Writer///November 1, 2006///308868///tt0496424///7.9', 'S01E06///Jack Meets Dennis///November 30, 2006///311010///tt0496424///7.6', 'S01E08///The Break-Up///December 14, 2006///311011///tt0496424///8.1', 'S01E07///Tracy Does Conan///December 7, 2006///311012///tt0496424///7.7', 'S01E05///Jack-Tor///November 16, 2006///311013///tt0496424///8.3', 'S01E09///The Baby Show///January 4, 2007///311604///tt0496424///7.9', 'S01E10///The Rural Juror///January 11, 2007///316764///tt0496424///8.0', 'S01E11///The Head and the Hair///January 18, 2007///316765///tt0496424///8.0', 'S01E12///Black Tie///February 1, 2007///320192///tt0496424///8.1', 'S01E13///Up All Night///February 8, 2007///320499///tt0496424///8.5', 'S01E14///The C Word///February 15, 2007///320677///tt0496424///8.0', 'S01E15///Hard Ball///February 22, 2007///320885///tt0496424///7.9', 'S01E16///The Source Awards///March 1, 2007///323243///tt0496424///8.4', 'S01E17///The Fighting Irish///March 8, 2007///324051///tt0496424///7.9', 'S01E18///Fireworks///April 5, 2007///327682///tt0496424///7.9', 'S01E19///Corporate Crush///April 12, 2007///327697///tt0496424///8.2', 'S01E20///Cleveland///April 19, 2007///327698///tt0496424///7.8', 'S01E21///Hiatus///April 26, 2007///327699///tt0496424///8.0', 'S02E01///Seinfeld Vision///October 4, 2007///336606///tt0496424///8.3', 'S02E02///Jack Gets in the Game///October 11, 2007///337903///tt0496424///8.0', 'S02E03///The Collection///October 18, 2007///337904///tt0496424///7.8', "S02E04///Rosemary's Baby///October 25, 2007///337905///tt0496424///8.1", 'S02E05///Greenzo///November 8, 2007///337906///tt0496424///8.3', 'S02E06///Somebody to Love///November 15, 2007///337907///tt0496424///8.2', 'S02E07///Cougars///November 29, 2007///342291///tt0496424///8.0', 'S02E08///Secrets & Lies///December 6, 2007///343234///tt0496424///7.9', 'S02E09///Ludachristmas///December 13, 2007///345107///tt0496424///8.2', 'S02E10///Episode 210///January 10, 2008///347835///tt0496424///8.0', 'S02E11///MILF Island///April 10, 2008///359110///tt0496424///8.4', 'S02E12///Subway Hero///April 17, 2008///359111///tt0496424///7.7', 'S02E13///Succession///April 24, 2008///359112///tt0496424///8.4', 'S02E14///Sandwich Day///May 1, 2008///364835///tt0496424///8.1', 'S02E15///Cooter///May 8, 2008///364975///tt0496424///8.5', 'S03E01///Do-Over///October 30, 2008///400500///tt0496424///8.2', 'S03E02///Believe in the Stars///November 6, 2008///402805///tt0496424///8.5', 'S03E03///The One with the Cast of “Night Court”///November 13, 2008///402806///tt0496424///8.0', 'S03E04///Gavin Volure///November 20, 2008///402807///tt0496424///8.1', 'S03E05///Reunion///December 4, 2008///407874///tt0496424///8.6', 'S03E06///Christmas Special///December 11, 2008///410342///tt0496424///7.8', 'S03E07///Señor Macho Solo///January 8, 2009///419191///tt0496424///8.1', 'S03E08///Flu Shot///January 15, 2009///419192///tt0496424///7.8', 'S03E09///Retreat to Move Forward///January 22, 2009///424955///tt0496424///8.0', 'S03E10///Generalissimo///February 5, 2009///431182///tt0496424///8.6', "S03E11///St. Valentine's Day///February 12, 2009///431183///tt0496424///8.2", 'S03E12///Larry King///February 26, 2009///435725///tt0496424///8.1', 'S03E13///Goodbye, My Friend///March 5, 2009///435726///tt0496424///8.1', 'S03E14///The Funcooker///March 12, 2009///435727///tt0496424///8.4', 'S03E15///The Bubble///March 19, 2009///435728///tt0496424///8.1', 'S03E16///Apollo, Apollo///March 26, 2009///468091///tt0496424///8.5', 'S03E17///Cutbacks///April 9, 2009///513031///tt0496424///7.7', 'S03E18///Jackie Jormp-Jomp///April 16, 2009///534601///tt0496424///8.0', 'S03E19///The Ones///April 23, 2009///534611///tt0496424///8.0', 'S03E20///The Natural Order///April 30, 2009///534621///tt0496424///7.9', 'S03E21///Mamma Mia///May 7, 2009///534631///tt0496424///8.1', 'S03E22///Kidney Now!///May 14, 2009///556381///tt0496424///8.7', 'S04E01///Season 4///October 15, 2009///1084341///tt0496424///7.8', 'S04E02///Into the Crevasse///October 22, 2009///1184781///tt0496424///7.8', 'S04E03///Stone Mountain///October 29, 2009///1185671///tt0496424///7.8', 'S04E04///Audition Day///November 5, 2009///1269231///tt0496424///8.0', 'S04E05///The Problem Solvers///November 12, 2009///1270041///tt0496424///8.0', 'S04E06///Sun Tea///November 19, 2009///1308061///tt0496424///7.8', 'S04E07///Dealbreakers Talk Show #0001///December 3, 2009///1321231///tt0496424///8.3', 'S04E08///Secret Santa///December 10, 2009///1321241///tt0496424///8.1', 'S04E09///Klaus and Greta///January 14, 2010///1529541///tt0496424///8.4', 'S04E10///Black Light Attack!///January 14, 2010///1551041///tt0496424///8.4', 'S04E11///Winter Madness///January 21, 2010///1583401///tt0496424///8.0', 'S04E12///Verna///February 4, 2010///1583411///tt0496424///7.5', 'S04E13///Anna Howard Shaw Day///February 11, 2010///1706571///tt0496424///7.7', 'S04E14///Future Husband///March 11, 2010///1847161///tt0496424///8.6', 'S04E15///Don Geiss, America, and Hope///March 18, 2010///1847171///tt0496424///7.9', 'S04E16///Floyd///March 25, 2010///1847181///tt0496424///8.1', 'S04E17///Lee Marvin vs. Derek Jeter///April 22, 2010///1984841///tt0496424///8.0', 'S04E18///Khonani///April 22, 2010///1984851///tt0496424///8.0', 'S04E19///Argus///April 29, 2010///2048861///tt0496424///8.0', 'S04E20///The Moms///May 6, 2010///2075101///tt0496424///7.6', 'S04E21///Emmanuelle Goes to Dinosaur Land///May 13, 2010///2122241///tt0496424///7.7', 'S04E22///I Do Do///May 20, 2010///2171411///tt0496424///7.9', 'S05E01///The Fabian Strategy///September 23, 2010///2518051///tt0496424///8.0', 'S05E02///When It Rains, It Pours///September 30, 2010///2832681///tt0496424///8.3', "S05E03///Let's Stay Together///October 7, 2010///2845621///tt0496424///7.8", 'S05E04///Live Show///October 14, 2010///2913171///tt0496424///8.6', "S05E06///Gentleman's Intermission///November 4, 2010///2972431///tt0496424///8.1", 'S05E05///Reaganing///October 21, 2010///2972771///tt0496424///7.9', 'S05E07///Brooklyn Without Limits///November 11, 2010///3027201///tt0496424///8.0', 'S05E08///College///November 18, 2010///3111391///tt0496424///8.0', 'S05E09///Chain Reaction of Mental Anguish///December 2, 2010///3193701///tt0496424///7.7', 'S05E10///Christmas Attack Zone///December 9, 2010///3193721///tt0496424///8.0', 'S05E11///Mrs. Donaghy///January 20, 2011///3388921///tt0496424///8.3', 'S05E12///Operation Righteous Cowboy Lightning///January 27, 2011///3511021///tt0496424///8.5', 'S05E13///¡Qué Sorpresa!///February 3, 2011///3609631///tt0496424///8.0', 'S05E14///Double-Edged Sword///February 10, 2011///3609651///tt0496424///8.5', "S05E15///It's Never Too Late for Now///February 17, 2011///3718221///tt0496424///8.2", 'S05E16///TGS Hates Women///February 24, 2011///3763601///tt0496424///8.3', 'S05E17///Queen of Jordan///March 17, 2011///3784241///tt0496424///7.6', 'S05E18///Plan B///March 24, 2011///3926071///tt0496424///7.9', 'S05E19///I Heart Connecticut///April 14, 2011///3990801///tt0496424///7.7', 'S05E20///100, Part 1///April 21, 2011///3990811///tt0496424///8.1', 'S05E21///100, Part 2///April 21, 2011///3990821///tt0496424///8.1', 'S05E22///Everything Sunny All the Time Always///April 28, 2011///3990831///tt0496424///8.5', 'S05E23///Respawn///May 5, 2011///3990841///tt0496424///8.0', "S06E01///Dance Like Nobody's Watching///January 12, 2012///4183946///tt0496424///8.0", 'S06E02///Idiots Are People Two!///January 19, 2012///4233755///tt0496424///7.9', 'S06E03///Idiots Are People Three!///January 26, 2012///4241590///tt0496424///8.0', 'S06E04///The Ballad of Kenneth Parcell///January 26, 2012///4241591///tt0496424///8.0', 'S06E05///Today You Are a Man///February 2, 2012///4245765///tt0496424///7.8', "S06E06///Hey, Baby, What's Wrong? Part 1///February 9, 2012///4245766///tt0496424///7.9", "S06E07///Hey, Baby, What's Wrong? Part 2///February 9, 2012///4245767///tt0496424///7.9", 'S06E08///The Tuxedo Begins///February 16, 2012///4245768///tt0496424///7.9', 'S06E09///Leap Day///February 23, 2012///4258916///tt0496424///8.0', 'S06E10///Alexis Goodlooking and the Case of the Missing Whisky///March 1, 2012///4265806///tt0496424///8.5', 'S06E11///Standards and Practices///March 8, 2012///4266557///tt0496424///8.1', "S06E12///St. Patrick's Day///March 15, 2012///4282969///tt0496424///7.7", 'S06E13///Grandmentor///March 22, 2012///4286972///tt0496424///8.1', 'S06E14///Kidnapped by Danger///March 22, 2012///4286973///tt0496424///8.1', 'S06E15///The Shower Principle///March 29, 2012///4291939///tt0496424///7.7', 'S06E16///Nothing Left to Lose///April 5, 2012///4291940///tt0496424///7.6', 'S06E17///Meet the Woggels!///April 12, 2012///4291941///tt0496424///8.4', 'S06E18///Murphy Brown Lied to Us///April 19, 2012///4291942///tt0496424///7.6', 'S06E19///Live from Studio 6H///April 26, 2012///4291943///tt0496424///7.7', 'S06E20///Queen of Jordan II: Mystery of the Phantom Pooper///May 3, 2012///4291944///tt0496424///7.6', 'S06E21///The Return of Avery Jessup///May 10, 2012///4291945///tt0496424///7.8', 'S06E22///What Will Happen to the Gang Next Year?///May 17, 2012///4291946///tt0496424///8.7', 'S07E01///The Beginning of the End///October 4, 2012///4341948///tt0496424///7.7', 'S07E02///Governor Dunston///October 11, 2012///4357923///tt0496424///7.7', 'S07E03///Stride of Pride///October 18, 2012///4357924///tt0496424///7.9', 'S07E04///Unwindulax///October 25, 2012///4357925///tt0496424///7.9', "S07E05///There's No I in America///October 31, 2012///4357926///tt0496424///7.6", 'S07E06///Aunt Phatso vs. Jack Donaghy///November 15, 2012///4357927///tt0496424///7.6', 'S07E07///Mazel Tov, Dummies!///November 29, 2012///4357928///tt0496424///8.4', 'S07E08///My Whole Life Is Thunder///December 6, 2012///4357929///tt0496424///8.1', 'S07E10///Florida///January 17, 2013///4357930///tt0496424///8.4', 'S07E09///Game Over///January 10, 2013///4357931///tt0496424///8.0', "S07E11///A Goon's Deed in a Weary World///January 24, 2013///4357932///tt0496424///8.5", 'S07E12///Hogcock!///January 31, 2013///4357933///tt0496424///9.1', 'S07E13///Last Lunch///January 31, 2013///4357934///tt0496424///9.1']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[1]
+    air_date = res[2]
+    rating = res[5]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+    document.getElementById('rating').innerHTML = rating;
+            document.getElementById('rating').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('rating').animate([
+    // keyframes
+        { transform: 'translateY(-280px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+<script>
+    function
+    change()
+    {
+        var elem = document.getElementById("random_button");
+        if (elem.innerHTML == "Random Episode") elem.innerHTML = "Pick Again";
+        else elem.innerHTML = "Pick Again";
+    }
+</script>
+
+<script>
+    function
+    color()
+    {
+        var elem = document.getElementById("rating").innerHTML;
+        var float = parseFloat(elem);
+        var good = 8.5;
+        var bad = 7.9;
+        if (float >= good) document.getElementById("rating").style.backgroundColor = "#2db92d";
+        else if (float <= bad) document.getElementById("rating").style.backgroundColor = "#ff3333";
+        else document.getElementById("rating").style.backgroundColor = "#333333";
+    }
+</script>
+
+</html>

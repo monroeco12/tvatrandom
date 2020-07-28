@@ -1,0 +1,162 @@
+---
+permalink: random-episode-of-the-expanse
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='../random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="The Expanse random episode generator." />
+    <title>Random Expanse Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='../logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>The Expanse</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='change(); color()'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p id='random_button' class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+        <div id='rating' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///Dulcinea///December 8, 2015///4856662///tt3230854///7.7', 'S01E02///The Big Empty///December 15, 2015///5280274///tt3230854///7.7', 'S01E03///Remember the Cant///December 22, 2015///5280275///tt3230854///8.0', 'S01E04///CQB///December 29, 2015///5280276///tt3230854///8.7', 'S01E05///Back to the Butcher///January 5, 2016///5280277///tt3230854///7.8', 'S01E06///Rock Bottom///January 12, 2016///5280278///tt3230854///8.0', 'S01E07///Windmills///January 19, 2016///5280279///tt3230854///8.0', 'S01E08///Salvage///January 26, 2016///5305129///tt3230854///8.7', 'S01E09///Critical Mass///February 2, 2016///5305130///tt3230854///8.7', 'S01E10///Leviathan Wakes///February 2, 2016///5412322///tt3230854///8.7', 'S02E01///Safe///February 1, 2017///5632569///tt3230854///8.3', 'S02E03///Static///February 8, 2017///5684770///tt3230854///8.9', 'S02E02///Doors And Corners///February 1, 2017///5738999///tt3230854///8.3', 'S02E04///Godspeed///February 15, 2017///5739001///tt3230854///9.0', 'S02E05///Home///February 22, 2017///5739002///tt3230854///9.5', 'S02E06///Paradigm Shift///March 1, 2017///5739003///tt3230854///8.6', 'S02E07///The Seventh Man///March 8, 2017///5739004///tt3230854///8.2', 'S02E08///Pyre///March 15, 2017///5739005///tt3230854///8.3', 'S02E09///The Weeping Somnambulist///March 22, 2017///5739006///tt3230854///8.3', 'S02E10///Cascade///March 29, 2017///5739007///tt3230854///8.3', 'S02E11///Here There Be Dragons///April 5, 2017///5739008///tt3230854///8.8', 'S02E12///The Monster and the Rocket///April 12, 2017///5739009///tt3230854///8.7', "S02E13///Caliban's War///April 19, 2017///5739010///tt3230854///8.9", 'S03E01///Fight or Flight///April 11, 2018///6539689///tt3230854///8.8', 'S03E02///IFF///April 18, 2018///6596531///tt3230854///9.0', 'S03E03///Assured Destruction///April 25, 2018///6596534///tt3230854///8.9', 'S03E04///Reload///May 2, 2018///6596535///tt3230854///8.9', 'S03E05///Triple Point///May 9, 2018///6596536///tt3230854///9.5', 'S03E06///Immolation///May 16, 2018///6596537///tt3230854///9.5', 'S03E07///Delta-V///May 23, 2018///6596539///tt3230854///8.6', 'S03E08///It Reaches Out///May 30, 2018///6596541///tt3230854///9.2', 'S03E09///Intransigence///June 6, 2018///6596543///tt3230854///8.5', 'S03E10///Dandelion Sky///June 13, 2018///6596544///tt3230854///9.0', 'S03E11///Fallen World///June 20, 2018///6596546///tt3230854///8.7', 'S03E12///Congregation///June 27, 2018///6596547///tt3230854///9.0', "S03E13///Abaddon's Gate///June 27, 2018///6596548///tt3230854///9.0", 'S04E01///New Terra///December 13, 2019///6851352///tt3230854///8.8', 'S04E02///Jetsam///December 13, 2019///7459810///tt3230854///8.8', 'S04E03///Subduction///December 13, 2019///7459811///tt3230854///8.8', 'S04E04///Retrograde///December 13, 2019///7459812///tt3230854///8.8', 'S04E05///Oppressor///December 13, 2019///7459813///tt3230854///8.8', 'S04E06///Displacement///December 13, 2019///7459814///tt3230854///8.8', 'S04E07///A Shot in the Dark///December 13, 2019///7459815///tt3230854///8.8', 'S04E08///The One-Eyed Man///December 13, 2019///7459816///tt3230854///8.8', 'S04E09///Saeculum///December 13, 2019///7459817///tt3230854///8.8', 'S04E10///Cibola Burn///December 13, 2019///7459818///tt3230854///8.8']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[1]
+    air_date = res[2]
+    rating = res[5]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+    document.getElementById('rating').innerHTML = rating;
+            document.getElementById('rating').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('rating').animate([
+    // keyframes
+        { transform: 'translateY(-280px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+<script>
+    function
+    change()
+    {
+        var elem = document.getElementById("random_button");
+        if (elem.innerHTML == "Random Episode") elem.innerHTML = "Pick Again";
+        else elem.innerHTML = "Pick Again";
+    }
+</script>
+
+<script>
+    function
+    color()
+    {
+        var elem = document.getElementById("rating").innerHTML;
+        var float = parseFloat(elem);
+        var good = 8.5;
+        var bad = 7.9;
+        if (float >= good) document.getElementById("rating").style.backgroundColor = "#2db92d";
+        else if (float <= bad) document.getElementById("rating").style.backgroundColor = "#ff3333";
+        else document.getElementById("rating").style.backgroundColor = "#333333";
+    }
+</script>
+
+</html>

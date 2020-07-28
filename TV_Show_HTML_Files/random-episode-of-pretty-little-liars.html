@@ -1,0 +1,162 @@
+---
+permalink: random-episode-of-pretty-little-liars
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='../random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="Pretty Little Liars random episode generator." />
+    <title>Random Pretty Little Liars Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='../logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>Pretty Little Liars</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='change(); color()'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p id='random_button' class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+        <div id='rating' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///Pilot///June 8, 2010///2075261///tt1578873///7.9', 'S01E02///The Jenna Thing///June 15, 2010///2085101///tt1578873///7.9', 'S01E03///To Kill a Mocking Girl///June 22, 2010///2085111///tt1578873///7.8', 'S01E04///Can You Hear Me Now///June 29, 2010///2085121///tt1578873///7.9', 'S01E05///Reality Bites Me///July 6, 2010///2085131///tt1578873///7.9', "S01E06///There's No Place Like Homecoming///July 13, 2010///2085141///tt1578873///8.3", 'S01E07///The Homecoming Hangover///July 20, 2010///2085181///tt1578873///7.8', "S01E08///Please Do Talk About Me When I'm Gone///July 27, 2010///2085221///tt1578873///7.9", 'S01E09///The Perfect Storm///August 3, 2010///2085231///tt1578873///8.2', 'S01E10///Keep Your Friends Close///August 10, 2010///2085241///tt1578873///8.5', 'S01E11///Moments Later///January 3, 2011///2657331///tt1578873///8.2', 'S01E12///Salt Meets Wound///January 10, 2011///2770301///tt1578873///7.9', 'S01E13///Know Your Frenemies///January 17, 2011///3168221///tt1578873///8.3', 'S01E14///Careful What U Wish 4///January 24, 2011///3168231///tt1578873///8.0', "S01E15///If at First You Don't Succeed, Lie, Lie Again///January 31, 2011///3168241///tt1578873///8.1", 'S01E16///Je Suis une Amie///February 7, 2011///3550601///tt1578873///8.1', 'S01E17///The New Normal///February 14, 2011///3654021///tt1578873///8.0', 'S01E18///The Badass Seed///February 21, 2011///3663571///tt1578873///8.1', 'S01E19///A Person of Interest///February 28, 2011///3663581///tt1578873///8.3', 'S01E20///Someone to Watch Over Me///March 7, 2011///3719931///tt1578873///8.2', 'S01E21///Monsters in the End///March 14, 2011///3719941///tt1578873///8.4', 'S01E22///For Whom the Bell Tolls///March 21, 2011///3719951///tt1578873///8.6', "S02E01///It's Alive///June 14, 2011///3990401///tt1578873///8.4", 'S02E02///The Goodbye Look///June 21, 2011///4113089///tt1578873///8.0', 'S02E03///My Name Is Trouble///June 28, 2011///4113090///tt1578873///8.0', 'S02E04///Blind Dates///July 5, 2011///4119256///tt1578873///8.3', 'S02E05///The Devil You Know///July 12, 2011///4119257///tt1578873///8.2', 'S02E06///Never Letting Go///July 19, 2011///4119266///tt1578873///8.2', 'S02E07///Surface Tension///July 26, 2011///4119269///tt1578873///8.1', 'S02E08///Save the Date///August 2, 2011///4128626///tt1578873///8.3', 'S02E09///Picture This///August 9, 2011///4136019///tt1578873///8.3', "S02E10///Touched by an 'A'-ngel///August 16, 2011///4136020///tt1578873///8.2", 'S02E11///I Must Confess///August 23, 2011///4149812///tt1578873///8.4', 'S02E12///Over My Dead Body///August 30, 2011///4149813///tt1578873///8.9', 'S02E13///The First Secret///October 19, 2011///4161143///tt1578873///8.7', 'S02E14///Through Many Dangers, Toils and Snares///January 2, 2012///4191680///tt1578873///8.7', "S02E15///A Hot Piece of 'A'///January 9, 2012///4191681///tt1578873///8.5", 'S02E22///Father Knows Best///February 27, 2012///4194177///tt1578873///8.0', 'S02E23///Eye of the Beholder///March 5, 2012///4199222///tt1578873///8.1', 'S02E16///Let the Water Hold Me Down///January 16, 2012///4218075///tt1578873///8.2', 'S02E17///Blond Leading the Blind///January 23, 2012///4218076///tt1578873///8.4', 'S02E18///A Kiss Before Lying///January 30, 2012///4218077///tt1578873///8.4', 'S02E19///The Naked Truth///February 6, 2012///4218078///tt1578873///8.4', 'S02E20///CTRL:A///February 13, 2012///4218079///tt1578873///8.1', 'S02E21///Breaking the Code///February 20, 2012///4237344///tt1578873///8.2', 'S02E24///If These Dolls Could Talk///March 12, 2012///4246172///tt1578873///8.7', 'S02E25///unmAsked///March 19, 2012///4246173///tt1578873///9.1', "S03E01///It Happened 'That Night'///June 5, 2012///4289005///tt1578873///8.4", 'S03E02///Blood Is the New Black///June 12, 2012///4292323///tt1578873///8.3', 'S03E03///Kingdom of the Blind///June 19, 2012///4298807///tt1578873///8.3', 'S03E04///Birds of a Feather///June 26, 2012///4299855///tt1578873///8.0', 'S03E05///That Girl Is Poison///July 10, 2012///4331569///tt1578873///8.1', "S03E06///The Remains of the 'A'///July 17, 2012///4331570///tt1578873///8.0", 'S03E07///Crazy///July 24, 2012///4331571///tt1578873///8.3', 'S03E08///Stolen Kisses///July 31, 2012///4338644///tt1578873///8.1', 'S03E11///Single Fright Female///August 21, 2012///4343527///tt1578873///8.1', 'S03E09///The Kahn Game///August 7, 2012///4343528///tt1578873///8.1', 'S03E10///What Lies Beneath///August 14, 2012///4343529///tt1578873///8.2', 'S03E12///The Lady Killer///August 28, 2012///4357768///tt1578873///9.1', 'S03E13///This is a Dark Ride///October 23, 2012///4363334///tt1578873///9.1', 'S03E15///Mona-Mania!///January 15, 2013///4369168///tt1578873///8.2', "S03E14///She's Better Now///January 8, 2013///4369194///tt1578873///8.3", 'S03E16///Misery Loves Company///January 22, 2013///4374101///tt1578873///8.7', 'S03E17///Out of the Frying Pan, Into the Inferno///January 29, 2013///4380312///tt1578873///8.4', 'S03E18///Dead to Me///February 5, 2013///4384718///tt1578873///8.3', 'S03E19///What Becomes of the Broken-Hearted?///February 12, 2013///4395442///tt1578873///8.4', 'S03E20///Hot Water///February 19, 2013///4409585///tt1578873///8.2', 'S03E21///Out of Sight, Out of Mind///February 26, 2013///4409586///tt1578873///8.4', 'S03E22///Will the Circle Be Unbroken?///March 5, 2013///4414407///tt1578873///8.1', "S03E23///I'm Your Puppet///March 12, 2013///4419374///tt1578873///8.5", 'S03E24///A dAngerous gAme///March 19, 2013///4428795///tt1578873///8.8', 'S04E01///A is for A-l-i-v-e///June 11, 2013///4514063///tt1578873///8.5', 'S04E04///Face Time///July 2, 2013///4529997///tt1578873///8.1', 'S04E02///Turn of the Shoe///June 18, 2013///4529998///tt1578873///7.7', "S04E03///Cat's Cradle///June 25, 2013///4529999///tt1578873///8.0", 'S04E05///Gamma Zeta Die!///July 9, 2013///4537584///tt1578873///8.1', 'S04E06///Under the Gun///July 16, 2013///4559370///tt1578873///8.1', 'S04E07///Crash and Burn, Girl!///July 23, 2013///4559371///tt1578873///8.2', "S04E08///The Guilty Girl's Handbook///July 30, 2013///4559372///tt1578873///8.2", 'S04E09///Into the Deep///August 6, 2013///4559373///tt1578873///8.1', 'S04E10///The Mirror Has Three Faces///August 13, 2013///4559375///tt1578873///8.3', 'S04E11///Bring Down the Hoe///August 20, 2013///4559376///tt1578873///8.1', "S04E12///Now You See Me, Now You Don't///August 27, 2013///4559378///tt1578873///9.0", 'S04E13///Grave New World///October 22, 2013///4559380///tt1578873///8.6', "S04E14///Who's in the Box?///January 7, 2014///4613870///tt1578873///7.9", 'S04E15///Love ShAck, Baby///January 14, 2014///4644157///tt1578873///8.0', 'S04E16///Close Encounters///January 21, 2014///4644158///tt1578873///8.0', 'S04E17///Bite Your Tongue///January 28, 2014///4644159///tt1578873///8.4', 'S04E18///Hot for Teacher///February 4, 2014///4644604///tt1578873///8.2', 'S04E19///Shadow Play///February 11, 2014///4644605///tt1578873///6.7', 'S04E20///Free Fall///February 18, 2014///4644606///tt1578873///8.5', "S04E21///She's Come Undone///February 25, 2014///4644607///tt1578873///8.3", 'S04E22///Cover For Me///March 4, 2014///4667365///tt1578873///7.8', 'S04E23///Unbridled///March 11, 2014///4667612///tt1578873///8.1', 'S04E24///A is for Answers///March 18, 2014///4667613///tt1578873///9.0', 'S05E01///EscApe From New York///June 10, 2014///4822476///tt1578873///8.3', 'S05E02///Whirly Girlie///June 17, 2014///4862307///tt1578873///8.1', 'S05E03///Surfing the Aftershocks///June 24, 2014///4862308///tt1578873///7.7', 'S05E05///Miss Me x 100///July 8, 2014///4872389///tt1578873///7.5', 'S05E06///Run, Ali, Run///July 15, 2014///4872391///tt1578873///8.7', 'S05E07///The Silence of E. Lamb///July 22, 2014///4901654///tt1578873///7.9', 'S05E08///Scream for Me///July 29, 2014///4901655///tt1578873///7.7', 'S05E09///March of Crimes///August 5, 2014///4901656///tt1578873///7.7', 'S05E04///Thrown from the Ride///July 1, 2014///4901657///tt1578873///7.9', 'S05E10///A Dark Ali///August 12, 2014///4918612///tt1578873///8.0', 'S05E11///No One Here Can Love or Understand Me///August 19, 2014///4918613///tt1578873///7.6', 'S05E12///Taking This One to the Grave///August 26, 2014///4918614///tt1578873///8.9', "S05E13///How the 'A' Stole Christmas///December 9, 2014///4918615///tt1578873///8.0", 'S05E14///Through a Glass, Darkly///January 6, 2015///4949689///tt1578873///8.0', 'S05E15///Fresh Meat///January 13, 2015///4949690///tt1578873///7.5', 'S05E16///Over a Barrel///January 20, 2015///4970396///tt1578873///7.5', 'S05E18///Oh, What Hard Luck Stories They All Hand Me///February 3, 2015///4971721///tt1578873///7.7', 'S05E17///The Bin of Sin///January 27, 2015///5107007///tt1578873///7.3', 'S05E19///Out, Damned Spot ///February 10, 2015///5107008///tt1578873///7.6', "S05E20///Pretty Isn't the Point///February 17, 2015///5107009///tt1578873///8.0", 'S05E21///Bloody Hell///February 24, 2015///5107010///tt1578873///7.8', 'S05E22///To Plea or Not to Plea///March 3, 2015///5142438///tt1578873///7.9', 'S05E23///The Melody Lingers On///March 10, 2015///5142439///tt1578873///8.0', "S05E24///I'm a Good Girl, I Am///March 17, 2015///5142441///tt1578873///8.6", 'S05E25///Welcome to the Dollhouse///March 24, 2015///5142445///tt1578873///9.3', 'S06E01///Game On, Charles///June 2, 2015///5187976///tt1578873///9.2', 'S06E02///Songs of Innocence///June 9, 2015///5188791///tt1578873///7.9', 'S06E03///Songs of Experience///June 16, 2015///5188792///tt1578873///7.9', "S06E04///Don't Look Now///June 23, 2015///5188793///tt1578873///7.9", "S06E05///She's No Angel///June 30, 2015///5188794///tt1578873///7.7", 'S06E06///No Stone Unturned///July 14, 2015///5202087///tt1578873///7.5', 'S06E07///Oh Brother, Where Art Thou///July 21, 2015///5202088///tt1578873///8.0', 'S06E08///FrAmed///July 28, 2015///5202089///tt1578873///8.0', 'S06E09///Last Dance///August 4, 2015///5202090///tt1578873///8.5', 'S06E10///Game Over, Charles///August 11, 2015///5202091///tt1578873///4.7', 'S06E11///Of Late I Think of Rosewood///January 12, 2016///5277604///tt1578873///7.6', 'S06E12///Charlotte’s Web///January 19, 2016///5285269///tt1578873///7.2', 'S06E13///The Gloves Are On///January 26, 2016///5285270///tt1578873///7.3', 'S06E14///New Guys, New Lies///February 2, 2016///5302496///tt1578873///7.2', 'S06E15///Do Not Disturb///February 9, 2016///5306690///tt1578873///7.3', 'S06E16///Where Somebody Waits for Me///February 16, 2016///5306691///tt1578873///7.1', "S06E17///We've All Got Baggage///February 23, 2016///5306692///tt1578873///7.0", 'S06E18///Burn This///March 1, 2016///5330425///tt1578873///7.5', 'S06E19///Did You Miss Me?///March 8, 2016///5330426///tt1578873///7.5', 'S06E20///Hush, Hush, Sweet Liars///March 15, 2016///5330427///tt1578873///7.9', 'S07E01///Tick-Tock, Bitches///June 21, 2016///5553014///tt1578873///7.9', 'S07E02///Bedlam///June 28, 2016///5574961///tt1578873///7.1', 'S07E03///The Talented Mr. Rollins///July 5, 2016///5607617///tt1578873///8.1', 'S07E04///Hit and Run, Run, Run///July 12, 2016///5607618///tt1578873///8.1', 'S07E05///Along Comes Mary///July 19, 2016///5607619///tt1578873///7.4', 'S07E06///Wanted: Dead or Alive///August 2, 2016///5645208///tt1578873///7.8', "S07E07///Original G'A'ngsters///August 9, 2016///5645209///tt1578873///7.7", 'S07E08///Exes and OMGs///August 16, 2016///5654599///tt1578873///7.3', 'S07E09///The Wrath of Kahn ///August 23, 2016///5654600///tt1578873///7.8', 'S07E10///The DArkest Knight ///August 30, 2016///5654601///tt1578873///8.5', 'S07E11///Playtime///April 18, 2017///5677499///tt1578873///7.6', 'S07E12///These Boots Were Made For Stalking///April 25, 2017///5678422///tt1578873///7.0', 'S07E13///Hold Your Piece///May 2, 2017///5692950///tt1578873///7.4', 'S07E14///Power Play///May 9, 2017///5702688///tt1578873///8.0', 'S07E15///In the Eye Abides the Heart///May 23, 2017///5704656///tt1578873///7.7', 'S07E16///The Glove That Rocks the Cradle///May 30, 2017///5747535///tt1578873///7.7', 'S07E17///Driving Miss Crazy ///June 6, 2017///5747536///tt1578873///7.6', 'S07E18///Choose or Lose///June 13, 2017///5747537///tt1578873///8.4', 'S07E19///Farewell, My Lovely///June 20, 2017///5747538///tt1578873///8.3', 'S07E20///Til DeAth Do Us PArt///June 27, 2017///5747540///tt1578873///5.5']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[1]
+    air_date = res[2]
+    rating = res[5]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+    document.getElementById('rating').innerHTML = rating;
+            document.getElementById('rating').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('rating').animate([
+    // keyframes
+        { transform: 'translateY(-280px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+<script>
+    function
+    change()
+    {
+        var elem = document.getElementById("random_button");
+        if (elem.innerHTML == "Random Episode") elem.innerHTML = "Pick Again";
+        else elem.innerHTML = "Pick Again";
+    }
+</script>
+
+<script>
+    function
+    color()
+    {
+        var elem = document.getElementById("rating").innerHTML;
+        var float = parseFloat(elem);
+        var good = 8.5;
+        var bad = 7.9;
+        if (float >= good) document.getElementById("rating").style.backgroundColor = "#2db92d";
+        else if (float <= bad) document.getElementById("rating").style.backgroundColor = "#ff3333";
+        else document.getElementById("rating").style.backgroundColor = "#333333";
+    }
+</script>
+
+</html>

@@ -1,0 +1,162 @@
+---
+permalink: random-episode-of-the-100
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='../random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="The 100 random episode generator." />
+    <title>Random 100 Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='../logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>The 100</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='change(); color()'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p id='random_button' class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+        <div id='rating' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///Pilot///March 19, 2014///4543295///tt2661044///7.5', 'S01E02///Earth Skills///March 26, 2014///4735398///tt2661044///7.5', 'S01E03///Earth Kills///April 2, 2014///4735399///tt2661044///7.9', "S01E04///Murphy's Law///April 9, 2014///4740979///tt2661044///7.8", "S01E05///Twilight's Last Gleaming///April 16, 2014///4740980///tt2661044///8.1", "S01E06///His Sister's Keeper///April 23, 2014///4828423///tt2661044///8.0", 'S01E07///Contents Under Pressure///April 30, 2014///4828424///tt2661044///8.1', 'S01E08///Day Trip///May 7, 2014///4828425///tt2661044///7.9', 'S01E09///Unity Day///May 14, 2014///4828426///tt2661044///8.2', 'S01E10///I Am Become Death///May 21, 2014///4828427///tt2661044///8.3', 'S01E11///The Calm///May 28, 2014///4828428///tt2661044///8.0', 'S01E12///We Are Grounders (1)///June 4, 2014///4828429///tt2661044///8.4', 'S01E13///We Are Grounders (2)///June 11, 2014///4828430///tt2661044///8.4', 'S02E01///The 48///October 22, 2014///4887576///tt2661044///8.4', 'S02E02///Inclement Weather///October 29, 2014///5013666///tt2661044///8.4', 'S02E03///Reapercussions///November 5, 2014///5018484///tt2661044///8.3', 'S02E04///Many Happy Returns///November 12, 2014///5025919///tt2661044///8.3', 'S02E05///Human Trials///November 19, 2014///5032892///tt2661044///8.5', 'S02E06///Fog of War///December 3, 2014///5044970///tt2661044///8.4', 'S02E07///Long Into an Abyss///December 10, 2014///5044972///tt2661044///8.6', 'S02E08///Spacewalker///December 17, 2014///5044973///tt2661044///8.9', 'S02E09///Remember Me///January 21, 2015///5045682///tt2661044///8.3', 'S02E12///Rubicon///February 11, 2015///5076965///tt2661044///8.3', 'S02E14///Bodyguard of Lies///February 25, 2015///5077943///tt2661044///8.8', 'S02E10///Survival of the Fittest///January 28, 2015///5077983///tt2661044///8.6', 'S02E11///Coup de Grâce///February 4, 2015///5077984///tt2661044///8.7', 'S02E13///Resurrection///February 18, 2015///5077985///tt2661044///8.9', 'S02E15///Blood Must Have Blood (1)///March 4, 2015///5099179///tt2661044///8.8', 'S02E16///Blood Must Have Blood (2)///March 11, 2015///5099180///tt2661044///8.8', 'S03E01///Wanheda (1)///January 21, 2016///5281340///tt2661044///8.0', 'S03E02///Wanheda (2)///January 28, 2016///5281341///tt2661044///8.0', 'S03E03///Ye Who Enter Here///February 4, 2016///5435334///tt2661044///8.4', 'S03E04///Watch the Thrones///February 11, 2016///5435336///tt2661044///8.9', 'S03E05///Hakeldama///February 18, 2016///5489290///tt2661044///8.7', 'S03E06///Bitter Harvest///February 25, 2016///5504334///tt2661044///8.2', 'S03E07///Thirteen///March 3, 2016///5512130///tt2661044///8.3', 'S03E08///Terms and Conditions///March 10, 2016///5528953///tt2661044///6.1', 'S03E09///Stealing Fire///March 31, 2016///5544536///tt2661044///6.3', 'S03E10///Fallen///April 7, 2016///5553140///tt2661044///6.4', 'S03E11///Nevermore///April 14, 2016///5553141///tt2661044///6.6', 'S03E12///Demons///April 21, 2016///5553142///tt2661044///7.1', 'S03E13///Join or Die///April 28, 2016///5553143///tt2661044///6.9', 'S03E14///Red Sky at Morning///May 5, 2016///5553144///tt2661044///7.2', 'S03E15///Perverse Instantiation (1)///May 12, 2016///5589671///tt2661044///7.1', 'S03E16///Perverse Instantiation (2)///May 19, 2016///5589672///tt2661044///7.1', 'S04E01///Echoes///February 1, 2017///5744700///tt2661044///7.8', 'S04E02///Heavy Lies The Crown///February 8, 2017///5904886///tt2661044///7.8', 'S04E03///The Four Horsemen///February 15, 2017///5904887///tt2661044///8.2', 'S04E04///A Lie Guarded///February 22, 2017///5938968///tt2661044///8.2', 'S04E05///The Tinder Box///March 1, 2017///5939659///tt2661044///8.4', 'S04E06///We Will Rise///March 15, 2017///5939660///tt2661044///8.0', 'S04E07///Gimme Shelter///March 22, 2017///5940804///tt2661044///8.0', 'S04E13///Praimfaya///May 24, 2017///5940805///tt2661044///8.2', 'S04E08///God Complex///March 29, 2017///5941009///tt2661044///8.1', 'S04E11///The Other Side///May 10, 2017///5941011///tt2661044///9.2', 'S04E09///DNR///April 26, 2017///5941030///tt2661044///8.3', 'S04E12///The Chosen///May 17, 2017///5943802///tt2661044///8.9', 'S04E10///Die All, Die Merrily///May 3, 2017///5947380///tt2661044///9.3', 'S05E01///Eden///April 24, 2018///6226156///tt2661044///8.8', 'S05E03///Sleeping Giants///May 8, 2018///6245844///tt2661044///8.8', 'S05E02///Red Queen///May 1, 2018///6245845///tt2661044///9.1', "S05E04///Pandora's Box///May 15, 2018///6291901///tt2661044///8.7", 'S05E05///Shifting Sands///May 22, 2018///6316749///tt2661044///8.4', 'S05E07///Acceptable Losses///June 19, 2018///6401881///tt2661044///8.3', 'S05E09///Sic Semper Tyrannis///July 10, 2018///6422052///tt2661044///8.3', 'S05E10///The Warriors Will///July 17, 2018///6422053///tt2661044///8.7', 'S05E11///The Dark Year///July 24, 2018///6538302///tt2661044///8.7', 'S05E12///Damocles (1)///July 31, 2018///6538303///tt2661044///8.4', 'S05E13///Damocles (2)///August 7, 2018///6538304///tt2661044///8.4', 'S05E06///Exit Wounds///June 5, 2018///6710696///tt2661044///8.5', 'S05E08///How We Get to Peace///June 26, 2018///6719792///tt2661044///9.0', 'S06E01///Sanctum///April 30, 2019///6785212///tt2661044///8.7', 'S06E02///Red Sun Rising///May 7, 2019///6792119///tt2661044///8.7', 'S06E03///The Children of Gabriel///May 14, 2019///7159487///tt2661044///8.6', 'S06E04///The Face Behind the Glass///May 21, 2019///7172420///tt2661044///8.7', 'S06E05///The Gospel of Josephine///May 28, 2019///7179417///tt2661044///8.9', 'S06E06///Memento Mori///June 11, 2019///7209811///tt2661044///8.5', 'S06E07///Nevermind///June 18, 2019///7218172///tt2661044///8.6', 'S06E08///The Old Man and the Anomaly///June 25, 2019///7223603///tt2661044///8.5', 'S06E09///What You Take With You///July 9, 2019///7223605///tt2661044///8.5', 'S06E10///Matryoshka///July 16, 2019///7223606///tt2661044///8.7', 'S06E11///Ashes to Ashes///July 23, 2019///7223608///tt2661044///8.6', 'S06E12///Adjustment Protocol///July 30, 2019///7223610///tt2661044///8.9', 'S06E13///The Blood of Sanctum///August 6, 2019///7223611///tt2661044///8.4', 'S07E01///From the Ashes///May 20, 2020///7619587///tt2661044///8.3', 'S07E02///The Garden///May 27, 2020///7682640///tt2661044///8.6', 'S07E03///False Gods///June 3, 2020///7682641///tt2661044///7.9', 'S07E04///Hesperides///June 10, 2020///7682642///tt2661044///8.5', 'S07E05///Welcome to Bardo///June 17, 2020///7682643///tt2661044///9.1', 'S07E06///Nakara///June 24, 2020///7682644///tt2661044///8.2', "S07E07///The Queen's Gambit///July 1, 2020///7682645///tt2661044///8.1", 'S07E08///Anaconda///July 8, 2020///7682646///tt2661044///9.5', 'S07E09///The Flock///July 15, 2020///7682647///tt2661044///8.4']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[1]
+    air_date = res[2]
+    rating = res[5]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+    document.getElementById('rating').innerHTML = rating;
+            document.getElementById('rating').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('rating').animate([
+    // keyframes
+        { transform: 'translateY(-280px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+<script>
+    function
+    change()
+    {
+        var elem = document.getElementById("random_button");
+        if (elem.innerHTML == "Random Episode") elem.innerHTML = "Pick Again";
+        else elem.innerHTML = "Pick Again";
+    }
+</script>
+
+<script>
+    function
+    color()
+    {
+        var elem = document.getElementById("rating").innerHTML;
+        var float = parseFloat(elem);
+        var good = 8.5;
+        var bad = 7.9;
+        if (float >= good) document.getElementById("rating").style.backgroundColor = "#2db92d";
+        else if (float <= bad) document.getElementById("rating").style.backgroundColor = "#ff3333";
+        else document.getElementById("rating").style.backgroundColor = "#333333";
+    }
+</script>
+
+</html>
