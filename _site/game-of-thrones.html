@@ -1,0 +1,162 @@
+---
+permalink: random-episode-of-game-of-thrones
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='../random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="Game of Thrones random episode generator." />
+    <title>Random Game of Thrones Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='../logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>Game of Thrones</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='change(); color()'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p id='random_button' class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+        <div id='rating' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///Winter Is Coming///April 17, 2011///3254641///tt0944947///9.1', 'S01E08///The Pointy End///June 5, 2011///3360391///tt0944947///8.8', 'S01E02///The Kingsroad///April 24, 2011///3436411///tt0944947///8.7', 'S01E03///Lord Snow///May 1, 2011///3436421///tt0944947///8.8', 'S01E04///Cripples, Bastards, and Broken Things///May 8, 2011///3436431///tt0944947///9.1', 'S01E05///The Wolf and the Lion///May 15, 2011///3436441///tt0944947///9.2', 'S01E06///A Golden Crown///May 22, 2011///3436451///tt0944947///9.2', 'S01E07///You Win or You Die///May 29, 2011///3436461///tt0944947///9.0', 'S01E09///Baelor///June 12, 2011///4063481///tt0944947///9.6', 'S01E10///Fire and Blood///June 19, 2011///4063491///tt0944947///9.5', 'S02E01///The North Remembers///April 1, 2012///4161693///tt0944947///8.8', 'S02E02///The Night Lands///April 8, 2012///4245771///tt0944947///8.5', 'S02E03///What is Dead May Never Die///April 15, 2012///4245772///tt0944947///8.8', 'S02E04///Garden of Bones///April 22, 2012///4245773///tt0944947///8.8', 'S02E05///The Ghost of Harrenhal///April 29, 2012///4245774///tt0944947///8.8', 'S02E06///The Old Gods and the New///May 6, 2012///4245775///tt0944947///9.1', 'S02E07///A Man Without Honor///May 13, 2012///4245776///tt0944947///8.9', 'S02E08///The Prince of Winterfell///May 20, 2012///4245777///tt0944947///8.8', 'S02E09///Blackwater///May 27, 2012///4245778///tt0944947///9.7', 'S02E10///Valar Morghulis///June 3, 2012///4245779///tt0944947///9.4', 'S03E01///Valar Dohaeris///March 31, 2013///4293685///tt0944947///8.8', 'S03E02///Dark Wings, Dark Words///April 7, 2013///4517458///tt0944947///8.6', 'S03E03///Walk of Punishment///April 14, 2013///4517459///tt0944947///8.9', 'S03E04///And Now His Watch Is Ended///April 21, 2013///4517460///tt0944947///9.6', 'S03E05///Kissed by Fire///April 28, 2013///4517461///tt0944947///9.0', 'S03E06///The Climb///May 5, 2013///4517462///tt0944947///8.8', 'S03E07///The Bear and the Maiden Fair///May 12, 2013///4517463///tt0944947///8.7', 'S03E08///Second Sons///May 19, 2013///4517464///tt0944947///9.0', 'S03E09///The Rains of Castamere///June 2, 2013///4517465///tt0944947///9.9', 'S03E10///Mhysa///June 9, 2013///4517466///tt0944947///9.2', 'S04E01///Two Swords///April 6, 2014///4721938///tt0944947///9.1', 'S04E02///The Lion and the Rose///April 13, 2014///4801602///tt0944947///9.7', 'S04E03///Breaker of Chains///April 20, 2014///4801603///tt0944947///8.9', 'S04E04///Oathkeeper///April 27, 2014///4801604///tt0944947///8.8', 'S04E05///First of His Name///May 4, 2014///4801605///tt0944947///8.8', 'S04E06///The Laws of Gods and Men///May 11, 2014///4801606///tt0944947///9.7', 'S04E07///Mockingbird///May 18, 2014///4801607///tt0944947///9.1', 'S04E08///The Mountain and the Viper///June 1, 2014///4801608///tt0944947///9.7', 'S04E09///The Watchers on the Wall///June 8, 2014///4801609///tt0944947///9.6', 'S04E10///The Children///June 15, 2014///4801610///tt0944947///9.7', 'S05E01///The Wars to Come///April 12, 2015///5083694///tt0944947///8.5', 'S05E02///The House of Black and White///April 19, 2015///5150174///tt0944947///8.5', 'S05E03///High Sparrow///April 26, 2015///5150175///tt0944947///8.5', 'S05E04///Sons of the Harpy///May 3, 2015///5150183///tt0944947///8.7', 'S05E05///Kill the Boy///May 10, 2015///5171022///tt0944947///8.6', 'S05E06///Unbowed, Unbent, Unbroken///May 17, 2015///5171023///tt0944947///8.0', 'S05E07///The Gift///May 24, 2015///5171024///tt0944947///9.0', 'S05E08///Hardhome///May 31, 2015///5194184///tt0944947///9.9', 'S05E09///The Dance of Dragons///June 7, 2015///5194187///tt0944947///9.5', "S05E10///Mother's Mercy///June 14, 2015///5194188///tt0944947///9.1", 'S06E01///The Red Woman///April 24, 2016///5469015///tt0944947///8.5', 'S06E02///Home///May 1, 2016///5579002///tt0944947///9.4', 'S06E03///Oathbreaker///May 8, 2016///5579003///tt0944947///8.7', 'S06E04///Book of the Stranger///May 15, 2016///5599364///tt0944947///9.1', 'S06E05///The Door///May 22, 2016///5600132///tt0944947///9.7', 'S06E06///Blood of My Blood///May 29, 2016///5615733///tt0944947///8.4', 'S06E07///The Broken Man///June 5, 2016///5615734///tt0944947///8.6', 'S06E08///No One///June 12, 2016///5624259///tt0944947///8.4', 'S06E09///Battle of the Bastards///June 19, 2016///5624260///tt0944947///9.9', 'S06E10///The Winds of Winter///June 26, 2016///5624261///tt0944947///9.9', 'S07E02///Stormborn///July 23, 2017///6132445///tt0944947///8.6', "S07E03///The Queen's Justice///July 30, 2017///6132453///tt0944947///8.9", 'S07E05///Eastwatch///August 13, 2017///6132455///tt0944947///9.2', 'S07E06///Beyond the Wall///August 20, 2017///6132456///tt0944947///9.8', 'S07E01///Dragonstone///July 16, 2017///6185708///tt0944947///8.8', 'S07E04///The Spoils of War///August 6, 2017///6235145///tt0944947///9.0', 'S07E07///The Dragon and the Wolf///August 27, 2017///6275142///tt0944947///9.4', 'S08E01///Winterfell///April 14, 2019///7117386///tt0944947///7.5', 'S08E02///A Knight of the Seven Kingdoms///April 21, 2019///7121401///tt0944947///7.8', 'S08E03///The Long Night///April 28, 2019///7121402///tt0944947///7.5', 'S08E04///The Last of the Starks///May 5, 2019///7121403///tt0944947///5.5', 'S08E05///The Bells///May 12, 2019///7121404///tt0944947///6.0', 'S08E06///The Iron Throne///May 19, 2019///7121405///tt0944947///4.1']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[1]
+    air_date = res[2]
+    rating = res[5]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+    document.getElementById('rating').innerHTML = rating;
+            document.getElementById('rating').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('rating').animate([
+    // keyframes
+        { transform: 'translateY(-280px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+<script>
+    function
+    change()
+    {
+        var elem = document.getElementById("random_button");
+        if (elem.innerHTML == "Random Episode") elem.innerHTML = "Pick Again";
+        else elem.innerHTML = "Pick Again";
+    }
+</script>
+
+<script>
+    function
+    color()
+    {
+        var elem = document.getElementById("rating").innerHTML;
+        var float = parseFloat(elem);
+        var good = 8.5;
+        var bad = 7.9;
+        if (float >= good) document.getElementById("rating").style.backgroundColor = "#2db92d";
+        else if (float <= bad) document.getElementById("rating").style.backgroundColor = "#ff3333";
+        else document.getElementById("rating").style.backgroundColor = "#333333";
+    }
+</script>
+
+</html>

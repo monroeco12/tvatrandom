@@ -1,0 +1,162 @@
+---
+permalink: random-episode-of-the-sopranos
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='../random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="The Sopranos random episode generator." />
+    <title>Random Sopranos Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='../logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>The Sopranos</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='change(); color()'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p id='random_button' class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+        <div id='rating' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///The Sopranos///January 10, 1999///167539///tt0141842///8.5', 'S01E02///46 Long///January 17, 1999///167540///tt0141842///8.5', 'S01E03///Denial, Anger, Acceptance///January 24, 1999///167541///tt0141842///8.7', 'S01E04///Meadowlands///January 31, 1999///167542///tt0141842///8.7', 'S01E05///College///February 7, 1999///167543///tt0141842///8.9', 'S01E06///Pax Soprana///February 14, 1999///167544///tt0141842///8.6', 'S01E07///Down Neck///February 21, 1999///167545///tt0141842///8.5', 'S01E08///The Legend of Tennessee Moltisanti///February 28, 1999///167546///tt0141842///8.7', 'S01E09///Boca///March 7, 1999///167547///tt0141842///8.6', 'S01E10///A Hit Is a Hit///March 14, 1999///167548///tt0141842///8.1', 'S01E11///Nobody Knows Anything///March 21, 1999///167549///tt0141842///8.8', 'S01E12///Isabella///March 28, 1999///167550///tt0141842///9.1', 'S01E13///I Dream of Jeannie Cusamano///April 4, 1999///167551///tt0141842///9.2', "S02E01///Guy Walks into a Psychiatrist's Office///January 16, 2000///167552///tt0141842///8.4", 'S02E02///Do Not Resuscitate///January 23, 2000///167553///tt0141842///8.2', 'S02E03///Toodle-Fucking-Oo///January 30, 2000///167554///tt0141842///8.5', 'S02E04///Commendatori///February 6, 2000///167555///tt0141842///8.6', "S02E05///Big Girls Don't Cry///February 13, 2000///167556///tt0141842///8.6", 'S02E06///The Happy Wanderer///February 20, 2000///167557///tt0141842///8.7', 'S02E07///D-Girl///February 27, 2000///167558///tt0141842///8.7', 'S02E08///Full Leather Jacket///March 5, 2000///167559///tt0141842///8.9', 'S02E09///From Where to Eternity///March 12, 2000///167560///tt0141842///8.8', 'S02E10///Bust Out///March 19, 2000///167561///tt0141842///8.5', 'S02E11///House Arrest///March 26, 2000///167562///tt0141842///8.3', 'S02E12///The Knight in White Satin Armor///April 2, 2000///167563///tt0141842///9.3', 'S02E13///Funhouse///April 9, 2000///167564///tt0141842///9.4', "S03E01///Mr. Ruggerio's Neighborhood///March 4, 2001///167565///tt0141842///8.7", 'S03E02///Proshai, Livushka///March 4, 2001///167566///tt0141842///8.7', 'S03E03///Fortunate Son///March 11, 2001///167567///tt0141842///8.7', 'S03E04///Employee of the Month///March 18, 2001///167568///tt0141842///8.5', 'S03E05///Another Toothpick///March 25, 2001///167569///tt0141842///9.1', 'S03E06///University///April 1, 2001///167570///tt0141842///8.7', 'S03E07///Second Opinion///April 8, 2001///167571///tt0141842///8.7', 'S03E08///He Is Risen///April 15, 2001///167572///tt0141842///8.5', 'S03E09///The Telltale Moozadell///April 22, 2001///167573///tt0141842///8.4', "S03E10///To Save Us All From Satan's Power///April 29, 2001///167574///tt0141842///8.3", 'S03E11///Pine Barrens///May 6, 2001///167575///tt0141842///8.5', 'S03E12///Amour Fou///May 13, 2001///167576///tt0141842///9.7', 'S03E13///Army of One///May 20, 2001///167577///tt0141842///9.2', 'S04E01///For All Debts Public and Private///September 15, 2002///167578///tt0141842///8.3', 'S04E02///No-Show///September 22, 2002///167579///tt0141842///8.3', 'S04E03///Christopher///September 29, 2002///167580///tt0141842///7.9', 'S04E04///The Weight///October 6, 2002///167581///tt0141842///8.5', 'S04E05///Pie-O-My///October 13, 2002///167582///tt0141842///8.2', 'S04E06///Everybody Hurts///October 20, 2002///167583///tt0141842///8.4', 'S04E07///Watching Too Much Television///October 27, 2002///167584///tt0141842///8.2', 'S04E08///Mergers & Acquisitions///November 3, 2002///167585///tt0141842///8.2', 'S04E09///Whoever Did This///November 10, 2002///167586///tt0141842///9.2', 'S04E10///The Strong, Silent Type///November 17, 2002///167587///tt0141842///8.8', 'S04E11///Calling All Cars///November 24, 2002///167588///tt0141842///8.1', 'S04E12///Eloise///December 1, 2002///167589///tt0141842///8.3', 'S04E13///Whitecaps///December 8, 2002///167590///tt0141842///9.2', 'S05E01///Two Tonys///March 7, 2004///167591///tt0141842///8.7', 'S05E02///Rat Pack///March 14, 2004///167592///tt0141842///8.5', "S05E03///Where's Johnny?///March 21, 2004///167593///tt0141842///8.7", 'S05E04///All Happy Families...///March 28, 2004///167594///tt0141842///8.6', 'S05E05///Irregular Around the Margins///April 4, 2004///167595///tt0141842///9.2', 'S05E06///Sentimental Education///April 11, 2004///167596///tt0141842///8.3', 'S05E07///In Camelot///April 18, 2004///167597///tt0141842///8.1', 'S05E08///Marco Polo///April 25, 2004///167598///tt0141842///8.8', 'S05E09///Unidentified Black Males///May 2, 2004///167599///tt0141842///8.8', 'S05E10///Cold Cuts///May 9, 2004///167600///tt0141842///8.7', 'S05E11///The Test Dream///May 16, 2004///167601///tt0141842///8.6', 'S05E12///Long Term Parking///May 23, 2004///167602///tt0141842///9.6', 'S05E13///All Due Respect///June 6, 2004///167603///tt0141842///9.2', 'S06E01///Members Only///March 12, 2006///306215///tt0141842///9.2', 'S06E02///Join the Club///March 19, 2006///306216///tt0141842///8.7', 'S06E03///Mayham///March 26, 2006///306217///tt0141842///8.8', 'S06E04///The Fleshy Part of the Thigh///April 2, 2006///306218///tt0141842///8.5', 'S06E05///Mr. & Mrs. John Sacrimoni Request...///April 9, 2006///306219///tt0141842///8.8', 'S06E06///Live Free or Die///April 16, 2006///306220///tt0141842///8.6', 'S06E07///Luxury Lounge///April 23, 2006///306221///tt0141842///8.3', 'S06E08///Johnny Cakes///April 30, 2006///306222///tt0141842///8.4', 'S06E09///The Ride///May 7, 2006///306223///tt0141842///8.4', "S06E10///Moe n' Joe///May 14, 2006///306224///tt0141842///8.3", 'S06E11///Cold Stones///May 21, 2006///307344///tt0141842///8.7', 'S06E12///Kaisha///June 4, 2006///307426///tt0141842///8.3', 'S06E13///Soprano Home Movies///April 8, 2007///327392///tt0141842///9.0', 'S06E14///Stage 5///April 15, 2007///327393///tt0141842///8.8', 'S06E15///Remember When///April 22, 2007///327394///tt0141842///8.6', 'S06E16///Chasing It///April 29, 2007///327395///tt0141842///8.1', 'S06E17///Walk Like a Man///May 6, 2007///327396///tt0141842///8.8', 'S06E18///Kennedy and Heidi///May 13, 2007///327397///tt0141842///9.1', 'S06E19///The Second Coming///May 20, 2007///327398///tt0141842///9.2', 'S06E20///The Blue Comet///June 3, 2007///329767///tt0141842///9.6', 'S06E21///Made in America///June 10, 2007///329768///tt0141842///9.3']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[1]
+    air_date = res[2]
+    rating = res[5]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+    document.getElementById('rating').innerHTML = rating;
+            document.getElementById('rating').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('rating').animate([
+    // keyframes
+        { transform: 'translateY(-280px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+<script>
+    function
+    change()
+    {
+        var elem = document.getElementById("random_button");
+        if (elem.innerHTML == "Random Episode") elem.innerHTML = "Pick Again";
+        else elem.innerHTML = "Pick Again";
+    }
+</script>
+
+<script>
+    function
+    color()
+    {
+        var elem = document.getElementById("rating").innerHTML;
+        var float = parseFloat(elem);
+        var good = 8.5;
+        var bad = 7.9;
+        if (float >= good) document.getElementById("rating").style.backgroundColor = "#2db92d";
+        else if (float <= bad) document.getElementById("rating").style.backgroundColor = "#ff3333";
+        else document.getElementById("rating").style.backgroundColor = "#333333";
+    }
+</script>
+
+</html>

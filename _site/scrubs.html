@@ -1,0 +1,162 @@
+---
+permalink: random-episode-of-scrubs
+---
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <link rel='stylesheet' href='../random_episode_style.css'>
+
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+        <!-- Global site tag (gtag.js)-Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-172820632-2'></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-172820632-2');
+    </script>
+
+    <meta name="description" content="Scrubs random episode generator." />
+    <title>Random Scrubs Episode</title>
+
+</head>
+
+<body>
+
+    <a href='https://www.tvatrandom.com'>
+        <div class='header'>
+            <p>
+                <img src='../logo.png' alt='TV at Random Logo' title='TV at Random Logo' style='width: 200px; padding-top: 10px;'>
+            </p>
+        </div>
+    </a>
+
+    <div class='sub_header'>
+        <div>
+            <p class='show_title'><i>Scrubs</i></p>
+        </div>
+    </div>
+
+    <div class='random_row'>
+
+        <a href='#' onclick='change(); color()'>
+            <div id='random' class='random_button'>
+                <div>
+                    <p id='random_button' class='random_episode' >Random Episode</p>
+                </div>
+            </div>
+        </a>
+
+        <div id='season-episode' class='info' style='font-size: 2rem; font-weight: 600;'></div>
+
+        <div id='episode-title' class='info' style='font-weight: 300;'></div>
+
+        <div id='air-date' class='info' style='font-weight: 300;'></div>
+
+        <div id='rating' class='info' style='font-weight: 300;'></div>
+
+    </div>
+
+    <div class='footer'>
+        <div>
+            <a href='https://www.tvatrandom.com'>
+                <p class='footer_text'>&#169; 2020 tvatrandom.com</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var button = document.getElementById('random');
+    var input = document.getElementById('random');
+    var episodes = ['S01E01///My First Day///October 2, 2001///184602///tt0285403///8.5', 'S01E02///My Mentor///October 4, 2001///184603///tt0285403///8.2', "S01E03///My Best Friend's Mistake///October 9, 2001///184604///tt0285403///8.1", 'S01E04///My Old Lady///October 16, 2001///184605///tt0285403///9.2', 'S01E05///My Two Dads///October 23, 2001///184606///tt0285403///8.3', 'S01E06///My Bad///October 30, 2001///184607///tt0285403///8.3', 'S01E07///My Super Ego///November 6, 2001///184608///tt0285403///8.1', 'S01E08///My Fifteen Minutes///November 15, 2001///184609///tt0285403///8.2', 'S01E09///My Day Off///November 20, 2001///184610///tt0285403///8.1', 'S01E10///My Nickname///November 27, 2001///184611///tt0285403///8.1', 'S01E11///My Own Personal Jesus///December 11, 2001///184612///tt0285403///7.9', 'S01E12///My Blind Date///January 8, 2002///184613///tt0285403///8.2', 'S01E13///My Balancing Act///January 15, 2002///184614///tt0285403///8.0', 'S01E14///My Drug Buddy///January 22, 2002///184615///tt0285403///8.2', 'S01E15///My Bed Banter & Beyond///February 5, 2002///184616///tt0285403///8.6', 'S01E16///My Heavy Meddle///February 26, 2002///184617///tt0285403///7.9', 'S01E17///My Student///March 5, 2002///184618///tt0285403///8.0', 'S01E18///My Tuscaloosa Heart///March 12, 2002///184619///tt0285403///7.9', 'S01E19///My Old Man///April 9, 2002///184620///tt0285403///8.1', 'S01E20///My Way or the Highway///April 16, 2002///184621///tt0285403///8.0', 'S01E21///My Sacrificial Clam///April 30, 2002///184622///tt0285403///7.8', 'S01E22///My Occurrence///May 7, 2002///184623///tt0285403///9.1', 'S01E23///My Hero///May 14, 2002///184624///tt0285403///8.8', 'S01E24///My Last Day///May 21, 2002///184625///tt0285403///8.8', 'S02E01///My Overkill///September 26, 2002///184627///tt0285403///8.7', 'S02E02///My Nightingale///October 3, 2002///184628///tt0285403///8.0', 'S02E03///My Case Study///October 10, 2002///184629///tt0285403///8.0', 'S02E04///My Big Mouth///October 17, 2002///184630///tt0285403///7.9', 'S02E05///My New Coat///October 24, 2002///184631///tt0285403///8.0', 'S02E06///My Big Brother///October 31, 2002///184632///tt0285403///8.0', 'S02E07///My First Step///November 7, 2002///184633///tt0285403///8.0', 'S02E08///My Fruit Cups///November 14, 2002///184634///tt0285403///8.3', 'S02E09///My Lucky Day///December 5, 2002///184635///tt0285403///8.1', 'S02E10///My Monster///December 12, 2002///184636///tt0285403///8.2', 'S02E11///My Sex Buddy///January 2, 2003///184637///tt0285403///8.3', 'S02E12///My New Old Friend///January 9, 2003///184638///tt0285403///8.1', 'S02E13///My Philosophy///January 16, 2003///184639///tt0285403///8.6', 'S02E14///My Brother, My Keeper///January 23, 2003///184640///tt0285403///8.0', 'S02E15///His Story///January 30, 2003///184641///tt0285403///8.7', 'S02E16///My Karma///February 20, 2003///184642///tt0285403///8.1', 'S02E17///My Own Private Practice Guy///March 13, 2003///184643///tt0285403///8.0', 'S02E18///My T.C.W.///March 20, 2003///184644///tt0285403///8.5', 'S02E19///My Kingdom///March 27, 2003///184645///tt0285403///8.0', 'S02E20///My Interpretation///April 3, 2003///184646///tt0285403///8.3', 'S02E21///My Drama Queen///April 10, 2003///184647///tt0285403///8.1', 'S02E22///My Dream Job///April 17, 2003///184648///tt0285403///8.6', 'S03E01///My Own American Girl///October 2, 2003///184649///tt0285403///8.2', 'S03E02///My Journey///October 9, 2003///184650///tt0285403///7.9', 'S03E03///My White Whale///October 23, 2003///184651///tt0285403///8.0', 'S03E04///My Lucky Night///October 30, 2003///184652///tt0285403///8.1', 'S03E05///My Brother, Where Art Thou?///November 6, 2003///184653///tt0285403///8.2', 'S03E06///My Advice to You///November 13, 2003///184654///tt0285403///8.0', 'S03E07///My Fifteen Seconds///November 20, 2003///184655///tt0285403///8.5', 'S03E08///My Friend the Doctor///December 4, 2003///184656///tt0285403///8.3', 'S03E09///My Dirty Secret///December 11, 2003///184657///tt0285403///8.0', 'S03E10///My Rule of Thumb///January 22, 2004///184658///tt0285403///7.9', 'S03E11///My Clean Break///February 3, 2004///184659///tt0285403///8.0', 'S03E12///My Catalyst///February 10, 2004///184660///tt0285403///9.0', 'S03E13///My Porcelain God///February 17, 2004///184661///tt0285403///8.7', 'S03E14///My Screw Up///February 24, 2004///184662///tt0285403///9.8', 'S03E15///My Tormented Mentor///March 2, 2004///184663///tt0285403///8.1', 'S03E16///My Butterfly///March 16, 2004///184664///tt0285403///8.8', 'S03E17///My Moment of Un-Truth///March 30, 2004///184665///tt0285403///8.1', 'S03E18///His Story II///April 6, 2004///184666///tt0285403///8.1', 'S03E19///My Choosiest Choice of All///April 20, 2004///184667///tt0285403///8.3', 'S03E20///My Fault///April 22, 2004///184668///tt0285403///8.4', 'S03E21///My Self-Examination///April 27, 2004///184669///tt0285403///8.3', "S03E22///My Best Friend's Wedding///May 4, 2004///184670///tt0285403///8.6", "S04E01///My Old Friend's New Friend///August 31, 2004///184671///tt0285403///8.5", 'S04E02///My Office///September 7, 2004///184672///tt0285403///8.3', 'S04E03///My New Game///September 14, 2004///184673///tt0285403///8.1', 'S04E04///My First Kill///September 21, 2004///184674///tt0285403///8.2', 'S04E05///Her Story///September 28, 2004///184675///tt0285403///8.1', 'S04E06///My Cake///October 12, 2004///184676///tt0285403///8.9', 'S04E07///My Common Enemy///October 19, 2004///184677///tt0285403///8.0', 'S04E08///My Last Chance///October 26, 2004///184678///tt0285403///8.8', 'S04E09///My Malpractical Decision///November 9, 2004///184679///tt0285403///8.2', 'S04E10///My Female Trouble///November 16, 2004///184680///tt0285403///8.3', 'S04E11///My Unicorn///November 23, 2004///184681///tt0285403///8.4', 'S04E12///My Best Moment///December 7, 2004///184682///tt0285403///8.7', 'S04E13///My Ocardial Infarction///January 18, 2005///184683///tt0285403///8.0', 'S04E14///My Lucky Charm///January 25, 2005///184684///tt0285403///8.3', 'S04E15///My Hypocritical Oath///February 1, 2005///184685///tt0285403///8.1', 'S04E16///My Quarantine///February 8, 2005///184686///tt0285403///8.1', 'S04E17///My Life in Four Cameras///February 15, 2005///184687///tt0285403///8.4', 'S04E18///My Roommates///February 22, 2005///184688///tt0285403///8.3', 'S04E19///My Best Laid Plans///March 1, 2005///184689///tt0285403///8.5', "S04E20///My Boss' Free Haircut///March 29, 2005///184690///tt0285403///8.4", 'S04E21///My Lips Are Sealed///April 5, 2005///184691///tt0285403///8.1', 'S04E22///My Big Move///April 12, 2005///184692///tt0285403///8.3', 'S04E23///My Faith in Humanity///April 19, 2005///184693///tt0285403///8.0', 'S04E24///My Drive-By///April 26, 2005///184694///tt0285403///8.0', 'S04E25///My Changing Ways///May 10, 2005///184695///tt0285403///8.2', "S05E01///My Intern's Eyes///January 3, 2006///302820///tt0285403///8.1", 'S05E02///My Rite of Passage///January 3, 2006///302821///tt0285403///8.1', 'S05E03///My Day at the Races///January 10, 2006///302822///tt0285403///8.0', 'S05E04///My Jiggly Ball///January 10, 2006///302823///tt0285403///8.0', 'S05E07///My Way Home///January 24, 2006///302824///tt0285403///8.3', 'S05E05///My New God///January 17, 2006///302825///tt0285403///8.5', 'S05E06///My Missed Perception///January 17, 2006///302826///tt0285403///8.5', 'S05E08///My Big Bird///January 24, 2006///303584///tt0285403///8.1', 'S05E09///My Half-Acre///February 7, 2006///303585///tt0285403///8.0', 'S05E10///Her Story II///February 7, 2006///303586///tt0285403///8.0', "S05E11///My Buddy's Booty///February 28, 2006///303587///tt0285403///9.3", 'S05E12///My Cabbage///February 28, 2006///303588///tt0285403///9.3', 'S05E13///My Five Stages///March 7, 2006///306209///tt0285403///8.4', 'S05E14///My Own Personal Hell///March 14, 2006///306210///tt0285403///8.8', 'S05E15///My Extra Mile///March 21, 2006///306211///tt0285403///8.5', 'S05E17///My Chopped Liver///April 4, 2006///306212///tt0285403///8.0', 'S05E18///My New Suit///April 11, 2006///306213///tt0285403///8.4', 'S05E19///His Story III///April 18, 2006///306214///tt0285403///8.5', 'S05E16///My Bright Idea///March 28, 2006///306327///tt0285403///8.0', 'S05E20///My Lunch///April 25, 2006///307019///tt0285403///8.4', 'S05E21///My Fallen Idol///May 2, 2006///307110///tt0285403///8.5', 'S05E22///My Déjà Vu, My Déjà Vu///May 9, 2006///307111///tt0285403///8.1', 'S05E23///My Urologist///May 16, 2006///307112///tt0285403///8.0', 'S05E24///My Transition///May 16, 2006///307113///tt0285403///8.0', 'S06E01///My Mirror Image///November 30, 2006///314309///tt0285403///8.2', "S06E02///My Best Friend's Baby's Baby and My Baby's Baby///December 7, 2006///314310///tt0285403///8.3", 'S06E03///My Coffee///December 14, 2006///314311///tt0285403///8.0', 'S06E04///My House///January 4, 2007///314312///tt0285403///8.3', 'S06E05///My Friend with Money///January 11, 2007///314313///tt0285403///7.9', 'S06E06///My Musical///January 18, 2007///314314///tt0285403///9.1', 'S06E07///His Story IV///February 1, 2007///314315///tt0285403///8.3', 'S06E08///My Road to Nowhere///February 8, 2007///315313///tt0285403///8.6', 'S06E09///My Perspective///February 15, 2007///315633///tt0285403///8.3', 'S06E10///My Therapeutic Month///February 22, 2007///319298///tt0285403///8.0', 'S06E11///My Night to Remember///March 1, 2007///319299///tt0285403///5.7', 'S06E12///My Fishbowl///March 8, 2007///319300///tt0285403///8.0', 'S06E13///My Scrubs///March 15, 2007///320220///tt0285403///8.3', 'S06E14///My No Good Reason///March 22, 2007///320733///tt0285403///8.9', 'S06E15///My Long Goodbye///April 5, 2007///323045///tt0285403///9.1', 'S06E16///My Words of Wisdom///April 12, 2007///323566///tt0285403///8.3', 'S06E17///Their Story///April 19, 2007///323567///tt0285403///8.6', 'S06E18///My Turf War///April 26, 2007///324322///tt0285403///8.1', 'S06E19///My Cold Shower///May 3, 2007///324794///tt0285403///8.6', 'S06E20///My Conventional Wisdom///May 10, 2007///327018///tt0285403///8.6', 'S06E21///My Rabbit///May 17, 2007///327019///tt0285403///8.3', 'S06E22///My Point of No Return///May 17, 2007///327020///tt0285403///8.3', 'S07E01///My Own Worst Enemy///October 25, 2007///339383///tt0285403///8.3', 'S07E02///My Hard Labor///November 1, 2007///339384///tt0285403///8.0', 'S07E03///My Inconvenient Truth///November 8, 2007///339385///tt0285403///7.9', 'S07E04///My Identity Crisis///November 15, 2007///339386///tt0285403///8.0', 'S07E05///My Growing Pains///November 29, 2007///343702///tt0285403///8.1', 'S07E06///My Number One Doctor///December 6, 2007///344610///tt0285403///8.2', 'S07E07///My Bad Too///April 10, 2008///346449///tt0285403///7.9', 'S07E08///My Manhood///April 17, 2008///359979///tt0285403///8.0', 'S07E09///My Dumb Luck///April 24, 2008///359980///tt0285403///8.6', 'S07E10///My Waste of Time///May 1, 2008///359981///tt0285403///8.0', 'S07E11///My Princess///May 8, 2008///359982///tt0285403///8.1', 'S08E01///My Jerks///January 6, 2009///401823///tt0285403///8.2', 'S08E02///My Last Words///January 6, 2009///401824///tt0285403///8.2', 'S08E03///My Saving Grace///January 13, 2009///401825///tt0285403///9.4', 'S08E04///My Happy Place///January 13, 2009///401826///tt0285403///9.4', "S08E05///My ABC's///January 27, 2009///401827///tt0285403///7.9", 'S08E11///My Nah Nah Nah///March 18, 2009///401828///tt0285403///8.2', 'S08E06///My Cookie Pants///January 27, 2009///401829///tt0285403///8.3', 'S08E07///My New Role///February 3, 2009///401830///tt0285403///8.2', 'S08E10///My Comedy Show///February 10, 2009///401831///tt0285403///8.0', 'S08E12///Their Story II///March 25, 2009///401832///tt0285403///8.5', 'S08E13///My Full Moon///April 1, 2009///401833///tt0285403///7.7', 'S08E14///My Soul on Fire (1)///April 8, 2009///401834///tt0285403///7.8', "S08E08///My Lawyer's in Love///February 3, 2009///401835///tt0285403///7.7", 'S08E09///My Absence///February 10, 2009///401836///tt0285403///7.7', 'S08E15///My Soul on Fire (2)///April 15, 2009///401837///tt0285403///7.7', 'S08E16///My Cuz///April 22, 2009///401838///tt0285403///7.8', 'S08E17///My Chief Concern///May 5, 2009///401839///tt0285403///8.1', 'S08E18///My Finale///May 6, 2009///401840///tt0285403///8.3', 'S09E01///Our First Day of School///December 1, 2009///1269261///tt0285403///6.6', 'S09E02///Our Drunk Friend///December 1, 2009///1309751///tt0285403///6.6', 'S09E03///Our Role Models///December 8, 2009///1309761///tt0285403///6.6', 'S09E04///Our Histories///December 15, 2009///1309771///tt0285403///6.5', 'S09E09///Our Stuff Gets Real///January 12, 2010///1309781///tt0285403///6.6', 'S09E06///Our New Girl-Bro///January 1, 2010///1309791///tt0285403///6.2', 'S09E07///Our White Coats///January 5, 2010///1309801///tt0285403///6.1', 'S09E08///Our Couples///January 5, 2010///1330871///tt0285403///6.1', 'S09E05///Our Mysteries///December 22, 2009///1330881///tt0285403///6.2', 'S09E10///Our True Lies///January 19, 2010///1330891///tt0285403///5.9', 'S09E12///Our Driving Issues///March 10, 2010///1379731///tt0285403///6.5', 'S09E11///Our Dear Leaders///January 26, 2010///1379741///tt0285403///6.3', 'S09E13///Our Thanks///March 17, 2010///1406911///tt0285403///5.9']
+    button.addEventListener('click', function() {
+    input.value = episodes[Math.floor(Math.random() * episodes.length)];
+    text = input.value;
+    var str = text;
+    var res = str.split('///');
+    season_episode = res[0]
+    episode_title = res[1]
+    air_date = res[2]
+    rating = res[5]
+    document.getElementById('season-episode').innerHTML = season_episode;
+            document.getElementById('season-episode').style.visibility='visible';
+    document.getElementById('episode-title').innerHTML = '"' + episode_title + '"';
+            document.getElementById('episode-title').style.visibility='visible';
+    document.getElementById('air-date').innerHTML = air_date;
+            document.getElementById('air-date').style.visibility='visible';
+    document.getElementById('rating').innerHTML = rating;
+            document.getElementById('rating').style.visibility='visible';
+
+    document.getElementById('season-episode').animate([
+    // keyframes
+        { transform: 'translateY(-55px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('episode-title').animate([
+    // keyframes
+        { transform: 'translateY(-130px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('air-date').animate([
+    // keyframes
+        { transform: 'translateY(-205px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    document.getElementById('rating').animate([
+    // keyframes
+        { transform: 'translateY(-280px)' },
+        { transform: 'translateY(0px)' }
+        ], {
+    // timing options
+        duration: 225,
+        iterations: 1,
+    });
+    });
+</script>
+
+<script>
+    function
+    change()
+    {
+        var elem = document.getElementById("random_button");
+        if (elem.innerHTML == "Random Episode") elem.innerHTML = "Pick Again";
+        else elem.innerHTML = "Pick Again";
+    }
+</script>
+
+<script>
+    function
+    color()
+    {
+        var elem = document.getElementById("rating").innerHTML;
+        var float = parseFloat(elem);
+        var good = 8.5;
+        var bad = 7.9;
+        if (float >= good) document.getElementById("rating").style.backgroundColor = "#2db92d";
+        else if (float <= bad) document.getElementById("rating").style.backgroundColor = "#ff3333";
+        else document.getElementById("rating").style.backgroundColor = "#333333";
+    }
+</script>
+
+</html>
